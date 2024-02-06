@@ -1,1 +1,2 @@
-It is just an empty repo.
+Чтобы запустить проект в пути Yandex\lyceum прописать:
+'python manage.py runserver'
