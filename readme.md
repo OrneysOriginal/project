@@ -1,2 +1,2 @@
-Чтобы запустить проект в пути Yandex\lyceum прописать:
+Чтобы запустить проект в пути lyceum прописать:
 'python manage.py runserver'
