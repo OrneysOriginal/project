@@ -1,0 +1,20 @@
+[tool.black]
+line-length = 79
+target-version = ['py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+  | \.venv         # exclude a few common directories in the
+  | \.git          # root of the project
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.eggs
+  | _build
+  | buck-out
+  | build
+  | dist
+  | foo.py           # also separately exclude a file named foo.py in
+                     # the root of the project
+)/
+'''
