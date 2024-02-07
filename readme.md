@@ -3,8 +3,9 @@
 'python -m venv venv'
 
 Для Windows
-'./source/venv/activate' 
+'./source/venv/activate' или
 venv\Scripts\activate.bat
+
 Для Linux
 sorce ./bin/activate или
 ./venv/Scripts/activate
