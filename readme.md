@@ -11,6 +11,8 @@ sorce ./bin/activate или
 ./venv/Scripts/activate
 Или
 venv\Scripts\Activate.ps1
+Или
+source venv/bin/activate
 
 'pip install -r requirements.txt'
 'python manage.py runserver'
