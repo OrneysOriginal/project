@@ -3,9 +3,12 @@
 'python -m venv venv'
 
 Для Windows
-'venv\Scripts\activate.bat'
+'./source/venv/activate' 
+venv\Scripts\activate.bat
 Для Linux
-sorce ./bin/activate
+sorce ./bin/activate или
+./venv/Scripts/activate
+
 
 'pip install -r requirements.txt'
 'python manage.py runserver'
