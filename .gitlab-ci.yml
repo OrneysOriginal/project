@@ -1,6 +1,7 @@
 stages:
   - linting
   - black
+  - deploy
 
 flake8:
   stage: linting
@@ -13,3 +14,8 @@ black:
   script:
     - pip install black
     - black --check .
+deploy:
+  stage: deploy
+  image: python:3.10
+  script:
+    - pip install -r requirements.txt
