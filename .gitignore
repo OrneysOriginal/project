@@ -2,4 +2,8 @@ venv
 .vscode/
 .idea/
 __pycache__/
+<<<<<<< HEAD
 .env
+=======
+.env
+>>>>>>> e1ef78a2e649a111764a247b8d77068574101aff

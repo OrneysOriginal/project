@@ -12,5 +12,4 @@ black:
   image: python:3.10
   script:
     - pip install black
-    - black --config pyproject.toml
     - black --check .
