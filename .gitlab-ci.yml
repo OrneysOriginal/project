@@ -19,4 +19,4 @@ deploy:
   image: python:3.10
   script:
     - pip install -r requirements.txt
-    - python lyceum\manage.py runserver
+    - python lyceum/manage.py runserver
