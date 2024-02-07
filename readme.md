@@ -1,7 +1,12 @@
 <<<<<<< HEAD
 Чтобы запустить проект в корне прописать:
 'python -m venv venv'
-'venv\Scripts\activate'
+
+Для Windows
+'venv\Scripts\activate.bat'
+Для Linux
+sorce ./bin/activate
+
 'pip install -r requirements.txt'
 'python manage.py runserver'
 =======
