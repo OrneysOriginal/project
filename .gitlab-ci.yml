@@ -15,13 +15,13 @@ flake8:
     
 black:
   stage: black
-  image: python:3.10
+  image: python:3.12
   script:
     - pip install black
     - black --check .
 deploy:
   stage: deploy
-  image: python:3.10
+  image: python:3.12
   script:
     - pip install -r requirements/prod.txt
     - pip install -r requirements/dev.txt
