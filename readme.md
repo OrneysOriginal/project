@@ -19,4 +19,7 @@ source venv/bin/activate
 =======
 Чтобы запустить проект в пути lyceum прописать:
 'python manage.py runserver'
+
+Скачать библиотеку python-dotenv
+И запустить проект как описывалось выше
 >>>>>>> 6c541691550af771c2fc6295220dbd0628c800e3
