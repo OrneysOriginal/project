@@ -1,9 +1,9 @@
 [tool.black]
 line-length = 79
 target-version = ['py312']
-include = '\.pyi?$'
 exclude = '''
 /(
+  | migrations
   | \.venv         # exclude a few common directories in the
   | \.git          # root of the project
   | \.hg
