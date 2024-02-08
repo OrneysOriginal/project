@@ -1,4 +1,4 @@
-![pipline status](https://gitlab.com/<namespace>/<project>/badges/main/pipeline.svg)
+![pipline status](https://gitlab.com/gitlab.crja72.ru/199562-sav1ngeorgiy-course-1112/badges/main/pipeline.svg)
 <<<<<<< HEAD
 Чтобы запустить проект в корне прописать:
 'python -m venv venv'
