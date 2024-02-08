@@ -1,4 +1,4 @@
-https://gitlab.example.com/<namespace>/<project>/badges/<branch>/pipeline.svg?ignore_skipped=true
+![Static Badge](https://img.shields.io/badge/pipline-passed-rgb(0%2C%20200%2C%200))
 <<<<<<< HEAD
 Чтобы запустить проект в корне прописать:
 'python -m venv venv'
