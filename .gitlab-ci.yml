@@ -10,6 +10,7 @@ flake8:
     - flake8 --verbose .
     - pip install pep8-naming
     - pip install import-order
+    - pip install flake8-quotes
     - flake8 --inline-quotes=double
     
 black:
