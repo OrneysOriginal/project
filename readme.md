@@ -1,3 +1,4 @@
+![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
 <<<<<<< HEAD
 Чтобы запустить проект в корне прописать:
 'python -m venv venv'
