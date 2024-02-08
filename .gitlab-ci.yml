@@ -8,6 +8,9 @@ flake8:
   image: registry.gitlab.com/pipeline-components/flake8:latest
   script:
     - flake8 --verbose .
+    - pip install pep8-naming
+    - pip install import-order
+    - pip install flake8-quotes
     - flake8 --inline-quotes=double
     
 black:
