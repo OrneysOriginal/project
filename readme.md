@@ -22,4 +22,9 @@ source venv/bin/activate
 
 Скачать библиотеку python-dotenv
 И запустить проект как описывалось выше
+
+Для Linux
+В Docker можно плавное перейти к тестам с используя
+--env-file .env и библиотеку python-dotenv
+
 >>>>>>> 6c541691550af771c2fc6295220dbd0628c800e3
