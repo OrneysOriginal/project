@@ -3,6 +3,9 @@ stages:
   - black
   - deploy
 
+before_script:
+  - pip install -r requirements/dev.txt
+
 flake8:
   stage: linting
   image: registry.gitlab.com/pipeline-components/flake8:latest
@@ -23,4 +26,3 @@ deploy:
   image: python:3.12
   script:
     - pip install -r requirements/prod.txt
-    - pip install -r requirements/dev.txt
