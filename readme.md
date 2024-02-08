@@ -1,5 +1,5 @@
-[![pipeline status](https://gitlab.com/Георгий Савин/199562-sav1ngeorgiy-course-1112
-/badges/master/pipeline.svg)](https://gitlab.com/Георгий Савин/199562-sav1ngeorgiy-course-1112/commits/master)
+[![pipeline status](https://gitlab.com/@sav1ngeorgiy/199562-sav1ngeorgiy-course-1112
+/badges/master/pipeline.svg)](https://gitlab.com/@sav1ngeorgiy/199562-sav1ngeorgiy-course-1112/commits/master)
 <<<<<<< HEAD
 Чтобы запустить проект в корне прописать:
 'python -m venv venv'
