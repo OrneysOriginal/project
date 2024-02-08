@@ -1,4 +1,4 @@
-![Static Badge](https://img.shields.io/badge/pipline-passed-rgb(0%2C%20200%2C%200))
+![Static Badge](https://gitlab.com/<namespace>/<project>/badges/main/pipeline.svg)
 <<<<<<< HEAD
 Чтобы запустить проект в корне прописать:
 'python -m venv venv'
