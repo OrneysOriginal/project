@@ -27,7 +27,7 @@ load_dotenv()
 SECRET_KEY = os.getenv("SECRET_KEY", default="aboba")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", default="boba")
 
 ALLOWED_HOSTS = []
 
@@ -92,25 +92,25 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": (
             "django.contrib.auth.password_validation.",
-            "UserAttributeSimilarityValidator"
-                 )
-    },
-    {
-        "NAME": (
-            "django.contrib.auth.password_validation.",
-            "MinimumLengthValidator"
+            "UserAttributeSimilarityValidator",
         )
     },
     {
         "NAME": (
             "django.contrib.auth.password_validation.",
-            "CommonPasswordValidator"
+            "MinimumLengthValidator",
+        )
+    },
+    {
+        "NAME": (
+            "django.contrib.auth.password_validation.",
+            "CommonPasswordValidator",
         ),
     },
     {
         "NAME": (
             "django.contrib.auth.password_validation.",
-            "NumericPasswordValidator"
+            "NumericPasswordValidator",
         ),
     },
 ]
