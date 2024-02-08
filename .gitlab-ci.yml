@@ -17,7 +17,7 @@ black:
   stage: black
   image: python:3.12
   script:
-    - black . --check
+    - black --check .
 deploy:
   stage: deploy
   image: python:3.12
