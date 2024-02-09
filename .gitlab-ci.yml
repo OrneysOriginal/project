@@ -1,7 +1,6 @@
 stages:
   - linting
   - black
-  - deploy
 
 before_script:
   - pip install -r requirements/dev.txt
@@ -19,8 +18,3 @@ black:
   script:
     - black --check .
 
-deploy:
-  stage: deploy
-  script:
-    - python lyceum/manage.py runserver
-    - ^C
