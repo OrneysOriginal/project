@@ -1,4 +1,5 @@
 [![pipeline status](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/badges/main/pipeline.svg)](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/-/commits/main)
+
 Чтобы запустить проект в корне прописать:
 'python -m venv venv'
 
