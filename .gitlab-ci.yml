@@ -1,6 +1,7 @@
 stages:
   - linting
   - black
+  - deploy
 
 before_script:
   - pip install -r requirements/dev.txt
@@ -16,3 +17,9 @@ black:
   image: registry.gitlab.com/pipeline-components/black:latest
   script:
     - black --check .
+
+deploy:
+  stage: deploy
+  script:
+    - python manage.py runserver
+    - ^C
