@@ -1,8 +1,4 @@
 black==24.1.1
 Django==4.2.9
 flake8==7.0.0
-<<<<<<< HEAD
 flake8-quotes==3.3.2
-=======
-flake8-quotes==3.3.2
->>>>>>> e1220ab4157e94aa2f45f68280c06c8c4a691461
