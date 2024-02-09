@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-﻿pep8-naming==0.13.3
-flake8-quotes==3.3.2
-flake8-import-order==0.0.11
-=======
 pep8-naming==0.13.3
 flake8-quotes==3.3.2
 flake8-import-order==0.0.11
->>>>>>> e1220ab4157e94aa2f45f68280c06c8c4a691461
