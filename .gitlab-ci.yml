@@ -22,4 +22,4 @@ black:
 adrestest:
   stage: adrestest
   script:
-    - pythom manage.py test
+    - python manage.py test
