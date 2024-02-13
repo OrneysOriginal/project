@@ -9,7 +9,7 @@ load_dotenv()
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", default="not_so_secret")
 
-DEBUG = os.getenv("DJANGO_DEBUG", default="true").lower() in (
+DEBUG = os.getenv("DJANGO_DEBUG", default="false").lower() in (
     "1",
     "y",
     "yes",
