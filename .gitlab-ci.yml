@@ -4,13 +4,14 @@ stages:
   - adrestest
 
 before_script:
+  - python -m pip install --upgrade pip
   - pip install -r requirements/dev.txt
+  - pip install -r requirements/test.txt
 
 flake8:
   stage: linting
   image: registry.gitlab.com/pipeline-components/flake8:latest
   script:
-    - pip install -r requirements/test.txt
     - flake8 --inline-quotes=double
 
 black:
@@ -22,4 +23,5 @@ black:
 adrestest:
   stage: adrestest
   script:
-    - pythom manage.py test
+    - cd lyceum
+    - python manage.py test
