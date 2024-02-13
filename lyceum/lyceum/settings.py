@@ -9,7 +9,13 @@ load_dotenv()
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", default="not_so_secret")
 
-DEBUG = os.getenv("DJANGO_DEBUG", default="true").lower()
+DEBUG = os.getenv("DJANGO_DEBUG", default="true").lower() in (
+    "1",
+    "y",
+    "yes",
+    "true",
+    "t",
+)
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", default="*").split(" ")
 
@@ -37,10 +43,7 @@ MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
-INTERNAL_IPS = [
-    "127.0.0.1",
-    "localhost"
-]
+INTERNAL_IPS = ["127.0.0.1", "localhost"]
 
 ROOT_URLCONF = "lyceum.urls"
 
