@@ -39,8 +39,7 @@ MIDDLEWARE = [
 
 INTERNAL_IPS = [
     "127.0.0.1",
-    "127.0.0.1:8000",
-    "localhost:8000",
+    "localhost"
 ]
 
 ROOT_URLCONF = "lyceum.urls"
