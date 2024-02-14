@@ -6,12 +6,11 @@ stages:
 before_script:
   - pip install -r requirements/dev.txt
   - pip install -r requirements/test.txt
-
 flake8:
   stage: linting
   image: registry.gitlab.com/pipeline-components/flake8:latest
   script:
-    - flake8 --import-order-style=google --inline-quotes=double .
+    - flake8 --inline-quotes=double .
 
 black:
   stage: black
