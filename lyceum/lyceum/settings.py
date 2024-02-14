@@ -9,13 +9,7 @@ load_dotenv()
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "ABOBA")
 
-DEBUG = os.getenv("DJANGO_DEBUG", "false").lower() in (
-    "1",
-    "y",
-    "yes",
-    "true",
-    "t",
-)
+DEBUG = os.getenv("DJANGO_DEBUG", "False").lower() in ("true",)
 
 ALLOWED_HOSTS = list(
     map(str.strip, os.getenv("DJANGO_ALLOWED_HOSTS", "*").split(","))
