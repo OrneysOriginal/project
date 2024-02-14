@@ -17,7 +17,7 @@ DEBUG = os.getenv("DJANGO_DEBUG", default="false").lower() in (
     "t",
 )
 
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", default="*").split(",")
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", default="*").split(" ")
 
 INSTALLED_APPS = [
     "catalog.apps.CatalogConfig",
