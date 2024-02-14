@@ -13,6 +13,6 @@ urlpatterns = [
 
 
 if settings.DEBUG:
-    from debug_toolbar import urls
+    import debug_toolbar
 
-    urlpatterns += (path("__debug__/", include(urls)),)
+    urlpatterns += (path("__debug__/", include(debug_toolbar.urls)),)
