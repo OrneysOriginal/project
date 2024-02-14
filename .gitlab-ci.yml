@@ -21,6 +21,7 @@ black:
 
 adrestest:
   stage: adrestest
+  image: python:3.10
   script:
     - cd lyceum
     - python manage.py test
