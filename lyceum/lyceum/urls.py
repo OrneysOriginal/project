@@ -7,14 +7,12 @@ from . import settings
 urlpatterns = [
     path("", include("homepage.urls")),
     path("", include("catalog.urls")),
-    path("about/", include("about.urls")),
+    path("", include("about.urls")),
     path("admin/", admin.site.urls),
 ]
 
 
 if settings.DEBUG:
-    import debug_toolbar
+    from debug_toolbar import urls
 
-    urlpatterns = [
-        path("__debug__/", include(debug_toolbar.urls)),
-    ] + urlpatterns
+    urlpatterns += (path("__debug__/", include(urls)),)

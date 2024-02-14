@@ -42,11 +42,9 @@ MIDDLEWARE = [
 ]
 
 if DEBUG:
-    MIDDLEWARE += [
-        "debug_toolbar.middleware.DebugToolbarMiddleware",
-    ]
+    MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
     INTERNAL_IPS = ["127.0.0.1", "localhost"]
-    INSTALLED_APPS += ["debug_toolbar"]
+    INSTALLED_APPS.append("debug_toolbar")
 
 ROOT_URLCONF = "lyceum.urls"
 
