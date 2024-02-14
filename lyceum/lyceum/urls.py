@@ -14,8 +14,5 @@ urlpatterns = [
 
 if settings.DEBUG:
     import debug_toolbar
-    from lyceum import INSTALLED_APPS, MIDDLEWARE
 
-    urlpatterns += (path("__debug__/", include(debug_toolbar.urls)),)
-    INSTALLED_APPS += ["debug_toolbar"]
-    MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]
+    urlpatterns = [path("__debug__/", include(debug_toolbar.urls)),] + urlpatterns
