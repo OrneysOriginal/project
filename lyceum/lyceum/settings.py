@@ -7,9 +7,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 load_dotenv()
 
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", default="not_so_secret")
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "ABOBA")
 
-DEBUG = os.getenv("DJANGO_DEBUG", default="false").lower() in (
+DEBUG = os.getenv("DJANGO_DEBUG", "false").lower() in (
     "1",
     "y",
     "yes",
@@ -17,7 +17,7 @@ DEBUG = os.getenv("DJANGO_DEBUG", default="false").lower() in (
     "t",
 )
 
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", default="*").split(" ")
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "*").split(" ")
 
 INSTALLED_APPS = [
     "catalog.apps.CatalogConfig",
