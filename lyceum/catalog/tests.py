@@ -18,3 +18,5 @@ class TestCatalog(TestCase):
         self.assertEqual(response.status_code, 200)
         response = Client().get("/catalog/re/99/")
         self.assertEqual(response.status_code, 200)
+        response = Client().get("/catalog/re/'99'/")
+        self.assertEqual(response.status_code, 404)
