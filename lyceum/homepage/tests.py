@@ -12,4 +12,4 @@ class TestHomepage(TestCase):
     def test_teapot(self):
         response = Client().get("/coffee/")
         self.assertEqual(response.status_code, HTTPStatus.IM_A_TEAPOT)
-        self.assertEqual(response.content.decode(), "<body>Я чайник</body>")
+        self.assertEqual(response.content.decode(), "Я чайник")
