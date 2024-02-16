@@ -13,12 +13,10 @@ class TestHomepage(TestCase):
         lst = []
         for i in range(9):
             lst.append(Client().get("/coffee/"))
-        lst = [0] * 10
-        for i in range(10):
-            lst[i] = Client().get("/coffee/")
         for i in range(len(lst)):
             self.assertEqual(lst[i].status_code, HTTPStatus.IM_A_TEAPOT)
             if i == 0:
                 self.assertEqual(lst[i].content.decode(), "Я кинйач")
             else:
+                print(lst[i].content.decode(), i)
                 self.assertEqual(lst[i].content.decode(), "Я чайник")
