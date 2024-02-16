@@ -1,5 +1,5 @@
 [![pipeline status](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/badges/main/pipeline.svg)](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/-/commits/main)
-[![flake8](https://img.shields.io/badge/flake8-passed-gray?labelColor=green&style=flat)](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/-/commits/main)
+[![flake8](https://img.shields.io/badge/flake8-passed-green?labelColor=gray&style=flat)](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/-/commits/main)
 [![black](https://img.shields.io/badge/black-passed-gray?labelColor=green&style=flat)](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/-/commits/main)
 [![adrestest](https://img.shields.io/badge/adrestest-passed-gray?labelColor=green&style=flat)](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/-/commits/main)
 
