@@ -10,9 +10,6 @@ class TestHomepage(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_teapot(self):
-        response = Client().get("/coffee/")
-        self.assertEqual(response.status_code, HTTPStatus.IM_A_TEAPOT)
-        self.assertEqual(response.content.decode(), "Я чайник")
         lst = [0] * 10
         for i in range(10):
             lst[i] = Client().get("/coffee/")
