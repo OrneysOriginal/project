@@ -7,24 +7,13 @@ from dotenv import load_dotenv
 load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+true_val = ("true", "1", "t", "y", "yes",)
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "ABOBA")
 
-DEBUG = os.getenv("DJANGO_DEBUG", "False").lower() in (
-    "true",
-    "1",
-    "t",
-    "y",
-    "yes",
-)
+DEBUG = os.getenv("DJANGO_DEBUG", "False").lower() in true_val
 
-ALLOW_REVERSE = os.getenv("DJANGO_ALLOW_REVERSE", "true").lower() in (
-    "true",
-    "1",
-    "t",
-    "y",
-    "yes",
-)
+ALLOW_REVERSE = os.getenv("DJANGO_ALLOW_REVERSE", "true").lower() in true_val
 
 ALLOWED_HOSTS = list(
     map(str.strip, os.getenv("DJANGO_ALLOWED_HOSTS", "*").split(","))
@@ -56,7 +45,7 @@ MIDDLEWARE = [
 if DEBUG:
     INSTALLED_APPS.append("debug_toolbar")
     MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
-    INTERNAL_IPS = ["127.0.0.1", "localhost"]
+    INTERNAL_IPS = ["127.0.0.1"]
 
 ROOT_URLCONF = "lyceum.urls"
 

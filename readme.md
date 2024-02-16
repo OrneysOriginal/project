@@ -2,30 +2,25 @@
 
 [![coverage report](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/badges/main/coverage.svg)](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/-/commits/main)
 
-Чтобы запустить проект в корне прописать:
-'python -m venv venv'
+Проект запускается на версиях питона 3.10, 3.11, 3.12
 
-Для Windows
-'./source/venv/activate' или
-venv\Scripts\activate.bat
+Чтобы запустить проект на Windows нужно:
+В корне проекта прописать команду:
+python -m venv venv - Чтобы установить виртуальное окружение
+Далее:
+venv/Script/activate - чтобы активировать виртуальное окружение
+После скачать все продовые зависимости командой:
+pip install -r requirements/prod.txt
+Потом перейти в lyceum и прописать в терминале:
+python manage.py runserever
+Веб сервер джанго запущен :)
 
-Для Linux
-sorce ./bin/activate или
-./venv/Scripts/activate
-Или
-venv\Scripts\Activate.ps1
-Или
-source venv/bin/activate
-
-'pip install -r requirements.txt'
-'python manage.py runserver'
-Чтобы запустить проект в пути lyceum прописать:
-'python manage.py runserver'
-
-Скачать библиотеку python-dotenv
-И запустить проект как описывалось выше
-
-Для Linux
-В Docker можно плавное перейти к тестам с используя
---env-file .env и библиотеку python-dotenv
-
+Для Linux(запускаемся из папки проекта):
+$ pip3 install virtualenv - устанавливаем виртуальную среду
+$ source env/bin/activate - запускаем виртуальную среду
+(projects - это имя вашего проекта)
+$ python3 -m pip install -r requirements/prod.txt
+(python3 или python, смотря какой у вас питон установлен)
+$ python3 manage.py runserver - запускаем проект
+(python3 или python, смотря какой у вас питон установлен)
+Веб сервер джанго запущен :)

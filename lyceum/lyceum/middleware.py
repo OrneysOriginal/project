@@ -3,23 +3,27 @@ import re
 from django.conf import settings
 
 
-count = 1
-
-
 class ReverseRusWordMiddleware:
+    count = 1
+
     def __init__(self, get_response):
         self.get_response = get_response
 
     def __call__(self, request):
-        global count
         response = self.get_response(request)
-        if count == 10:
+        if ReverseRusWordMiddleware.count == 10:
             if settings.ALLOW_REVERSE:
                 text = response.content.decode("utf-8")
                 words = re.findall("[а-яА-ЯёЁ]+", text)
+                rus_reverse_words = {}
                 for i in range(len(words)):
-                    text = text.replace(words[i], words[i][::-1])
+                    rus_reverse_words[words[i]] = words[i][::-1]
+                strip_text = text.strip("<body>").strip("</>").split()
+                for i in range(len(strip_text)):
+                    if rus_reverse_words.get(strip_text[i]) is not None:
+                        strip_text[i] = rus_reverse_words[strip_text[i]]
+                text = " ".join(strip_text)
                 response.content = text.encode("utf-8")
-            count = 0
-        count += 1
+            ReverseRusWordMiddleware.count = 0
+        ReverseRusWordMiddleware.count += 1
         return response

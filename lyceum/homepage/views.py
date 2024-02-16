@@ -1,3 +1,5 @@
+from http import HTTPStatus
+
 from django.http import HttpResponse
 
 
@@ -6,4 +8,4 @@ def homepage(request):
 
 
 def teapot(request):
-    return HttpResponse("Я чайник", status=418)
+    return HttpResponse("Я чайник", status=HTTPStatus.IM_A_TEAPOT)

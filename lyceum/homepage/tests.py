@@ -10,12 +10,14 @@ class TestHomepage(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_teapot(self):
-        lst = []
+        response = Client().get("/coffee/")
+        self.assertEqual(response.status_code, HTTPStatus.IM_A_TEAPOT)
+        self.assertEqual(response.content.decode(), "Я чайник")
+
+    def test_teapot_reverse(self):
+        responses = []
         for i in range(10):
-            lst.append(Client().get("/coffee/"))
-        for i in range(len(lst)):
-            self.assertEqual(lst[i].status_code, HTTPStatus.IM_A_TEAPOT)
-            if i == 1:
-                self.assertEqual(lst[i].content.decode(), "Я кинйач")
-            else:
-                self.assertEqual(lst[i].content.decode(), "Я чайник")
+            responses.append(Client().get("/coffee/").content.decode())
+        self.assertEqual(responses.count("Я кинйач"), 1)
+
+
