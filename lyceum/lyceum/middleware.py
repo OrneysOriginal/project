@@ -6,7 +6,7 @@ from django.conf import settings
 count = 1
 
 
-class ReverseRusWord:
+class ReverseRusWordMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
 
