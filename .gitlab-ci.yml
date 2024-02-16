@@ -2,6 +2,7 @@ stages:
   - linting
   - black
   - adrestest
+  - badge
 
 before_script:
   - pip install -r requirements/dev.txt
@@ -26,7 +27,7 @@ adrestest:
     - cd lyceum
     - python manage.py test
 
-Badge:
+badge:
   stage: build
   image: python:3.6
   before_script:
