@@ -19,5 +19,3 @@ class TestHomepage(TestCase):
         for i in range(10):
             responses.append(Client().get("/coffee/").content.decode())
         self.assertEqual(responses.count("Я кинйач"), 1)
-
-

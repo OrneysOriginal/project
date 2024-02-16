@@ -7,7 +7,13 @@ from dotenv import load_dotenv
 load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-true_val = ("true", "1", "t", "y", "yes",)
+true_val = (
+    "true",
+    "1",
+    "t",
+    "y",
+    "yes",
+)
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "ABOBA")
 
