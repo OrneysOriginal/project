@@ -18,6 +18,14 @@ DEBUG = os.getenv("DJANGO_DEBUG", "False").lower() in (
     "yes",
 )
 
+ALLOW_REVERSE = os.getenv("DJANGO_ALLOW_REVERSE", "true").lower() in (
+    "true",
+    "1",
+    "t",
+    "y",
+    "yes",
+)
+
 ALLOWED_HOSTS = list(
     map(str.strip, os.getenv("DJANGO_ALLOWED_HOSTS", "*").split(","))
 )
@@ -42,6 +50,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "lyceum.middleware.ReverseRusWord",
 ]
 
 if DEBUG:

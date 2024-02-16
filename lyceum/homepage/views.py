@@ -6,4 +6,4 @@ def homepage(request):
 
 
 def teapot(request):
-    return HttpResponse(content="Я чайник", status=418)
+    return HttpResponse("Я чайник", status=418)
