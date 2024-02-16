@@ -11,12 +11,11 @@ class TestHomepage(TestCase):
 
     def test_teapot(self):
         lst = []
-        for i in range(9):
+        for i in range(10):
             lst.append(Client().get("/coffee/"))
         for i in range(len(lst)):
             self.assertEqual(lst[i].status_code, HTTPStatus.IM_A_TEAPOT)
             if i == 0:
                 self.assertEqual(lst[i].content.decode(), "Я кинйач")
             else:
-                print(lst[i].content.decode(), i)
                 self.assertEqual(lst[i].content.decode(), "Я чайник")

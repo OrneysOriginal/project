@@ -13,13 +13,13 @@ class ReverseRusWord:
     def __call__(self, request):
         global count
         response = self.get_response(request)
-        count += 1
         if count == 10:
             if settings.ALLOW_REVERSE:
-                count = 1
+                count = 0
                 text = response.content.decode("utf-8")
                 words = re.findall("[а-яА-ЯёЁ]+", text)
                 for i in range(len(words)):
                     text = text.replace(words[i], words[i][::-1])
                 response.content = text.encode("utf-8")
+        count += 1
         return response
