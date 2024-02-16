@@ -22,4 +22,3 @@ class TestHomepage(TestCase):
                 self.assertEqual(lst[i].content.decode(), "Я кинйач")
             else:
                 self.assertEqual(lst[i].content.decode(), "Я чайник")
-
