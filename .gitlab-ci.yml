@@ -26,17 +26,3 @@ adrestest:
   script:
     - cd lyceum
     - python manage.py test
-
-badge:
-  stage: build
-  image: python:3.6
-  before_script:
-    - echo "Python other dependencies installation"
-    - pip install anybadge
-  script:
-    - anybadge -l "Last Commit" -v "$(date '+%d.%m.%Y %H:%M')" -f last-commit.svg -c green
-  artifacts:
-    paths:
-      - last-commit.svg
-    when: always
-    expire_in: 4 weeks
