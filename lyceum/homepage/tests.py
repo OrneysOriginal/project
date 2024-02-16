@@ -15,7 +15,7 @@ class TestHomepage(TestCase):
             lst.append(Client().get("/coffee/"))
         for i in range(len(lst)):
             self.assertEqual(lst[i].status_code, HTTPStatus.IM_A_TEAPOT)
-            if i == 0:
+            if i == 1:
                 self.assertEqual(lst[i].content.decode(), "Я кинйач")
             else:
                 self.assertEqual(lst[i].content.decode(), "Я чайник")
