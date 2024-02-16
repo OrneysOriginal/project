@@ -2,6 +2,7 @@ stages:
   - linting
   - black
   - adrestest
+  - badge
 
 before_script:
   - pip install -r requirements/dev.txt
