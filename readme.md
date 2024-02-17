@@ -43,5 +43,3 @@ cd project
 ```bash
 $ python3 manage.py runserver - запускаем проект
 ```
-
-### Веб сервер джанго запущен :)
