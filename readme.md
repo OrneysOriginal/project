@@ -1,28 +1,88 @@
-[![pipeline status](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/badges/main/pipeline.svg)](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/-/commits/main)
-[![flake8](https://img.shields.io/badge/flake8-passed-green?labelColor=gray&style=flat)](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/-/commits/main)
-[![black](https://img.shields.io/badge/black-passed-green?labelColor=gray&style=flat)](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/-/commits/main)
-[![adrestest](https://img.shields.io/badge/adrestest-passed-green?labelColor=gray&style=flat)](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/-/commits/main)
+# Django project
 
+## By Sakhbiev Damir
 
-Проект запускается на версиях питона 3.10, 3.11, 3.12
+[![pipeline status](https://gitlab.crja72.ru/django/2024/spring/course/students/199049-sahbievdg-course-1112/badges/main/pipeline.svg)](https://gitlab.crja72.ru/django/2024/spring/course/students/199049-sahbievdg-course-1112/-/commits/main)
 
-Чтобы запустить проект на Windows нужно:
-В корне проекта прописать команду:
-python -m venv venv - Чтобы установить виртуальное окружение
-Далее:
-venv/Script/activate - чтобы активировать виртуальное окружение
-После скачать все продовые зависимости командой:
-pip install -r requirements/prod.txt
-Потом перейти в lyceum и прописать в терминале:
-python manage.py runserever
-Веб сервер джанго запущен :)
+### Prerequisites
 
-Для Linux(запускаемся из папки проекта):
-$ pip3 install virtualenv - устанавливаем виртуальную среду
-$ source env/bin/activate - запускаем виртуальную среду
-(projects - это имя вашего проекта)
-$ python3 -m pip install -r requirements/prod.txt
-(python3 или python, смотря какой у вас питон установлен)
-$ python3 manage.py runserver - запускаем проект
-(python3 или python, смотря какой у вас питон установлен)
-Веб сервер джанго запущен :)
+1. Install Python:3.10
+    * download link
+
+    ```url
+    https://www.python.org/downloads/release/python-3100/
+    ```
+
+2. Create virtual environment
+    * python
+
+    ```bash
+    python -m venv venv
+    ```
+
+3. Activate virtual environment
+    * windows
+
+    ```bash
+    .\venv\Scripts\activate
+    ```
+
+    * linux
+
+    ```bash
+    source venv/bin/activate
+    ```
+
+4. Upgrade pip
+    * python
+
+    ```bash
+    python -m pip install --upgrade pip
+    ```
+
+### Installation
+
+1. Clone the repo
+
+   ```bash
+   git clone git@gitlab.crja72.ru:django/2024/spring/course/students/199049-sahbievdg-course-1112.git
+   ```
+
+2. Install requirements
+    * production
+
+    ```bash
+    pip install requirements/prod.txt
+    ```
+
+    * test
+
+    ```bash
+    pip install requirements/test.txt
+    ```
+
+    * devolopment
+
+    ```bash
+    pip install requirements/dev.txt
+    ```
+
+3. Use your configuration in .env.example
+    * windows
+
+    ```bash
+    copy .env.example .env
+    ```
+
+    * linux
+
+    ```bash
+    cp .env.example .env
+    ```
+
+### Start
+
+```bash
+сd lyceum
+python manage.py runserver
+```
