@@ -19,8 +19,6 @@ pip install -r requirements/prod.txt
 python manage.py runserever
 ```
 
-### Веб сервер джанго запущен :)
-
 ## Для Linux(запускаемся из папки проекта):
 * Установка виртуально среды
 ```bash
@@ -45,3 +43,5 @@ cd project
 ```bash
 $ python3 manage.py runserver - запускаем проект
 ```
+
+### Веб сервер джанго запущен :)
