@@ -1,88 +1,47 @@
-# Django project
+## Проект запускается на версиях питона 3.10, 3.11, 3.12
+[![pipeline status](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/badges/main/pipeline.svg)](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/-/commits/main)
 
-## By Sakhbiev Damir
-
-[![pipeline status](https://gitlab.crja72.ru/django/2024/spring/course/students/199049-sahbievdg-course-1112/badges/main/pipeline.svg)](https://gitlab.crja72.ru/django/2024/spring/course/students/199049-sahbievdg-course-1112/-/commits/main)
-
-### Prerequisites
-
-1. Install Python:3.10
-    * download link
-
-    ```url
-    https://www.python.org/downloads/release/python-3100/
-    ```
-
-2. Create virtual environment
-    * python
-
-    ```bash
-    python -m venv venv
-    ```
-
-3. Activate virtual environment
-    * windows
-
-    ```bash
-    .\venv\Scripts\activate
-    ```
-
-    * linux
-
-    ```bash
-    source venv/bin/activate
-    ```
-
-4. Upgrade pip
-    * python
-
-    ```bash
-    python -m pip install --upgrade pip
-    ```
-
-### Installation
-
-1. Clone the repo
-
-   ```bash
-   git clone git@gitlab.crja72.ru:django/2024/spring/course/students/199049-sahbievdg-course-1112.git
-   ```
-
-2. Install requirements
-    * production
-
-    ```bash
-    pip install requirements/prod.txt
-    ```
-
-    * test
-
-    ```bash
-    pip install requirements/test.txt
-    ```
-
-    * devolopment
-
-    ```bash
-    pip install requirements/dev.txt
-    ```
-
-3. Use your configuration in .env.example
-    * windows
-
-    ```bash
-    copy .env.example .env
-    ```
-
-    * linux
-
-    ```bash
-    cp .env.example .env
-    ```
-
-### Start
-
+### Для Windows:
+* Создать виртуальную среду
 ```bash
-сd lyceum
-python manage.py runserver
+python -m venv venv
+```
+* Активировать её
+```bash
+venv/Script/activate
+```
+* Скачать все продовые зависимости командой
+```bash
+pip install -r requirements/prod.txt
+```
+* Перейти в lyceum и прописать в терминале:
+```bash
+python manage.py runserever
+```
+
+### Веб сервер джанго запущен :)
+
+## Для Linux(запускаемся из папки проекта):
+* Установка виртуально среды
+```bash
+$ pip3 install virtualenv
+```
+* Активация виртуальной среды
+```bash
+$ source env/bin/activate
+```
+* Установка всех продовых зависимостей
+(python3 или python, смотря какой у вас питон установлен)
+```bash
+$ python3 -m pip install -r requirements/prod.txt
+```
+* Меняем директорию
+(project - это имя вашего проекта)
+```bash
+cd project
+```
+* Запускаем проект
+(python3 или python, смотря какой у вас питон установлен)
+```bash
+$ python3 manage.py runserver - запускаем проект
 ```
