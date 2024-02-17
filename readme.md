@@ -1,24 +1,45 @@
-[![pipeline status](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/badges/main/pipeline.svg)](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/-/commits/main)![flake8](https://img.shields.io/badge/flake8-passed-gray?labelColor=green&style=flat)![black](https://img.shields.io/badge/black-passed-gray?labelColor=green&style=flat)![adrestest](https://img.shields.io/badge/adrestest-passed-gray?labelColor=green&style=flat)
+## Проект запускается на версиях питона 3.10, 3.11, 3.12
+[![pipeline status](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/badges/main/pipeline.svg)](https://gitlab.crja72.ru/django/2024/spring/course/students/199562-sav1ngeorgiy-course-1112/-/commits/main)
 
-Проект запускается на версиях питона 3.10, 3.11, 3.12
-
-Чтобы запустить проект на Windows нужно:
-В корне проекта прописать команду:
-python -m venv venv - Чтобы установить виртуальное окружение
-Далее:
-venv/Script/activate - чтобы активировать виртуальное окружение
-После скачать все продовые зависимости командой:
+### Для Windows:
+* Создать виртуальную среду
+```bash
+python -m venv venv
+```
+* Активировать её
+```bash
+venv/Script/activate
+```
+* Скачать все продовые зависимости командой
+```bash
 pip install -r requirements/prod.txt
-Потом перейти в lyceum и прописать в терминале:
+```
+* Перейти в lyceum и прописать в терминале:
+```bash
 python manage.py runserever
-Веб сервер джанго запущен :)
+```
 
-Для Linux(запускаемся из папки проекта):
-$ pip3 install virtualenv - устанавливаем виртуальную среду
-$ source env/bin/activate - запускаем виртуальную среду
-(projects - это имя вашего проекта)
+## Для Linux(запускаемся из папки проекта):
+* Установка виртуально среды
+```bash
+$ pip3 install virtualenv
+```
+* Активация виртуальной среды
+```bash
+$ source env/bin/activate
+```
+* Установка всех продовых зависимостей
+(python3 или python, смотря какой у вас питон установлен)
+```bash
 $ python3 -m pip install -r requirements/prod.txt
+```
+* Меняем директорию
+(project - это имя вашего проекта)
+```bash
+cd project
+```
+* Запускаем проект
 (python3 или python, смотря какой у вас питон установлен)
+```bash
 $ python3 manage.py runserver - запускаем проект
-(python3 или python, смотря какой у вас питон установлен)
-Веб сервер джанго запущен :)
+```
