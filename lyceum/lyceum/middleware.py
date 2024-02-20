@@ -9,6 +9,13 @@ class ReverseRusWordMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
 
+    @classmethod
+    def change_count(cls):
+        if cls.count == 10:
+            cls.count = 1
+        else:
+            cls.count += 1
+
     def __call__(self, request):
         response = self.get_response(request)
         if ReverseRusWordMiddleware.count == 10:
@@ -24,6 +31,5 @@ class ReverseRusWordMiddleware:
                         strip_text[i] = rus_reverse_words[strip_text[i]]
                 text = " ".join(strip_text)
                 response.content = text.encode("utf-8")
-            ReverseRusWordMiddleware.count = 0
-        ReverseRusWordMiddleware.count += 1
+        self.change_count()
         return response

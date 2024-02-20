@@ -6,16 +6,24 @@ from django.test import Client, TestCase
 class TestHomepage(TestCase):
 
     def test_enter(self):
-        response = Client().get("/")
-        self.assertEqual(response.status_code, 200)
+        with self.subTest():
+            response = Client().get("/")
+            self.assertEqual(response.status_code, HTTPStatus.OK)
 
     def test_teapot(self):
-        response = Client().get("/coffee/")
-        self.assertEqual(response.status_code, HTTPStatus.IM_A_TEAPOT)
-        self.assertEqual(response.content.decode(), "Я чайник")
+        with self.subTest():
+            contents = {"Я чайник": 0, "Я кинйач": 0}
+            for _ in range(2):
+                content = Client().get("/coffee/").content.decode()
+                contents[content] += 1
+            self.assertEqual(contents["Я чайник"], 1)
+            self.assertEqual(contents["Я кинйач"], 1)
 
     def test_teapot_reverse(self):
-        responses = []
-        for i in range(10):
-            responses.append(Client().get("/coffee/").content.decode())
-        self.assertEqual(responses.count("Я кинйач"), 1)
+        with self.subTest():
+            contents = {"Я чайник": 0, "Я кинйач": 0}
+            for _ in range(10):
+                content = Client().get("/coffee/").content.decode()
+                contents[content] += 1
+            self.assertEqual(contents["Я чайник"], 9)
+            self.assertEqual(contents["Я кинйач"], 1)

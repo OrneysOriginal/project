@@ -5,24 +5,19 @@ from django.contrib import admin
 @admin.register(catalog.models.CatalogItem)
 class AdminItem(admin.ModelAdmin):
     list_display = (
-        "Текст",
-        "Опубликовано",
-        "Название",
+        "name",
+        "is_published",
     )
-    list_display_links = ("Текст",)
-    list_editable = ("Название",)
+    list_display_links = ("name",)
+    filter_horizontal = ("tags",)
 
 
 @admin.register(catalog.models.CatalogTag)
 class AdminTag(admin.ModelAdmin):
-    list_display = ("Название",)
+    list_display = ("name",)
     filter_horizontal = ("item",)
 
 
 @admin.register(catalog.models.CatalogCategory)
 class AdminCatalogCategory(admin.ModelAdmin):
-    list_display = (
-        "Название",
-        "Слаг",
-        "Вес",
-    )
+    list_display = ("name",)
