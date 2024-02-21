@@ -76,7 +76,9 @@ class Item(AbstractCatalog):
         help_text="Выберите категорию",
     )
     tags = django.db.models.ManyToManyField(
-        Tag, related_name="item", verbose_name="теги",
+        Tag,
+        related_name="item",
+        verbose_name="теги",
     )
 
     class Meta:

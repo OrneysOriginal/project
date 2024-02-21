@@ -132,7 +132,8 @@ class TestModels(TestCase):
                 category_bases_not_valid[i].full_clean()
                 category_bases_not_valid[i].save()
         self.assertEqual(
-            catalog.models.Category.objects.count(), category_count,
+            catalog.models.Category.objects.count(),
+            category_count,
         )
 
     def test_add_valid_category(self):
@@ -153,7 +154,8 @@ class TestModels(TestCase):
             category_bases_not_valid[i].full_clean()
             category_bases_not_valid[i].save()
         self.assertEqual(
-            catalog.models.Category.objects.count(), category_count + 5,
+            catalog.models.Category.objects.count(),
+            category_count + 5,
         )
 
     def test_add_not_valid_tag(self):
