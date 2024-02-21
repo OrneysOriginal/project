@@ -27,7 +27,7 @@ def maxvaluevalidator(num):
         )
 
 
-class CatalogCategory(AbstractCatalog):
+class Category(AbstractCatalog):
     slug = django.db.models.CharField(
         max_length=200,
         unique=True,
@@ -41,11 +41,11 @@ class CatalogCategory(AbstractCatalog):
     )
 
     class Meta:
-        verbose_name = "категории"
+        verbose_name = "категория"
         verbose_name_plural = "категории"
 
 
-class CatalogTag(AbstractCatalog):
+class Tag(AbstractCatalog):
     slug = django.db.models.CharField(
         max_length=200,
         unique=True,
@@ -54,26 +54,26 @@ class CatalogTag(AbstractCatalog):
     )
 
     class Meta:
-        verbose_name = "теги"
+        verbose_name = "тег"
         verbose_name_plural = "теги"
 
 
-class CatalogItem(AbstractCatalog):
+class Item(AbstractCatalog):
     text = django.db.models.TextField(
         verbose_name="Текст",
         validators=[words_in_text],
         help_text="Описание товара",
     )
     category = django.db.models.ForeignKey(
-        CatalogCategory,
+        Category,
         on_delete=django.db.models.CASCADE,
         verbose_name="Категории",
         unique=False,
     )
     tags = django.db.models.ManyToManyField(
-        CatalogTag, related_name="item", verbose_name="теги"
+        Tag, related_name="item", verbose_name="теги"
     )
 
     class Meta:
         verbose_name = "товар"
-        verbose_name_plural = "товар"
+        verbose_name_plural = "товары"

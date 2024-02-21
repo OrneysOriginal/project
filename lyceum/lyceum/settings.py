@@ -19,10 +19,11 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "ABOBA")
 
 DEBUG = os.getenv("DJANGO_DEBUG", "False").lower() in true_val
 
-ALLOW_REVERSE = os.getenv("DJANGO_ALLOW_REVERSE", "true").lower() in true_val
+ALLOW_REVERSE = os.getenv("DJANGO_ALLOW_REVERSE",
+                          "true").lower() in true_val
 
 ALLOWED_HOSTS = list(
-    map(str.strip, os.getenv("DJANGO_ALLOWED_HOSTS", "*").split(","))
+    map(str.strip, os.getenv("DJANGO_ALLOWED_HOSTS", "*").split(",")),
 )
 
 INSTALLED_APPS = [
@@ -51,7 +52,8 @@ MIDDLEWARE = [
 
 if DEBUG:
     INSTALLED_APPS.append("debug_toolbar")
-    MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
+    MIDDLEWARE.insert(0, "debug_toolbar.middleware."
+                         "DebugToolbarMiddleware")
     INTERNAL_IPS = ["127.0.0.1"]
 
 ROOT_URLCONF = "lyceum.urls"
@@ -92,7 +94,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         "NAME": (
-            "django.contrib.auth.password_validation." "MinimumLengthValidator"
+            "django.contrib.auth.password_validation."
+            "MinimumLengthValidator"
         )
     },
     {

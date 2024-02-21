@@ -25,5 +25,7 @@ class TestHomepage(TestCase):
             for _ in range(10):
                 content = Client().get("/coffee/").content.decode()
                 contents[content] += 1
+            content = Client().get("/coffee/")
             self.assertEqual(contents["Я чайник"], 9)
             self.assertEqual(contents["Я кинйач"], 1)
+            self.assertEqual(content.status_code, HTTPStatus.IM_A_TEAPOT)
