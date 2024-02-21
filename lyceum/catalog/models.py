@@ -1,9 +1,10 @@
 import re
 
 from core.models import AbstractCatalog
+
 import django.core.exceptions
-from django.core.validators import validate_slug
 import django.db.models
+from django.core.validators import validate_slug
 
 
 def words_in_text(text):

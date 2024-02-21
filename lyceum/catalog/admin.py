@@ -1,4 +1,5 @@
 import catalog.models
+
 from django.contrib import admin
 
 

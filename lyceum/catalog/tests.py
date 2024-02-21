@@ -1,6 +1,7 @@
 from http import HTTPStatus
 
 import catalog.models
+
 import django.core.exceptions
 from django.test import Client, TestCase
 
@@ -45,19 +46,16 @@ class TestModels(TestCase):
 
     def test_add_not_valid_item(self):
         item_count = catalog.models.Item.objects.count()
-        item_base = catalog.models.Item(
-            name="Тестовый товар",
-            category=self.category,
-            text="Не валидный текст",
-            is_published=True,
-        )
-        with self.assertRaises(django.core.exceptions.ValidationError):
-            item_bases_not_valid = [catalog.models.Item(
+        item_bases_not_valid = [
+            catalog.models.Item(
                 name="Тестовый товар",
                 category=self.category,
                 text="Не валидный текст",
                 is_published=True,
-            ) for _ in range(5)]
+            )
+            for _ in range(5)
+        ]
+        with self.assertRaises(django.core.exceptions.ValidationError):
             for i in range(5):
                 item_bases_not_valid[i].name += str(i)
             item_bases_not_valid[0].text = "Превосходный"
@@ -83,7 +81,8 @@ class TestModels(TestCase):
                 text="Валидный текст",
                 is_published=True,
             )
-            for _ in range(5)]
+            for _ in range(5)
+        ]
         item_bases_valid[0].text = "Отлично,превосходно"
         item_bases_valid[1].text = "Превосходно"
         item_bases_valid[2].text = "роскошно"
@@ -100,12 +99,15 @@ class TestModels(TestCase):
 
     def test_add_not_valid_category(self):
         category_count = catalog.models.Category.objects.count()
-        category_bases_not_valid = [catalog.models.Category(
-            name='Тестовое имя',
-            is_published=True,
-            slug='testing_slug',
-            weight=100,
-        ) for _ in range(5)]
+        category_bases_not_valid = [
+            catalog.models.Category(
+                name="Тестовое имя",
+                is_published=True,
+                slug="testing_slug",
+                weight=100,
+            )
+            for _ in range(5)
+        ]
         with self.assertRaises(django.core.exceptions.ValidationError):
             for i in range(len(category_bases_not_valid)):
                 category_bases_not_valid[i].name += str(i)
@@ -113,12 +115,15 @@ class TestModels(TestCase):
                 category_bases_not_valid[i].weight -= 100
                 category_bases_not_valid[i].full_clean()
                 category_bases_not_valid[i].save()
-        category_bases_not_valid = [catalog.models.Category(
-            name='Тестовое имя',
-            is_published=True,
-            slug='testing_slug',
-            weight=100,
-        ) for _ in range(5)]
+        category_bases_not_valid = [
+            catalog.models.Category(
+                name="Тестовое имя",
+                is_published=True,
+                slug="testing_slug",
+                weight=100,
+            )
+            for _ in range(5)
+        ]
         with self.assertRaises(django.core.exceptions.ValidationError):
             for i in range(len(category_bases_not_valid)):
                 category_bases_not_valid[i].name += str(i)
@@ -127,18 +132,20 @@ class TestModels(TestCase):
                 category_bases_not_valid[i].full_clean()
                 category_bases_not_valid[i].save()
         self.assertEqual(
-            catalog.models.Category.objects.count(),
-            category_count
+            catalog.models.Category.objects.count(), category_count
         )
 
     def test_add_valid_category(self):
         category_count = catalog.models.Category.objects.count()
-        category_bases_not_valid = [catalog.models.Category(
-            name='Тестовое имя',
-            is_published=True,
-            slug='testing_slug',
-            weight=100,
-        ) for _ in range(5)]
+        category_bases_not_valid = [
+            catalog.models.Category(
+                name="Тестовое имя",
+                is_published=True,
+                slug="testing_slug",
+                weight=100,
+            )
+            for _ in range(5)
+        ]
         for i in range(len(category_bases_not_valid)):
             category_bases_not_valid[i].name += str(i)
             category_bases_not_valid[i].slug += str(i)
@@ -146,17 +153,19 @@ class TestModels(TestCase):
             category_bases_not_valid[i].full_clean()
             category_bases_not_valid[i].save()
         self.assertEqual(
-            catalog.models.Category.objects.count(),
-            category_count + 5
+            catalog.models.Category.objects.count(), category_count + 5
         )
 
     def test_add_not_valid_tag(self):
         tag_count = catalog.models.Tag.objects.count()
-        items_bases_not_valid = [catalog.models.Tag(
+        items_bases_not_valid = [
+            catalog.models.Tag(
                 name="Тестовое имя",
                 is_published=True,
                 slug="testing_not_valid_slug",
-            ) for _ in range(5)]
+            )
+            for _ in range(5)
+        ]
         with self.assertRaises(django.core.exceptions.ValidationError):
             for i in range(5):
                 items_bases_not_valid[i].name += str(i)
@@ -168,18 +177,18 @@ class TestModels(TestCase):
             for i in range(5):
                 items_bases_not_valid[i].full_clean()
                 items_bases_not_valid[i].save()
-        self.assertEqual(
-            catalog.models.Tag.objects.count(),
-            tag_count
-        )
+        self.assertEqual(catalog.models.Tag.objects.count(), tag_count)
 
     def test_add_valid_tag(self):
         tag_count = catalog.models.Tag.objects.count()
-        items_bases_valid = [catalog.models.Tag(
-            name="Тестовое имя",
-            is_published=True,
-            slug="testing_valid_slug",
-        ) for _ in range(5)]
+        items_bases_valid = [
+            catalog.models.Tag(
+                name="Тестовое имя",
+                is_published=True,
+                slug="testing_valid_slug",
+            )
+            for _ in range(5)
+        ]
         items_bases_valid[0].slug = "qwerty1"
         items_bases_valid[1].slug = "qwerty2"
         items_bases_valid[2].slug = "Abacaba_3"
@@ -190,13 +199,4 @@ class TestModels(TestCase):
         for i in range(5):
             items_bases_valid[i].full_clean()
             items_bases_valid[i].save()
-        self.assertEqual(
-            catalog.models.Tag.objects.count(),
-            tag_count + 5
-        )
-
-
-
-
-
-
+        self.assertEqual(catalog.models.Tag.objects.count(), tag_count + 5)

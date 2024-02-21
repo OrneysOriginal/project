@@ -12,7 +12,7 @@ flake8:
   stage: linting
   image: registry.gitlab.com/pipeline-components/flake8:latest
   script:
-    - flake8 --inline-quotes=double --import-order-style=google .
+    - flake8 --inline-quotes=double .
 
 black:
   stage: black
