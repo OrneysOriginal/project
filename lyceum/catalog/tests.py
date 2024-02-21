@@ -83,6 +83,8 @@ class TestModels(TestCase):
             )
             for _ in range(5)
         ]
+        for i in range(5):
+            item_bases_valid[i].name += str(i)
         item_bases_valid[0].text = "Отлично,превосходно"
         item_bases_valid[1].text = "Превосходно"
         item_bases_valid[2].text = "роскошно"
