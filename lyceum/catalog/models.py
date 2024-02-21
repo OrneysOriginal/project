@@ -10,21 +10,21 @@ from django.core.validators import validate_slug
 def words_in_text(text):
     if re.search(r"\bроскошно\b|\bпревосходно\b", text.lower()) is None:
         raise django.core.exceptions.ValidationError(
-            "В тексте должно присутсвовать слово 'превосходно' или 'роскошно'"
+            "В тексте должно присутсвовать слово 'превосходно' или 'роскошно'",
         )
 
 
 def minvaluevalidator(num):
     if num <= 0:
         raise django.core.exceptions.ValidationError(
-            "Значение ниже или равное 0 недопустимо"
+            "Значение ниже или равное 0 недопустимо",
         )
 
 
 def maxvaluevalidator(num):
     if num > 32767:
         raise django.core.exceptions.ValidationError(
-            "Значение выше 32767 недопустимо"
+            "Значение выше 32767 недопустимо",
         )
 
 
@@ -33,12 +33,14 @@ class Category(AbstractCatalog):
         max_length=200,
         unique=True,
         validators=[validate_slug],
-        verbose_name="Слаг",
+        verbose_name="слаг",
+        help_text="Напишите слаг(Eng)",
     )
     weight = django.db.models.IntegerField(
         default=100,
         validators=[minvaluevalidator, maxvaluevalidator],
         verbose_name="Вес",
+        help_text="Введите вес",
     )
 
     class Meta:
@@ -51,7 +53,8 @@ class Tag(AbstractCatalog):
         max_length=200,
         unique=True,
         validators=[validate_slug],
-        verbose_name="Слаг",
+        verbose_name="слаг",
+        help_text="Напишите слаг(Eng)",
     )
 
     class Meta:
@@ -68,11 +71,12 @@ class Item(AbstractCatalog):
     category = django.db.models.ForeignKey(
         Category,
         on_delete=django.db.models.CASCADE,
-        verbose_name="Категории",
+        verbose_name="категории",
         unique=False,
+        help_text="Выберите категорию",
     )
     tags = django.db.models.ManyToManyField(
-        Tag, related_name="item", verbose_name="теги"
+        Tag, related_name="item", verbose_name="теги",
     )
 
     class Meta:

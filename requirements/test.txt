@@ -4,3 +4,8 @@ pep8-naming==0.13.3
 flake8-quotes==3.3.2
 flake8-import-order==0.18.2
 django-debug-toolbar==4.3.0
+flake8-absolute-import
+flake8-commas
+flake8-comprehensions
+flake8-eradicate
+flake8-fixme
