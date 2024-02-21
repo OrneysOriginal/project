@@ -28,7 +28,7 @@ $ pip3 install virtualenv
 ```
 * Активация виртуальной среды
 ```bash
-$ source env/bin/activate
+$ source venv/bin/activate
 ```
 * Установка всех продовых зависимостей
 (python3 или python, смотря какой у вас питон установлен)
