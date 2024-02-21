@@ -9,6 +9,8 @@ python -m venv venv
 * Активировать её
 ```bash
 venv/Script/activate
+или
+venv/Script/activate.bat
 ```
 * Скачать все продовые зависимости командой
 ```bash
