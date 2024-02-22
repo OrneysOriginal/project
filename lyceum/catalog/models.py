@@ -2,7 +2,7 @@ import django.core.exceptions
 from django.core.validators import validate_slug
 import django.db.models
 
-from catalog.validators import validator_take_arg
+from catalog.validators import ValidatorArg
 from core.models import AbstractCatalog
 
 
@@ -57,7 +57,7 @@ class Tag(AbstractCatalog):
 class Item(AbstractCatalog):
     text = django.db.models.TextField(
         verbose_name="Текст",
-        validators=[validator_take_arg("превосходно", "роскошно")],
+        validators=[ValidatorArg("превосходно", "роскошно")],
         help_text="Описание товара",
     )
     category = django.db.models.ForeignKey(

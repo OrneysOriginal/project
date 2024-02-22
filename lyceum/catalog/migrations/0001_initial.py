@@ -153,7 +153,7 @@ class Migration(migrations.Migration):
                     "text",
                     models.TextField(
                         help_text="Описание товара",
-                        validators=[catalog.validators.validator_take_arg],
+                        validators=[catalog.validators.ValidatorArg],
                         verbose_name="Текст",
                     ),
                 ),
