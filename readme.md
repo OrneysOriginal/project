@@ -54,3 +54,4 @@ erDiagram
     catalog_item ||--|{ catalog_item_tag: item-tag
     catalog_item_tag }|--|| catalog_tag: tag-item
 ```
+![Screenshot](ER.jpg)
