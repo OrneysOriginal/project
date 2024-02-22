@@ -2,8 +2,8 @@ import django.core.exceptions
 from django.core.validators import validate_slug
 import django.db.models
 
-from core.models import AbstractCatalog
 from catalog.validators import validator_take_arg
+from core.models import AbstractCatalog
 
 
 def minvaluevalidator(num):
