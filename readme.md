@@ -48,6 +48,6 @@ $ python3 manage.py runserver - запускаем проект
 
 Вот так должна выглядеть система таблиц в базе данных
 erDiagram
-    catalog_item ||--|| catalog_category
-    catalog_item ||--|{ catalog_item_tag
-    catalog_item_tag }|--|| catalog_tag
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
+    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
