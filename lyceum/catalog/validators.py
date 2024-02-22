@@ -1,9 +1,9 @@
 import re
 
 import django.core.exceptions
-from django.utils.deconstruct import deconstructible
 from django.db.migrations.serializer import BaseSerializer
 from django.db.migrations.writer import MigrationWriter
+from django.utils.deconstruct import deconstructible
 
 
 @deconstructible
