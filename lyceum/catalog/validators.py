@@ -1,5 +1,5 @@
-import re
 from functools import wraps
+import re
 
 import django.core.exceptions
 
