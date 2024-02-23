@@ -3,10 +3,10 @@ import re
 import django.core.exceptions
 from django.core.validators import validate_slug
 import django.db.models
+from unidecode import unidecode
 
 from catalog.validators import ValidatorArg
 from core.models import AbstractCatalog
-from unidecode import unidecode
 
 
 def normalize_str(value: str) -> str:
