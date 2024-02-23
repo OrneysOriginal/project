@@ -48,10 +48,4 @@ $ python3 manage.py runserver - запускаем проект
 
 Вот так должна выглядеть система таблиц в базе данных
 ER у меня и здесь и просто картиночка (или erDiagram))
-```mermaid
-erDiagram
-    catalog_item ||--|| catalog_category: category
-    catalog_item ||--|{ catalog_item_tag: item-tag
-    catalog_item_tag }|--|| catalog_tag: tag-item
-```
 ![Screenshot](ER.jpg)
