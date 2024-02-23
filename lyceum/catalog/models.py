@@ -9,7 +9,7 @@ from catalog.validators import ValidatorArg
 from core.models import AbstractCatalog
 
 
-def normalize_str(value: str) -> str:
+def normalize_str(value):
     words = re.findall("[0-9а-яёa-z]+", value.lower())
     return unidecode("".join(words))
 
