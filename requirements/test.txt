@@ -9,3 +9,4 @@ flake8-commas
 flake8-comprehensions
 flake8-eradicate
 flake8-fixme
+parameterized
