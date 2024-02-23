@@ -21,9 +21,7 @@ DEBUG = os.getenv("DJANGO_DEBUG", "False").lower() in true_val
 
 ALLOW_REVERSE = os.getenv("DJANGO_ALLOW_REVERSE", "true").lower() in true_val
 
-ALLOWED_HOSTS = list(
-    map(str.strip, os.getenv("DJANGO_ALLOWED_HOSTS", "*").split(",")),
-)
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "*").split(",")
 
 INSTALLED_APPS = [
     "core.apps.CoreConfig",
@@ -93,7 +91,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         "NAME": (
-            "django.contrib.auth.password_validation." "MinimumLengthValidator"
+            "django.contrib.auth.password_validation.MinimumLengthValidator"
         ),
     },
     {

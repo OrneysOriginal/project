@@ -19,7 +19,7 @@ class ValidatorArg:
         if re.search(self.regular, text.lower()) is None:
             raise django.core.exceptions.ValidationError(
                 "В тексте должно присутсвовать слово"
-                " 'превосходно' или 'роскошно'",
+                " 'превосходно' или 'роскошно' или оба сразу",
             )
 
     def __eq__(self, other):

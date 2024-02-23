@@ -1,7 +1,7 @@
 import re
 
 import django.core.exceptions
-from django.core.validators import validate_slug
+from django.core.validators import validate_slug, MinValueValidator, MaxValueValidator
 import django.db.models
 from unidecode import unidecode
 
@@ -14,37 +14,25 @@ def normalize_str(value):
     return unidecode("".join(words))
 
 
-def minvaluevalidator(num):
-    if num <= 0:
-        raise django.core.exceptions.ValidationError(
-            "Значение ниже или равное 0 недопустимо",
-        )
-
-
-def maxvaluevalidator(num):
-    if num > 32767:
-        raise django.core.exceptions.ValidationError(
-            "Значение выше 32767 недопустимо",
-        )
-
-
 class Category(AbstractCatalog):
-    slug = django.db.models.CharField(
+    slug = django.db.models.SlugField(
         max_length=200,
         unique=True,
-        validators=[validate_slug],
         verbose_name="слаг",
         help_text="Напишите слаг(Eng)",
     )
     weight = django.db.models.IntegerField(
         default=100,
-        validators=[minvaluevalidator, maxvaluevalidator],
-        verbose_name="Вес",
+        validators=[
+            MinValueValidator(1),
+            MaxValueValidator(32767)
+        ],
+        verbose_name="вес",
         help_text="Введите вес",
     )
     normalization_data = django.db.models.CharField(
         max_length=150,
-        verbose_name="Правильные данные",
+        verbose_name="правильные данные",
         unique=True,
         editable=False,
     )
@@ -55,27 +43,26 @@ class Category(AbstractCatalog):
 
     def clean(self):
         normalization_data = normalize_str(self.name)
-        found = self.__class__.objects.filter(
+        found = Category.objects.filter(
             normalization_data=normalization_data,
         )
         if found and found[0] != self:
             raise django.core.exceptions.ValidationError(
-                {self.__class__.name.field.name: "есть похожое название"},
+                {Category.name.field.name: "есть похожое название"},
             )
         self.normalization_data = normalization_data
 
 
 class Tag(AbstractCatalog):
-    slug = django.db.models.CharField(
+    slug = django.db.models.SlugField(
         max_length=200,
         unique=True,
-        validators=[validate_slug],
         verbose_name="слаг",
         help_text="Напишите слаг(Eng)",
     )
     normalization_data = django.db.models.CharField(
         max_length=150,
-        verbose_name="Правильные данные",
+        verbose_name="правильные данные",
         unique=True,
         editable=False,
     )
@@ -86,19 +73,19 @@ class Tag(AbstractCatalog):
 
     def clean(self):
         normalization_data = normalize_str(self.name)
-        found = self.__class__.objects.filter(
+        found = Tag.objects.filter(
             normalization_data=normalization_data,
         )
         if found and found[0] != self:
             raise django.core.exceptions.ValidationError(
-                {self.__class__.name.field.name: "есть похожое название"},
+                {Tag.name.field.name: "есть похожое название"},
             )
         self.normalization_data = normalization_data
 
 
 class Item(AbstractCatalog):
     text = django.db.models.TextField(
-        verbose_name="Текст",
+        verbose_name="текст",
         validators=[ValidatorArg("превосходно", "роскошно")],
         help_text="Описание товара",
     )

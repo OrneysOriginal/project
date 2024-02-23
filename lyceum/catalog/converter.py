@@ -5,4 +5,4 @@ class IntPLusDig:
         return int(positive)
 
     def to_url(self, positive):
-        return positive
+        return str(positive)

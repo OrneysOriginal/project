@@ -9,7 +9,7 @@ import catalog.models
 
 
 class StaticURLTests(TestCase):
-    def test_catalog_items_endpoint(self) -> None:
+    def test_catalog_items_endpoint(self):
         status_code = Client().get("/catalog/").status_code
         self.assertEqual(status_code, HTTPStatus.OK)
 
@@ -35,9 +35,9 @@ class StaticURLTests(TestCase):
     )
     def test_catalog_item_endpoint(
         self,
-        param: str,
-        expected_status: HTTPStatus,
-    ) -> None:
+        param,
+        expected_status,
+    ):
         respone_status_code = Client().get(f"/catalog/{param}/").status_code
         self.assertEqual(
             respone_status_code,
@@ -76,10 +76,10 @@ class StaticURLTests(TestCase):
     )
     def test_catalog_item_re_converter_endpoint(
         self,
-        prefix: str,
-        param: str,
-        expected_status: HTTPStatus,
-    ) -> None:
+        prefix,
+        param,
+        expected_status,
+    ):
         respone_status_code = (
             Client().get(f"/catalog/{prefix}/{param}/").status_code
         )
@@ -91,9 +91,6 @@ class StaticURLTests(TestCase):
 
 
 class DBItemTests(TestCase):
-    category: catalog.models.Category
-    tag: catalog.models.Tag
-
     @classmethod
     def setUpClass(cls) -> None:
         super().setUpClass()
@@ -126,7 +123,7 @@ class DBItemTests(TestCase):
             ("test" * 38, "превосходно", False),
         ],
     )
-    def test_add_item(self, name: str, text: str, is_validate: bool) -> None:
+    def test_add_item(self, name, text, is_validate):
         item_count = catalog.models.Item.objects.count()
         self.item = catalog.models.Item(
             name=name,
@@ -177,7 +174,7 @@ class TagTests(TestCase):
             ("test", "abs" * 67, False),
         ],
     )
-    def test_add_tag(self, name: str, slug: str, is_validate: bool) -> None:
+    def test_add_tag(self, name, slug, is_validate):
         tag_count = catalog.models.Tag.objects.count()
         self.tag = catalog.models.Tag(
             name=name,
@@ -229,11 +226,11 @@ class CategoryTests(TestCase):
     )
     def test_add_category(
         self,
-        name: str,
-        slug: str,
-        weight: int,
-        is_validate: bool,
-    ) -> None:
+        name,
+        slug,
+        weight,
+        is_validate,
+    ):
         category_count = catalog.models.Category.objects.count()
         self.category = catalog.models.Category(
             name=name,
@@ -288,7 +285,7 @@ class NormalizeNameTests(TestCase):
             )
         ),
     )
-    def test_add_tag(self, name1: str, name2: str, is_validate: bool) -> None:
+    def test_add_tag(self, name1, name2, is_validate):
         tag_count = catalog.models.Category.objects.count()
         self.tag1 = catalog.models.Tag(
             name=name1,

@@ -47,13 +47,6 @@ class Migration(migrations.Migration):
                         help_text="Напишите слаг(Eng)",
                         max_length=200,
                         unique=True,
-                        validators=[
-                            django.core.validators.RegexValidator(
-                                re.compile("^[-a-zA-Z0-9_]+\\Z"),
-                                "Enter a valid “slug” consisting of letters, numbers, underscores or hyphens.",
-                                "invalid",
-                            )
-                        ],
                         verbose_name="слаг",
                     ),
                 ),
@@ -63,10 +56,10 @@ class Migration(migrations.Migration):
                         default=100,
                         help_text="Введите вес",
                         validators=[
-                            catalog.models.minvaluevalidator,
-                            catalog.models.maxvaluevalidator,
+                            django.core.validators.MinValueValidator(1),
+                            django.core.validators.MaxValueValidator(32767),
                         ],
-                        verbose_name="Вес",
+                        verbose_name="вес",
                     ),
                 ),
             ],
@@ -103,17 +96,10 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "slug",
-                    models.CharField(
+                    models.SlugField(
                         help_text="Напишите слаг(Eng)",
                         max_length=200,
                         unique=True,
-                        validators=[
-                            django.core.validators.RegexValidator(
-                                re.compile("^[-a-zA-Z0-9_]+\\Z"),
-                                "Enter a valid “slug” consisting of letters, numbers, underscores or hyphens.",
-                                "invalid",
-                            )
-                        ],
                         verbose_name="слаг",
                     ),
                 ),

@@ -12,11 +12,20 @@ venv/Script/activate
 или
 venv/Script/activate.bat
 ```
-* Скачать все продовые зависимости командой
+* Устанавливаем все необходимые зависимости
 ```bash
-pip install -r requirements/prod.txt
+pip install -r requirements/test.txt
+pip install -r requirements/dev.txt
 ```
-* Перейти в lyceum и прописать в терминале:
+* Переходим в проект lyceum
+```bash
+cd lyceum
+```
+* Запускаем тесты для проверки работоспособности
+```bash
+python manage.py test
+```
+* Запускаем проект после прохождения всех тестов
 ```bash
 python manage.py runserever
 ```
@@ -24,26 +33,28 @@ python manage.py runserever
 ## Для Linux(запускаемся из папки проекта):
 * Установка виртуально среды
 ```bash
-$ pip3 install virtualenv
+$ pip3 install venv
 ```
 * Активация виртуальной среды
 ```bash
 $ source venv/bin/activate
 ```
 * Установка всех продовых зависимостей
-(python3 или python, смотря какой у вас питон установлен)
 ```bash
-$ python3 -m pip install -r requirements/prod.txt
+$ python3 -m pip install -r requirements/test.txt
+$ python3 -m pip install -r requirements/dev.txt
 ```
-* Меняем директорию
-(project - это имя вашего проекта)
+* Меняем директорию на lyceum
 ```bash
-cd project
+cd lyceum
 ```
-* Запускаем проект
-(python3 или python, смотря какой у вас питон установлен)
+* Запускаем тесты для проверки работоспособности
 ```bash
-$ python3 manage.py runserver - запускаем проект
+* python3 manage.py test
+```
+* Запускаем проект после прохождения всех тестов
+```bash
+$ python3 manage.py runserver
 ```
 
 Вот так должна выглядеть система таблиц в базе данных
