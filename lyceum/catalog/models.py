@@ -1,9 +1,17 @@
+import re
+
 import django.core.exceptions
 from django.core.validators import validate_slug
 import django.db.models
 
 from catalog.validators import ValidatorArg
 from core.models import AbstractCatalog
+from unidecode import unidecode
+
+
+def normalize_str(value: str) -> str:
+    words = re.findall("[0-9а-яёa-z]+", value.lower())
+    return unidecode("".join(words))
 
 
 def minvaluevalidator(num):
@@ -34,10 +42,27 @@ class Category(AbstractCatalog):
         verbose_name="Вес",
         help_text="Введите вес",
     )
+    normalization_data = django.db.models.CharField(
+        max_length=150,
+        verbose_name="Правильные данные",
+        unique=True,
+        editable=False,
+    )
 
     class Meta:
         verbose_name = "категория"
         verbose_name_plural = "категории"
+
+    def clean(self):
+        normalization_data = normalize_str(self.name)
+        found = self.__class__.objects.filter(
+            normalization_data=normalization_data,
+        )
+        if found and found[0] != self:
+            raise django.core.exceptions.ValidationError(
+                {self.__class__.name.field.name: "есть похожое название"},
+            )
+        self.normalization_data = normalization_data
 
 
 class Tag(AbstractCatalog):
@@ -48,10 +73,27 @@ class Tag(AbstractCatalog):
         verbose_name="слаг",
         help_text="Напишите слаг(Eng)",
     )
+    normalization_data = django.db.models.CharField(
+        max_length=150,
+        verbose_name="Правильные данные",
+        unique=True,
+        editable=False,
+    )
 
     class Meta:
         verbose_name = "тег"
         verbose_name_plural = "теги"
+
+    def clean(self):
+        normalization_data = normalize_str(self.name)
+        found = self.__class__.objects.filter(
+            normalization_data=normalization_data,
+        )
+        if found and found[0] != self:
+            raise django.core.exceptions.ValidationError(
+                {self.__class__.name.field.name: "есть похожое название"},
+            )
+        self.normalization_data = normalization_data
 
 
 class Item(AbstractCatalog):

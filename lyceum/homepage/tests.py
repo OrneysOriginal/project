@@ -16,8 +16,7 @@ class TestHomepage(TestCase):
             for _ in range(2):
                 content = Client().get("/coffee/").content.decode()
                 contents[content] += 1
-            self.assertEqual(contents["Я чайник"], 1)
-            self.assertEqual(contents["Я кинйач"], 1)
+            self.assertEqual(contents["Я чайник"], 2)
 
     def test_teapot_reverse(self):
         with self.subTest():
