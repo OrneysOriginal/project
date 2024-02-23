@@ -1,7 +1,7 @@
 import re
 
 import django.core.exceptions
-from django.core.validators import validate_slug, MinValueValidator, MaxValueValidator
+from django.core.validators import MaxValueValidator, MinValueValidator
 import django.db.models
 from unidecode import unidecode
 
@@ -25,7 +25,7 @@ class Category(AbstractCatalog):
         default=100,
         validators=[
             MinValueValidator(1),
-            MaxValueValidator(32767)
+            MaxValueValidator(32767),
         ],
         verbose_name="вес",
         help_text="Введите вес",
