@@ -83,6 +83,48 @@
   }
 },
 {
+  "model": "catalog.mainimage",
+  "pk": 1,
+  "fields": {
+    "image": "media/baranina.jpg"
+  }
+},
+{
+  "model": "catalog.mainimage",
+  "pk": 2,
+  "fields": {
+    "image": "beef_DQtSnKZ.jpg"
+  }
+},
+{
+  "model": "catalog.mainimage",
+  "pk": 3,
+  "fields": {
+    "image": "apple.jpeg"
+  }
+},
+{
+  "model": "catalog.mainimage",
+  "pk": 4,
+  "fields": {
+    "image": "cabbage_GLKLjbM.jpg"
+  }
+},
+{
+  "model": "catalog.mainimage",
+  "pk": 5,
+  "fields": {
+    "image": "cucumber_m3oBJ4e.jpg"
+  }
+},
+{
+  "model": "catalog.images",
+  "pk": 3,
+  "fields": {
+    "image": "baranina-kare.jpg"
+  }
+},
+{
   "model": "catalog.item",
   "pk": 1,
   "fields": {
@@ -90,6 +132,8 @@
     "is_published": true,
     "text": "Превосходно",
     "category": 3,
+    "images": null,
+    "main_image": 1,
     "tags": [
       2
     ]
@@ -103,6 +147,8 @@
     "is_published": true,
     "text": "Роскошно",
     "category": 3,
+    "images": null,
+    "main_image": 2,
     "tags": [
       2
     ]
@@ -112,10 +158,12 @@
   "model": "catalog.item",
   "pk": 3,
   "fields": {
-    "name": "Капуста",
+    "name": "Яблоко",
     "is_published": true,
     "text": "Превосходно для похудения",
-    "category": 1,
+    "category": 2,
+    "images": null,
+    "main_image": 3,
     "tags": [
       2,
       4
@@ -126,10 +174,12 @@
   "model": "catalog.item",
   "pk": 4,
   "fields": {
-    "name": "Яблоко",
+    "name": "Капуста",
     "is_published": true,
     "text": "сок - превосходно",
-    "category": 2,
+    "category": 1,
+    "images": null,
+    "main_image": 4,
     "tags": [
       4,
       5
@@ -144,6 +194,8 @@
     "is_published": true,
     "text": "Роскошно и освежает - превосходно",
     "category": 1,
+    "images": null,
+    "main_image": 5,
     "tags": [
       1,
       2,
@@ -516,6 +568,136 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2024-02-26T15:40:46.667Z",
+    "user": 2,
+    "content_type": 13,
+    "object_id": "1",
+    "object_repr": "MainImage object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2024-02-26T17:19:11.801Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "2",
+    "object_repr": "Images object (2)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2024-02-26T17:20:58.596Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "3",
+    "object_repr": "Images object (3)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2024-02-27T18:32:12.920Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "4",
+    "object_repr": "Images object (4)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2024-02-27T18:33:46.976Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "5",
+    "object_repr": "Images object (5)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2024-02-27T18:36:49.231Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "6",
+    "object_repr": "Images object (6)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2024-02-27T18:40:06.081Z",
+    "user": 2,
+    "content_type": 13,
+    "object_id": "2",
+    "object_repr": "MainImage object (2)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2024-02-27T18:40:23.329Z",
+    "user": 2,
+    "content_type": 13,
+    "object_id": "3",
+    "object_repr": "MainImage object (3)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2024-02-27T18:40:28.734Z",
+    "user": 2,
+    "content_type": 13,
+    "object_id": "4",
+    "object_repr": "MainImage object (4)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2024-02-27T18:40:35.382Z",
+    "user": 2,
+    "content_type": 13,
+    "object_id": "5",
+    "object_repr": "MainImage object (5)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -840,6 +1022,150 @@
   }
 },
 {
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add image",
+    "content_type": 10,
+    "codename": "add_image"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change image",
+    "content_type": 10,
+    "codename": "change_image"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete image",
+    "content_type": 10,
+    "codename": "delete_image"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view image",
+    "content_type": 10,
+    "codename": "view_image"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add images",
+    "content_type": 11,
+    "codename": "add_images"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change images",
+    "content_type": 11,
+    "codename": "change_images"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete images",
+    "content_type": 11,
+    "codename": "delete_images"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view images",
+    "content_type": 11,
+    "codename": "view_images"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add kv store",
+    "content_type": 12,
+    "codename": "add_kvstore"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change kv store",
+    "content_type": 12,
+    "codename": "change_kvstore"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete kv store",
+    "content_type": 12,
+    "codename": "delete_kvstore"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view kv store",
+    "content_type": 12,
+    "codename": "view_kvstore"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add main image",
+    "content_type": 13,
+    "codename": "add_mainimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change main image",
+    "content_type": 13,
+    "codename": "change_mainimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete main image",
+    "content_type": 13,
+    "codename": "delete_mainimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view main image",
+    "content_type": 13,
+    "codename": "view_mainimage"
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
@@ -948,11 +1274,148 @@
   }
 },
 {
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "catalog",
+    "model": "image"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "catalog",
+    "model": "images"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "thumbnail",
+    "model": "kvstore"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "catalog",
+    "model": "mainimage"
+  }
+},
+{
   "model": "sessions.session",
   "pk": "00q1x4il8exsnupky38amoh44io05s84",
   "fields": {
     "session_data": ".eJxVjEEOwiAQRe_C2hBLgRlduu8ZyAwMUjU0Ke3KeHfbpAvd_vfef6tA61LC2mQOY1JXZdTpd2OKT6k7SA-q90nHqS7zyHpX9EGbHqYkr9vh_h0UamWrbZ_RAQF7b6TzEoHB5t5nRywWbRQQx9EZ2DQX8cIZBfNZ0HrxHavPF-pHODI:1rdCqO:npn00ItEa-ROXQ8ZUN3wndwdM2j9WCpElpn2-NCQNog",
     "expire_date": "2024-03-07T17:26:48.859Z"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||03d5ad941911ad08762dcea3a2897f77",
+  "fields": {
+    "value": "{\"name\": \"cucumber_m3oBJ4e.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [1600, 1148]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||941c9f032f2ef70d3681137a3ddeddbd",
+  "fields": {
+    "value": "{\"name\": \"cache/89/11/891174eb35cb4be3b4c5faba67805df5.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||b01b9e9493b30a5f378f9ddf77ed980a",
+  "fields": {
+    "value": "{\"name\": \"cache/df/c3/dfc39d740c52b28f36f1cb0fb8503f5d.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||b9255a912f6642aa0bd334ab34d0b6cb",
+  "fields": {
+    "value": "{\"name\": \"cache/1c/c5/1cc527316fd976cfdd7457f310b55023.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||ba548aa432440e084b40013843668afd",
+  "fields": {
+    "value": "{\"name\": \"beef_DQtSnKZ.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [1400, 934]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||c13ffafe5532b5e974d213b5fbb0f5dd",
+  "fields": {
+    "value": "{\"name\": \"cache/13/e7/13e7e87725d6f733439fd8fb54d4118a.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||c7fd0ac6f1fa590430dc8e90c1553fad",
+  "fields": {
+    "value": "{\"name\": \"cabbage_GLKLjbM.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [2048, 1365]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||cb55ddc0af3d184ba7fa60d93ee40153",
+  "fields": {
+    "value": "{\"name\": \"media/baranina.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [1013, 675]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||e354e020c0c956c8b2d53d773712be3e",
+  "fields": {
+    "value": "{\"name\": \"cache/f9/95/f9950ec9e435f9d7aaa4b8bf49ce4dd7.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||f42bb154a4c1d04f7b7da2c58b83e591",
+  "fields": {
+    "value": "{\"name\": \"apple.jpeg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [1280, 805]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||03d5ad941911ad08762dcea3a2897f77",
+  "fields": {
+    "value": "[\"e354e020c0c956c8b2d53d773712be3e\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||ba548aa432440e084b40013843668afd",
+  "fields": {
+    "value": "[\"941c9f032f2ef70d3681137a3ddeddbd\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||c7fd0ac6f1fa590430dc8e90c1553fad",
+  "fields": {
+    "value": "[\"b9255a912f6642aa0bd334ab34d0b6cb\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||cb55ddc0af3d184ba7fa60d93ee40153",
+  "fields": {
+    "value": "[\"c13ffafe5532b5e974d213b5fbb0f5dd\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||f42bb154a4c1d04f7b7da2c58b83e591",
+  "fields": {
+    "value": "[\"b01b9e9493b30a5f378f9ddf77ed980a\"]"
   }
 }
 ]
