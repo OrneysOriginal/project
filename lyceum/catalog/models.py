@@ -121,6 +121,17 @@ class Images(models.Model):
     def get_image300x300(self):
         return get_thumbnail(self.image, "300x300", crop="center", quality=51)
 
+    def image_tmb(self):
+        if self.image:
+            im = get_thumbnail(
+                self.image,
+                "300x300",
+                crop="center",
+                quality=51,
+            )
+            return im
+        return "Нет изображения"
+
     class Meta:
         verbose_name = "Картинки"
         verbose_name_plural = "Картинки"
@@ -148,14 +159,19 @@ class Item(AbstractCatalog):
         Images,
         on_delete=django.db.models.CASCADE,
         related_name="images",
+        null=False,
         verbose_name="Изображения",
     )
     main_image = django.db.models.OneToOneField(
         to=MainImage,
         on_delete=django.db.models.CASCADE,
+        null=False,
         verbose_name="Главное изображение",
     )
 
     class Meta:
         verbose_name = "товар"
         verbose_name_plural = "товары"
+
+
+__all__ = ["Category", "Tag", "MainImage", "Images", "Item"]

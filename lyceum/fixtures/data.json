@@ -1,141 +1,142 @@
 [
 {
   "model": "catalog.category",
-  "pk": 1,
+  "pk": 4,
   "fields": {
     "name": "Овощи",
     "is_published": true,
     "slug": "vegetables",
     "weight": 100,
-    "normalization_data": "овощи"
+    "normalization_data": "ovoshchi"
   }
 },
 {
   "model": "catalog.category",
-  "pk": 2,
+  "pk": 5,
   "fields": {
     "name": "Фрукты",
     "is_published": true,
     "slug": "fruits",
     "weight": 100,
-    "normalization_data": "фрукты"
+    "normalization_data": "frukty"
   }
 },
 {
   "model": "catalog.category",
-  "pk": 3,
+  "pk": 6,
   "fields": {
     "name": "Мясо",
     "is_published": true,
     "slug": "meat",
     "weight": 100,
-    "normalization_data": "мясо"
+    "normalization_data": "miaso"
   }
 },
 {
   "model": "catalog.tag",
-  "pk": 1,
+  "pk": 6,
+  "fields": {
+    "name": "Питательно",
+    "is_published": true,
+    "slug": "naturaly",
+    "normalization_data": "pitatel'no"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 7,
+  "fields": {
+    "name": "СпортПит",
+    "is_published": true,
+    "slug": "sport",
+    "normalization_data": "sportpit"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 8,
   "fields": {
     "name": "ДляДома",
     "is_published": true,
     "slug": "ForHome",
-    "normalization_data": "длядома"
+    "normalization_data": "dliadoma"
   }
 },
 {
   "model": "catalog.tag",
-  "pk": 2,
+  "pk": 9,
   "fields": {
-    "name": "Питательно",
-    "is_published": true,
-    "slug": "nutritionally",
-    "normalization_data": "питательно"
-  }
-},
-{
-  "model": "catalog.tag",
-  "pk": 3,
-  "fields": {
-    "name": "Спортпит",
-    "is_published": true,
-    "slug": "sport",
-    "normalization_data": "спортпит"
-  }
-},
-{
-  "model": "catalog.tag",
-  "pk": 4,
-  "fields": {
-    "name": "Фреш",
-    "is_published": true,
-    "slug": "fresh",
-    "normalization_data": "фреш"
-  }
-},
-{
-  "model": "catalog.tag",
-  "pk": 5,
-  "fields": {
-    "name": "Десерт",
+    "name": "Вкусно",
     "is_published": true,
     "slug": "taste",
-    "normalization_data": "десерт"
+    "normalization_data": "vkusno"
+  }
+},
+{
+  "model": "catalog.tag",
+  "pk": 10,
+  "fields": {
+    "name": "Полезно",
+    "is_published": true,
+    "slug": "good",
+    "normalization_data": "polezno"
   }
 },
 {
   "model": "catalog.mainimage",
   "pk": 1,
   "fields": {
-    "image": "media/baranina.jpg"
+    "image": "apple_WBow8F4.jpg"
   }
 },
 {
   "model": "catalog.mainimage",
   "pk": 2,
   "fields": {
-    "image": "beef_DQtSnKZ.jpg"
+    "image": "baranina_32R7bp0.jpg"
   }
 },
 {
   "model": "catalog.mainimage",
   "pk": 3,
   "fields": {
-    "image": "apple.jpeg"
+    "image": "beef_qz8Axhi.jpg"
   }
 },
 {
   "model": "catalog.mainimage",
   "pk": 4,
   "fields": {
-    "image": "cabbage_GLKLjbM.jpg"
+    "image": "cabbage_p7CCfdk.jpg"
   }
 },
 {
   "model": "catalog.mainimage",
   "pk": 5,
   "fields": {
-    "image": "cucumber_m3oBJ4e.jpg"
+    "image": "cucumber_lHD4mFb.jpg"
   }
 },
 {
   "model": "catalog.images",
-  "pk": 3,
+  "pk": 1,
   "fields": {
-    "image": "baranina-kare.jpg"
+    "image": "baranina-kare_oO6QGOy.jpg"
   }
 },
 {
   "model": "catalog.item",
   "pk": 1,
   "fields": {
-    "name": "Баранина",
+    "name": "Яблоко",
     "is_published": true,
     "text": "Превосходно",
-    "category": 3,
-    "images": null,
+    "category": 5,
+    "images": 1,
     "main_image": 1,
     "tags": [
-      2
+      9,
+      10
     ]
   }
 },
@@ -143,14 +144,16 @@
   "model": "catalog.item",
   "pk": 2,
   "fields": {
-    "name": "Говядина",
+    "name": "Баранина",
     "is_published": true,
-    "text": "Роскошно",
-    "category": 3,
-    "images": null,
+    "text": "Превосходно",
+    "category": 6,
+    "images": 1,
     "main_image": 2,
     "tags": [
-      2
+      6,
+      9,
+      10
     ]
   }
 },
@@ -158,15 +161,16 @@
   "model": "catalog.item",
   "pk": 3,
   "fields": {
-    "name": "Яблоко",
+    "name": "Говядина",
     "is_published": true,
-    "text": "Превосходно для похудения",
-    "category": 2,
-    "images": null,
+    "text": "Превосходно",
+    "category": 6,
+    "images": 1,
     "main_image": 3,
     "tags": [
-      2,
-      4
+      6,
+      9,
+      10
     ]
   }
 },
@@ -176,13 +180,13 @@
   "fields": {
     "name": "Капуста",
     "is_published": true,
-    "text": "сок - превосходно",
-    "category": 1,
-    "images": null,
+    "text": "Превосходно",
+    "category": 4,
+    "images": 1,
     "main_image": 4,
     "tags": [
-      4,
-      5
+      9,
+      10
     ]
   }
 },
@@ -190,16 +194,15 @@
   "model": "catalog.item",
   "pk": 5,
   "fields": {
-    "name": "Огурец",
+    "name": "Огурцы",
     "is_published": true,
-    "text": "Роскошно и освежает - превосходно",
-    "category": 1,
-    "images": null,
+    "text": "Превосходно",
+    "category": 4,
+    "images": 1,
     "main_image": 5,
     "tags": [
-      1,
-      2,
-      4
+      9,
+      10
     ]
   }
 },
@@ -693,6 +696,357 @@
     "content_type": 13,
     "object_id": "5",
     "object_repr": "MainImage object (5)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2024-02-28T20:05:17.878Z",
+    "user": 2,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Яблоко",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2024-02-28T20:44:42.745Z",
+    "user": 2,
+    "content_type": 13,
+    "object_id": "6",
+    "object_repr": "MainImage object (6)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2024-02-28T20:58:49.927Z",
+    "user": 2,
+    "content_type": 13,
+    "object_id": "7",
+    "object_repr": "MainImage object (7)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2024-02-28T20:58:55.925Z",
+    "user": 2,
+    "content_type": 13,
+    "object_id": "8",
+    "object_repr": "MainImage object (8)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2024-02-28T20:59:00.500Z",
+    "user": 2,
+    "content_type": 13,
+    "object_id": "9",
+    "object_repr": "MainImage object (9)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2024-02-28T20:59:05.597Z",
+    "user": 2,
+    "content_type": 13,
+    "object_id": "10",
+    "object_repr": "MainImage object (10)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2024-02-28T20:59:11.184Z",
+    "user": 2,
+    "content_type": 13,
+    "object_id": "11",
+    "object_repr": "MainImage object (11)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2024-02-28T20:59:15.708Z",
+    "user": 2,
+    "content_type": 13,
+    "object_id": "12",
+    "object_repr": "MainImage object (12)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2024-02-28T21:01:22.268Z",
+    "user": 2,
+    "content_type": 13,
+    "object_id": "13",
+    "object_repr": "MainImage object (13)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2024-02-28T21:01:28.271Z",
+    "user": 2,
+    "content_type": 13,
+    "object_id": "14",
+    "object_repr": "MainImage object (14)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2024-02-28T21:01:33.190Z",
+    "user": 2,
+    "content_type": 13,
+    "object_id": "15",
+    "object_repr": "MainImage object (15)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2024-02-28T21:01:37.254Z",
+    "user": 2,
+    "content_type": 13,
+    "object_id": "16",
+    "object_repr": "MainImage object (16)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2024-02-28T21:01:41.812Z",
+    "user": 2,
+    "content_type": 13,
+    "object_id": "17",
+    "object_repr": "MainImage object (17)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2024-02-28T21:01:46.417Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "4",
+    "object_repr": "Images object (4)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2024-02-28T21:02:00.831Z",
+    "user": 2,
+    "content_type": 1,
+    "object_id": "4",
+    "object_repr": "Овощи",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2024-02-28T21:02:08.274Z",
+    "user": 2,
+    "content_type": 1,
+    "object_id": "5",
+    "object_repr": "Фрукты",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 55,
+  "fields": {
+    "action_time": "2024-02-28T21:02:25.205Z",
+    "user": 2,
+    "content_type": 1,
+    "object_id": "6",
+    "object_repr": "Мясо",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 56,
+  "fields": {
+    "action_time": "2024-02-28T21:02:39.034Z",
+    "user": 2,
+    "content_type": 2,
+    "object_id": "6",
+    "object_repr": "Питательно",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 57,
+  "fields": {
+    "action_time": "2024-02-28T21:02:56.884Z",
+    "user": 2,
+    "content_type": 2,
+    "object_id": "7",
+    "object_repr": "СпортПит",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 58,
+  "fields": {
+    "action_time": "2024-02-28T21:03:09.892Z",
+    "user": 2,
+    "content_type": 2,
+    "object_id": "8",
+    "object_repr": "ДляДома",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 59,
+  "fields": {
+    "action_time": "2024-02-28T21:03:53.792Z",
+    "user": 2,
+    "content_type": 2,
+    "object_id": "9",
+    "object_repr": "Вкусно",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 60,
+  "fields": {
+    "action_time": "2024-02-28T21:04:10.765Z",
+    "user": 2,
+    "content_type": 2,
+    "object_id": "10",
+    "object_repr": "Полезно",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 61,
+  "fields": {
+    "action_time": "2024-02-28T21:05:41.222Z",
+    "user": 2,
+    "content_type": 3,
+    "object_id": "1",
+    "object_repr": "Яблоко",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 62,
+  "fields": {
+    "action_time": "2024-02-28T21:06:11.883Z",
+    "user": 2,
+    "content_type": 3,
+    "object_id": "2",
+    "object_repr": "Баранина",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 63,
+  "fields": {
+    "action_time": "2024-02-28T21:06:58.734Z",
+    "user": 2,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Говядина",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 64,
+  "fields": {
+    "action_time": "2024-02-28T21:07:21.066Z",
+    "user": 2,
+    "content_type": 3,
+    "object_id": "4",
+    "object_repr": "Капуста",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 65,
+  "fields": {
+    "action_time": "2024-02-28T21:07:45.428Z",
+    "user": 2,
+    "content_type": 3,
+    "object_id": "5",
+    "object_repr": "Огурцы",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -1322,9 +1676,121 @@
 },
 {
   "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||1fa3429656b9823ebaff3ed6f07d09da",
+  "fields": {
+    "value": "{\"name\": \"1614385102_12-p-yabloko-na-svetlom-fone-12.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [1280, 817]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||30b43f7e3f3912cf61580bf81cea5ca2",
+  "fields": {
+    "value": "{\"name\": \"beef.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [1400, 934]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||35fbe7bf0680cfb552b65fa58e36a805",
+  "fields": {
+    "value": "{\"name\": \"cache/25/c2/25c23ac307516ee1aca6785f13260df3.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||4e28eb98bcf0e0650437a0ea9f7cc0fe",
+  "fields": {
+    "value": "{\"name\": \"cache/ab/53/ab534e331f9ca524a5433723a0d9c1e7.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||50469c7486e65087bf61e17823955841",
+  "fields": {
+    "value": "{\"name\": \"cache/6d/80/6d80841592c05a91dfb18e83c65c20be.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||5105239bbe796f13dbcaf0c96a780d4f",
+  "fields": {
+    "value": "{\"name\": \"baranina.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [1013, 675]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||53d029367c75285de4d97d1d928e3021",
+  "fields": {
+    "value": "{\"name\": \"apple_WBow8F4.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [1280, 805]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||588fbfda655633c5c9c5a82636ae2765",
+  "fields": {
+    "value": "{\"name\": \"baranina_32R7bp0.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [1013, 675]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||65c743ded0be64c157c23d5215cc7770",
+  "fields": {
+    "value": "{\"name\": \"cache/d1/03/d1030e89d6928f1a8f51a64e64b97fb9.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||7ea85d187d037b227f11e94941d8bc74",
+  "fields": {
+    "value": "{\"name\": \"cabbage.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [2048, 1365]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||863bbc91bc118b359cbc8f928b59297f",
+  "fields": {
+    "value": "{\"name\": \"cache/ca/df/cadf8c77279dccf0a8715d3a3acb5835.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||8a8ec7034436703d9b46441f719f888e",
+  "fields": {
+    "value": "{\"name\": \"cache/6f/59/6f59be3b975d0579c7726d92f94683f3.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||8ea5d637025062680a83235b381fb6f1",
+  "fields": {
+    "value": "{\"name\": \"cache/d2/3d/d23dd709c2e4786b104546c695566e5f.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
   "pk": "sorl-thumbnail||image||941c9f032f2ef70d3681137a3ddeddbd",
   "fields": {
     "value": "{\"name\": \"cache/89/11/891174eb35cb4be3b4c5faba67805df5.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||9ac37253e6768be2df21244002dec10b",
+  "fields": {
+    "value": "{\"name\": \"cache/3a/a6/3aa66a7f93e8c8c08901ab0755a42287.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||9d54a9954a096a76e69cc2ada78b5ba2",
+  "fields": {
+    "value": "{\"name\": \"cache/0a/6b/0a6bfb717e8e7080d5d1a0c003f5b838.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||aa2ac547046e41b7eea135553724b49a",
+  "fields": {
+    "value": "{\"name\": \"baranina-kare.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [800, 800]}"
   }
 },
 {
@@ -1371,9 +1837,58 @@
 },
 {
   "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||d2a8aee820e62c189ec5c1a7527e31b2",
+  "fields": {
+    "value": "{\"name\": \"cache/a1/07/a1078afb48effa9c88e8682ae5dd2dc0.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||d9d2bf850f9e0da23254bcc442e684d7",
+  "fields": {
+    "value": "{\"name\": \"cucumber_lHD4mFb.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [1600, 1148]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||db755c2d1224c79f89242e557de3923d",
+  "fields": {
+    "value": "{\"name\": \"cache/a9/21/a921461e9738b429da84fb14a059fd5b.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||e1c121ff764792360e94290076932a2a",
+  "fields": {
+    "value": "{\"name\": \"cache/66/64/666432ad6a0be193efb9e952bc1d3272.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
   "pk": "sorl-thumbnail||image||e354e020c0c956c8b2d53d773712be3e",
   "fields": {
     "value": "{\"name\": \"cache/f9/95/f9950ec9e435f9d7aaa4b8bf49ce4dd7.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||e89cdc107c52c13dc02a88148bc148fa",
+  "fields": {
+    "value": "{\"name\": \"cabbage_p7CCfdk.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [2048, 1365]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||e98b16711ba7faeef10fffc89e7eb890",
+  "fields": {
+    "value": "{\"name\": \"apple.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [1280, 805]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||ee8c37f7261d712a3df0deda47616df6",
+  "fields": {
+    "value": "{\"name\": \"beef_qz8Axhi.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [1400, 934]}"
   }
 },
 {
@@ -1385,9 +1900,65 @@
 },
 {
   "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||f96150006cb81221306b3e22e33ea110",
+  "fields": {
+    "value": "{\"name\": \"cucumber.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [1600, 1148]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
   "pk": "sorl-thumbnail||thumbnails||03d5ad941911ad08762dcea3a2897f77",
   "fields": {
     "value": "[\"e354e020c0c956c8b2d53d773712be3e\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||1fa3429656b9823ebaff3ed6f07d09da",
+  "fields": {
+    "value": "[\"50469c7486e65087bf61e17823955841\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||30b43f7e3f3912cf61580bf81cea5ca2",
+  "fields": {
+    "value": "[\"863bbc91bc118b359cbc8f928b59297f\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||5105239bbe796f13dbcaf0c96a780d4f",
+  "fields": {
+    "value": "[\"d2a8aee820e62c189ec5c1a7527e31b2\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||53d029367c75285de4d97d1d928e3021",
+  "fields": {
+    "value": "[\"9d54a9954a096a76e69cc2ada78b5ba2\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||588fbfda655633c5c9c5a82636ae2765",
+  "fields": {
+    "value": "[\"db755c2d1224c79f89242e557de3923d\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||7ea85d187d037b227f11e94941d8bc74",
+  "fields": {
+    "value": "[\"4e28eb98bcf0e0650437a0ea9f7cc0fe\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||aa2ac547046e41b7eea135553724b49a",
+  "fields": {
+    "value": "[\"65c743ded0be64c157c23d5215cc7770\"]"
   }
 },
 {
@@ -1413,9 +1984,44 @@
 },
 {
   "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||d9d2bf850f9e0da23254bcc442e684d7",
+  "fields": {
+    "value": "[\"8ea5d637025062680a83235b381fb6f1\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||e89cdc107c52c13dc02a88148bc148fa",
+  "fields": {
+    "value": "[\"9ac37253e6768be2df21244002dec10b\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||e98b16711ba7faeef10fffc89e7eb890",
+  "fields": {
+    "value": "[\"35fbe7bf0680cfb552b65fa58e36a805\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||ee8c37f7261d712a3df0deda47616df6",
+  "fields": {
+    "value": "[\"e1c121ff764792360e94290076932a2a\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
   "pk": "sorl-thumbnail||thumbnails||f42bb154a4c1d04f7b7da2c58b83e591",
   "fields": {
     "value": "[\"b01b9e9493b30a5f378f9ddf77ed980a\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||f96150006cb81221306b3e22e33ea110",
+  "fields": {
+    "value": "[\"8a8ec7034436703d9b46441f719f888e\"]"
   }
 }
 ]

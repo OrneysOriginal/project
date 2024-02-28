@@ -10,3 +10,8 @@ flake8-comprehensions
 flake8-eradicate
 flake8-fixme
 parameterized
+flake8-builtins
+flake8-comments
+flake8-dunder-all
+flake8-print
+flake8-type-ignore

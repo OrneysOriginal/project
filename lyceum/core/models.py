@@ -2,10 +2,6 @@ from django.db import models
 
 
 class AbstractCatalog(models.Model):
-    id = models.AutoField(
-        primary_key=True,
-        verbose_name="id",
-    )
     name = models.CharField(
         max_length=150,
         verbose_name="название",
