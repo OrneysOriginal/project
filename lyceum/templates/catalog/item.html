@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <h1>Товар детально</h1>
+    {% for obj in item %}
+        <img src="/media/{{ obj.image_tmb }}">
+        {{ obj.get_image300x300.image_tmb }}
+    {% endfor %}
+{% endblock content %}

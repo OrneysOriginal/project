@@ -9,17 +9,18 @@ from django.utils.deconstruct import deconstructible
 @deconstructible
 class ValidatorArg:
 
-    def __init__(self, word1, word2, num=1):
-        regular_left = r"\b" + word1 + r"\b"
-        regular_right = r"\b" + word2 + r"\b"
-        self.regular = regular_left + "|" + regular_right
+    def __init__(self, *args, num=1):
+        self.arg = args
+        self.regular = r"\b" + args[0] + r"\b"
+        for i in range(1, len(args)):
+            self.regular += r"|\b" + args[i] + r"\b"
         self.num = num
 
     def __call__(self, text):
         if re.search(self.regular, text.lower()) is None:
             raise django.core.exceptions.ValidationError(
-                "В тексте должно присутсвовать слово"
-                " 'превосходно' или 'роскошно' или оба сразу",
+                "В тексте должно присутсвовать хотя бы одно из слов"
+                f"{self.arg}",
             )
 
     def __eq__(self, other):

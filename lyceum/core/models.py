@@ -19,7 +19,7 @@ class AbstractCatalog(models.Model):
     )
 
     def __str__(self):
-        return self.name
+        return self.name[:15]
 
     class Meta:
         abstract = True

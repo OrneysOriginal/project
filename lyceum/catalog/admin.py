@@ -8,6 +8,8 @@ class AdminItem(admin.ModelAdmin):
     list_display = (
         catalog.models.Item.name.field.name,
         catalog.models.Item.is_published.field.name,
+        catalog.models.Item.main_image.field.name,
+        catalog.models.Item.images.field.name,
     )
     list_editable = (catalog.models.Item.is_published.field.name,)
     list_display_links = (catalog.models.Item.name.field.name,)
@@ -30,3 +32,18 @@ class AdminCatalogCategory(admin.ModelAdmin):
         catalog.models.Category.is_published.field.name,
     )
     list_editable = (catalog.models.Category.is_published.field.name,)
+
+
+@admin.register(catalog.models.MainImage)
+class AdminMainImage(admin.ModelAdmin):
+    list_display = [
+        catalog.models.MainImage.image_tmb,
+        catalog.models.MainImage.get_image300x300,
+    ]
+
+
+@admin.register(catalog.models.Images)
+class AdminImages(admin.ModelAdmin):
+    list_display = [
+        catalog.models.Images.image.field.name,
+    ]

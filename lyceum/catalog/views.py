@@ -1,12 +1,26 @@
 from django.http import HttpResponse
+from django.shortcuts import render
+
+from catalog.models import Item, MainImage
 
 
 def item_list(request):
-    return HttpResponse("<body>Список элементов</body>")
+    templates = "catalog/item_list.html"
+    context = {
+        "title": "Список товаров",
+        "mainimage": MainImage.objects.filter(),
+        "MainImage": MainImage,
+    }
+    return render(request, templates, context)
 
 
 def item_detail(request, pk):
-    return HttpResponse("<body>Подробно элемент</body>")
+    templates = "catalog/item.html"
+    context = {
+        "title": "Товар",
+        "item": [x.main_image for x in Item.objects.filter(id=pk)],
+    }
+    return render(request, templates, context)
 
 
 def some_re(request, pk):

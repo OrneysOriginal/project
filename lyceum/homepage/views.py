@@ -1,10 +1,15 @@
 from http import HTTPStatus
 
 from django.http import HttpResponse
+from django.shortcuts import render
+
+from catalog.models import MainImage
 
 
 def homepage(request):
-    return HttpResponse("<body>Главная</body>")
+    template = "homepage/main.html"
+    context = {"title": "Главная", "mainimage": MainImage.objects.filter()[:6]}
+    return render(request, template, context)
 
 
 def teapot(request):

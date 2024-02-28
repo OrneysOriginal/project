@@ -2,7 +2,8 @@ import re
 
 import django.core.exceptions
 from django.core.validators import MaxValueValidator, MinValueValidator
-import django.db.models
+from django.db import models
+from sorl.thumbnail import get_thumbnail
 from unidecode import unidecode
 
 from catalog.validators import ValidatorArg
@@ -83,6 +84,48 @@ class Tag(AbstractCatalog):
         self.normalization_data = normalization_data
 
 
+class MainImage(models.Model):
+    image = models.ImageField(
+        upload_to="",
+        verbose_name="главное изображение",
+    )
+
+    def get_image300x300(self):
+        return get_thumbnail(self.image, "300x300", crop="center", quality=51)
+
+    def image_tmb(self):
+        if self.image:
+            im = get_thumbnail(
+                self.image,
+                "300x300",
+                crop="center",
+                quality=51,
+            )
+            return im
+        return "Нет изображения"
+
+    image_tmb.short_description = "превью"
+    image_tmb.allow_tags = True
+
+    class Meta:
+        verbose_name = "Главное изображение"
+        verbose_name_plural = "Главное изображение"
+
+
+class Images(models.Model):
+    image = models.ImageField(
+        upload_to="",
+        verbose_name="картинки",
+    )
+
+    def get_image300x300(self):
+        return get_thumbnail(self.image, "300x300", crop="center", quality=51)
+
+    class Meta:
+        verbose_name = "Картинки"
+        verbose_name_plural = "Картинки"
+
+
 class Item(AbstractCatalog):
     text = django.db.models.TextField(
         verbose_name="текст",
@@ -100,6 +143,19 @@ class Item(AbstractCatalog):
         Tag,
         related_name="item",
         verbose_name="теги",
+    )
+    images = django.db.models.ForeignKey(
+        Images,
+        on_delete=django.db.models.CASCADE,
+        related_name="images",
+        null=True,
+        verbose_name="Изображения",
+    )
+    main_image = django.db.models.OneToOneField(
+        to=MainImage,
+        on_delete=django.db.models.CASCADE,
+        null=True,
+        verbose_name="Главное изображение",
     )
 
     class Meta:
