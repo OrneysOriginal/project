@@ -23,3 +23,6 @@ class AbstractCatalog(models.Model):
 
     class Meta:
         abstract = True
+
+
+__all__ = ["AbstractCatalog"]

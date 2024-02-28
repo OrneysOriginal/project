@@ -327,3 +327,6 @@ class NormalizeNameTests(TestCase):
                 tag_count + 2,
                 msg="no add validate item",
             )
+
+
+__all__ = []

@@ -28,3 +28,6 @@ class TestHomepage(TestCase):
             self.assertEqual(contents["Я чайник"], 9)
             self.assertEqual(contents["Я кинйач"], 1)
             self.assertEqual(content.status_code, HTTPStatus.IM_A_TEAPOT)
+
+
+__all__ = []

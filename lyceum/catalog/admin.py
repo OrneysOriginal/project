@@ -47,3 +47,6 @@ class AdminImages(admin.ModelAdmin):
     list_display = [
         catalog.models.Images.image.field.name,
     ]
+
+
+__all__ = []

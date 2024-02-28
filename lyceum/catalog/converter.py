@@ -6,3 +6,6 @@ class IntPLusDig:
 
     def to_url(self, positive):
         return str(positive)
+
+
+__all__ = ["IntPLusDig"]

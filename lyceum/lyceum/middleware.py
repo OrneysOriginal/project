@@ -33,3 +33,6 @@ class ReverseRusWordMiddleware:
                 response.content = text.encode("utf-8")
         self.change_count()
         return response
+
+
+__all__ = ["ReverseRusWordMiddleware"]

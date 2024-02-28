@@ -148,7 +148,6 @@ class Item(AbstractCatalog):
         Images,
         on_delete=django.db.models.CASCADE,
         related_name="images",
-        null=True,
         verbose_name="Изображения",
     )
     main_image = django.db.models.OneToOneField(
