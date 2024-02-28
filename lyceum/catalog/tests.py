@@ -103,6 +103,12 @@ class DBItemTests(TestCase):
             name="Test",
             slug="Test",
         )
+        cls.main_image = catalog.models.MainImage.objects.create(
+            image="baranina.jpg",
+        )
+        cls.images = catalog.models.Images.objects.create(
+            image="baranina-kare.jpg",
+        )
 
     @parameterized.parameterized.expand(
         [
@@ -129,6 +135,8 @@ class DBItemTests(TestCase):
             name=name,
             text=text,
             category=self.category,
+            main_image=self.main_image,
+            images=self.images,
         )
         if not is_validate:
             with self.assertRaises(ValidationError):

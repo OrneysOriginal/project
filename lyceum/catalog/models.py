@@ -154,7 +154,6 @@ class Item(AbstractCatalog):
     main_image = django.db.models.OneToOneField(
         to=MainImage,
         on_delete=django.db.models.CASCADE,
-        null=True,
         verbose_name="Главное изображение",
     )
 
