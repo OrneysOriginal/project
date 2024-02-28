@@ -103,6 +103,12 @@ class DBItemTests(TestCase):
             name="Test",
             slug="Test",
         )
+        cls.main_image = catalog.models.MainImage.objects.create(
+            image="apple.jpg",
+        )
+        cls.images = catalog.models.Images.objects.create(
+            image="baranina-kare.jpg",
+        )
 
     @parameterized.parameterized.expand(
         [
