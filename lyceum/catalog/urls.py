@@ -4,6 +4,7 @@ from catalog import converter, views
 
 
 register_converter(converter.IntPLusDig, "positive")
+app_name = "catalog"
 
 urlpatterns = [
     path("", views.item_list, name="item_list"),

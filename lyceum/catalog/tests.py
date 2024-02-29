@@ -3,6 +3,7 @@ import itertools
 
 from django.core.exceptions import ValidationError
 from django.test import Client, TestCase
+from django.urls import reverse
 import parameterized
 
 import catalog.models
@@ -327,6 +328,29 @@ class NormalizeNameTests(TestCase):
                 tag_count + 2,
                 msg="no add validate item",
             )
+
+
+class PagesTests(TestCase):
+
+    @parameterized.parameterized.expand(
+        [
+            (reverse("catalog:item_list"), 200),
+            (reverse("catalog:item_detail", args=[1]), HTTPStatus.OK),
+            (reverse("catalog:item_detail", args=[2]), HTTPStatus.OK),
+            (reverse("catalog:item_detail", args=[3]), HTTPStatus.OK),
+            (reverse("catalog:item_detail", args=[4]), HTTPStatus.OK),
+            (reverse("catalog:item_detail", args=[5]), HTTPStatus.OK),
+            (reverse("catalog:item_detail", args=[6]), HTTPStatus.OK),
+            (reverse("catalog:item_detail", args=[7]), HTTPStatus.OK),
+            (reverse("catalog:item_detail", args=[8]), HTTPStatus.OK),
+            (reverse("catalog:item_detail", args=[9]), HTTPStatus.OK),
+            (reverse("homepage:main"), HTTPStatus.OK),
+            (reverse("about:about"), HTTPStatus.OK),
+        ],
+    )
+    def test_page_status_code(self, url, status_code):
+        response_code = Client().get(url).status_code
+        self.assertEqual(response_code, status_code)
 
 
 __all__ = []

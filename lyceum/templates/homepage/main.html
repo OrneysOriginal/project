@@ -3,7 +3,7 @@
 {% block content %}
     <h1>Главная</h1>
     {% for obj in mainimage %}
-        <a href="{% url 'item_detail' obj.id %}">
+        <a href="{% url 'catalog:item_detail' obj.id %}">
             <img src="/media/{{ obj.image_tmb }}">
             {{ obj.get_image300x300.image_tmb }}
         </a>

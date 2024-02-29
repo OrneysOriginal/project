@@ -17,4 +17,4 @@ __pycache__/
 lyceum/db.sqlite3
 
 #сторонний игнор
-/.vscode
+.vscode/
