@@ -344,8 +344,6 @@ class PagesTests(TestCase):
             (reverse("catalog:item_detail", args=[7]), HTTPStatus.OK),
             (reverse("catalog:item_detail", args=[8]), HTTPStatus.OK),
             (reverse("catalog:item_detail", args=[9]), HTTPStatus.OK),
-            (reverse("homepage:main"), HTTPStatus.OK),
-            (reverse("about:about"), HTTPStatus.OK),
         ],
     )
     def test_page_status_code(self, url, status_code):

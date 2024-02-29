@@ -125,6 +125,34 @@
   }
 },
 {
+  "model": "catalog.images",
+  "pk": 2,
+  "fields": {
+    "image": "1675515486_3-62.jpg"
+  }
+},
+{
+  "model": "catalog.images",
+  "pk": 3,
+  "fields": {
+    "image": "tomato-free-png-image-5a21126b1e7823.0247049415121168431248.jpg"
+  }
+},
+{
+  "model": "catalog.images",
+  "pk": 4,
+  "fields": {
+    "image": "unnamed.jpg"
+  }
+},
+{
+  "model": "catalog.images",
+  "pk": 5,
+  "fields": {
+    "image": "Commander_Zucchiduck.jpg"
+  }
+},
+{
   "model": "catalog.item",
   "pk": 1,
   "fields": {
@@ -132,7 +160,7 @@
     "is_published": true,
     "text": "Превосходно",
     "category": 5,
-    "images": 1,
+    "images": 2,
     "main_image": 1,
     "tags": [
       9,
@@ -165,7 +193,7 @@
     "is_published": true,
     "text": "Превосходно",
     "category": 6,
-    "images": 1,
+    "images": 3,
     "main_image": 3,
     "tags": [
       6,
@@ -182,7 +210,7 @@
     "is_published": true,
     "text": "Превосходно",
     "category": 4,
-    "images": 1,
+    "images": 4,
     "main_image": 4,
     "tags": [
       9,
@@ -198,7 +226,7 @@
     "is_published": true,
     "text": "Превосходно",
     "category": 4,
-    "images": 1,
+    "images": 5,
     "main_image": 5,
     "tags": [
       9,
@@ -1047,6 +1075,58 @@
     "content_type": 3,
     "object_id": "5",
     "object_repr": "Огурцы",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 66,
+  "fields": {
+    "action_time": "2024-02-29T20:53:44.111Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "5",
+    "object_repr": "Images object (5)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 67,
+  "fields": {
+    "action_time": "2024-02-29T20:54:01.035Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "6",
+    "object_repr": "Images object (6)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 68,
+  "fields": {
+    "action_time": "2024-02-29T20:54:17.112Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "7",
+    "object_repr": "Images object (7)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 69,
+  "fields": {
+    "action_time": "2024-02-29T20:55:38.188Z",
+    "user": 2,
+    "content_type": 11,
+    "object_id": "8",
+    "object_repr": "Images object (8)",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }

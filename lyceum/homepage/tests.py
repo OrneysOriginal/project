@@ -1,6 +1,8 @@
 from http import HTTPStatus
 
 from django.test import Client, TestCase
+from django.urls import reverse
+import parameterized
 
 
 class TestHomepage(TestCase):
@@ -28,6 +30,17 @@ class TestHomepage(TestCase):
             self.assertEqual(contents["Я чайник"], 9)
             self.assertEqual(contents["Я кинйач"], 1)
             self.assertEqual(content.status_code, HTTPStatus.IM_A_TEAPOT)
+
+
+class PagesTests(TestCase):
+    @parameterized.parameterized.expand(
+        [
+            (reverse("homepage:main"), 200),
+        ],
+    )
+    def test_page_status_code(self, url, status_code):
+        response = Client().get(url).status_code
+        self.assertEqual(response, status_code)
 
 
 __all__ = []
