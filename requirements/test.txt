@@ -15,3 +15,4 @@ flake8-comments
 flake8-dunder-all
 flake8-print
 flake8-type-ignore
+django-debug-toolbar==4.3.0

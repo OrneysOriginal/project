@@ -1,6 +1,7 @@
 import re
 
 from django.db import models
+from django.utils.safestring import mark_safe
 from sorl.thumbnail import get_thumbnail
 from unidecode import unidecode
 
@@ -40,14 +41,9 @@ class AbstractImage(models.Model):
 
     def image_tmb(self):
         if self.image:
-            im = get_thumbnail(
-                self.image,
-                "300x300",
-                crop="center",
-                quality=51,
-            )
-            return im
-        return "Нет изображения"
+            tag = f'<img src="{self.get_image300x300().url}">'
+            return mark_safe(tag)
+        return "изображение отсутствует"
 
     image_tmb.short_description = "превью"
     image_tmb.allow_tags = True
