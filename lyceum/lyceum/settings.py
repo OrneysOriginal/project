@@ -20,7 +20,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "ABOBA")
 
 DEBUG = os.getenv("DJANGO_DEBUG", "False").lower() in true_val
 
-DEBUG_TOOLBAR_CONFIG = {'DISABLE_PANELS': [True], }
+DEBUG_TOOLBAR_CONFIG = {"DISABLE_PANELS": [True]}
 
 ALLOW_REVERSE = os.getenv("DJANGO_ALLOW_REVERSE", "true").lower() in true_val
 
