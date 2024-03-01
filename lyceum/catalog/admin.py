@@ -1,6 +1,17 @@
 from django.contrib import admin
+from sorl.thumbnail.admin import AdminImageMixin
 
 import catalog.models
+
+
+class ItemMainImageInline(AdminImageMixin, admin.TabularInline):
+    fields = ["image"]
+    model = catalog.models.MainImage
+
+
+class ItemImagesInline(AdminImageMixin, admin.TabularInline):
+    fields = ["image"]
+    model = catalog.models.Images
 
 
 @admin.register(catalog.models.Item)
@@ -42,9 +53,10 @@ class AdminMainImage(admin.ModelAdmin):
 
 @admin.register(catalog.models.Images)
 class AdminImages(admin.ModelAdmin):
-    list_display = [
+    list_display = (
         catalog.models.Images.image.field.name,
-    ]
+        catalog.models.Images.get_image300x300,
+    )
 
 
 __all__ = []

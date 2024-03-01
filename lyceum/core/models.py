@@ -48,5 +48,8 @@ class AbstractImage(models.Model):
     image_tmb.short_description = "превью"
     image_tmb.allow_tags = True
 
+    def __str__(self):
+        return self.image
+
 
 __all__ = ["AbstractCatalog"]
