@@ -8,8 +8,6 @@ class AdminItem(admin.ModelAdmin):
     list_display = (
         catalog.models.Item.name.field.name,
         catalog.models.Item.is_published.field.name,
-        catalog.models.Item.main_image.field.name,
-        catalog.models.Item.images.field.name,
     )
     list_editable = (catalog.models.Item.is_published.field.name,)
     list_display_links = (catalog.models.Item.name.field.name,)
