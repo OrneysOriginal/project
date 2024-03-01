@@ -24,6 +24,11 @@ class AdminItem(admin.ModelAdmin):
     list_display_links = (catalog.models.Item.name.field.name,)
     filter_horizontal = (catalog.models.Item.tags.field.name,)
 
+    inlines = [
+        ItemMainImageInline,
+        ItemImagesInline,
+    ]
+
 
 @admin.register(catalog.models.Tag)
 class AdminTag(admin.ModelAdmin):

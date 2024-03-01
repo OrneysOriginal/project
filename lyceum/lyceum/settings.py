@@ -13,6 +13,7 @@ true_val = (
     "t",
     "y",
     "yes",
+    "",
 )
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "ABOBA")
