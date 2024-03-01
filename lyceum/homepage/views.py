@@ -8,6 +8,7 @@ from catalog.models import MainImage
 
 def homepage(request):
     template = "homepage/main.html"
+
     context = {"title": "Главная", "mainimage": MainImage.objects.filter()[:6]}
     return render(request, template, context)
 

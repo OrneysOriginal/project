@@ -49,7 +49,10 @@ class AbstractImage(models.Model):
     image_tmb.allow_tags = True
 
     def __str__(self):
-        return self.image
+        return self.image.url
+
+    class Meta:
+        abstract = True
 
 
-__all__ = ["AbstractCatalog"]
+__all__ = ["AbstractCatalog", "AbstractImage"]
