@@ -28,3 +28,4 @@ venv/
 db.sqlite3
 #cache
 .idea
+__pycache__
