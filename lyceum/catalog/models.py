@@ -1,5 +1,6 @@
 import django.core.exceptions
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.utils.text import slugify
 
 from catalog.validators import ValidatorArg
 from core.models import AbstractCatalog, AbstractImage, normalize_str
@@ -28,16 +29,20 @@ class Category(AbstractCatalog):
         editable=False,
     )
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+
     class Meta:
         verbose_name = "категория"
         verbose_name_plural = "категории"
 
     def clean(self):
         normalization_data = normalize_str(self.name)
-        found = Category.objects.filter(
+        if Category.objects.filter(
             normalization_data=normalization_data,
-        )
-        if found and found[0] != self:
+        ).exists():
             raise django.core.exceptions.ValidationError(
                 {Category.name.field.name: "есть похожое название"},
             )
@@ -58,16 +63,20 @@ class Tag(AbstractCatalog):
         editable=False,
     )
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+
     class Meta:
         verbose_name = "тег"
         verbose_name_plural = "теги"
 
     def clean(self):
         normalization_data = normalize_str(self.name)
-        found = Tag.objects.filter(
+        if Category.objects.filter(
             normalization_data=normalization_data,
-        )
-        if found and found[0] != self:
+        ).exists():
             raise django.core.exceptions.ValidationError(
                 {Tag.name.field.name: "есть похожое название"},
             )

@@ -12,10 +12,11 @@ venv/Script/activate
 или
 venv/Script/activate.bat
 ```
-* Устанавливаем все необходимые зависимости
+* Устанавливаем все необходимые зависимости(прод будет загружен при установке любого из первых двух)
 ```bash
-pip install -r requirements/test.txt
-pip install -r requirements/dev.txt
+pip install -r requirements/test.txt - для тестов
+pip install -r requirements/dev.txt - для разработки
+pip install -r requirements/prod.txt - для продакшена
 ```
 * Переходим в проект lyceum
 ```bash
