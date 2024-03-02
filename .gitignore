@@ -27,5 +27,5 @@ venv/
 #db
 db.sqlite3
 #cache
-.idea
-__pycache__
+.idea/
+__pycache__/
