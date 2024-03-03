@@ -8,7 +8,9 @@ def item_list(request):
     templates = "catalog/item_list.html"
     mainimage = MainImage.objects.all()
     list_item_id_mainimage = [x.item_id for x in mainimage]
-    dict_item = {num: Item.objects.filter(id=num) for num in list_item_id_mainimage}
+    dict_item = [
+        Item.objects.filter(id=num).text for num in list_item_id_mainimage
+    ]
     context = {
         "title": "Список товаров",
         "mainimage": MainImage.objects.filter(),
