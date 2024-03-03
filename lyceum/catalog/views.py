@@ -6,9 +6,13 @@ from catalog.models import Item, MainImage
 
 def item_list(request):
     templates = "catalog/item_list.html"
+    mainimage = MainImage.objects.all()
+    list_item_id_mainimage = [x.item_id for x in mainimage]
+    dict_item = {num: Item.objects.filter(id=num) for num in list_item_id_mainimage}
     context = {
         "title": "Список товаров",
         "mainimage": MainImage.objects.filter(),
+        "item": dict_item,
     }
     return render(request, templates, context)
 
