@@ -9,7 +9,6 @@ def item_list(request):
     context = {
         "title": "Список товаров",
         "mainimage": MainImage.objects.filter(),
-        "MainImage": MainImage,
     }
     return render(request, templates, context)
 

@@ -3,8 +3,20 @@
 {% block content %}
     <h1>Список товаров</h1>
     {% for obj in mainimage %}
-        <a href="{% url "catalog:item_detail" obj.id %}">
-            {{ obj.image_tmb }}
-        </a>
+        <div class="card mb-3" style="max-width: 1700px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              {{ obj.image_tmb }}
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Название пока не завезли :( (девелопер пока что ищет ифнормацию в чатике(и не только в нём) как не поймать ошибку Could not parse)</p>
+                <p class="card-text"><small class="text-body-secondary">Описание пока не завезли :(</small></p>
+                  <a class="btn btn-primary" href="{% url "catalog:item_detail" obj.item_id %}" role="button">К товару</a>
+              </div>
+            </div>
+          </div>
+        </div>
     {% endfor %}
 {% endblock %}
