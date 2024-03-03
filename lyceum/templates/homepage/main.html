@@ -3,8 +3,12 @@
 {% block content %}
     <h1>Главная</h1>
     {% for obj in mainimage %}
-        <a href="{% url "catalog:item_detail" obj.id %}">
-            {{ obj.image_tmb }}
-        </a>
+        <div class="card mb-3">
+          {{ obj.image_tmb }}
+          <div class="card-body">
+            <h5 class="card-title">{{ MainImage }}</h5>
+              <a class="btn btn-primary" href="{% url "catalog:item_detail" obj.id %}" role="button">К товару</a>
+          </div>
+        </div>
     {% endfor %}
 {% endblock %}

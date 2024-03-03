@@ -32,16 +32,13 @@ class AbstractCatalog(models.Model):
 
 
 class AbstractImage(models.Model):
-    image = models.ImageField(
-        upload_to="",
-    )
 
     def get_image300x300(self):
         return get_thumbnail(self.image, "300x300", crop="center", quality=51)
 
     def image_tmb(self):
         if self.image:
-            tag = f'<img src="{self.get_image300x300().url}">'
+            tag = f'<img src="{self.get_image300x300().url}" width=300>'
             return mark_safe(tag)
         return "изображение отсутствует"
 
@@ -55,4 +52,4 @@ class AbstractImage(models.Model):
         abstract = True
 
 
-__all__ = ["AbstractCatalog", "AbstractImage"]
+__all__ = []

@@ -31,4 +31,4 @@ def some_converter(request, pk):
     return HttpResponse(f"<body>{pk}</body>")
 
 
-__all__ = ["item_list", "item_detail", "some_re", "some_converter"]
+__all__ = []

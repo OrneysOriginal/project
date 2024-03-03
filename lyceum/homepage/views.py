@@ -17,4 +17,4 @@ def teapot(request):
     return HttpResponse("Я чайник", status=HTTPStatus.IM_A_TEAPOT)
 
 
-__all__ = ["homepage", "teapot"]
+__all__ = []

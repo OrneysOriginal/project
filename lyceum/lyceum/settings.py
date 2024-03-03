@@ -49,13 +49,12 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "lyceum.middleware.ReverseRusWordMiddleware",
 ]
 
 if DEBUG:
     INSTALLED_APPS.append("debug_toolbar")
     toolbar = "debug_toolbar.middleware.DebugToolbarMiddleware"
-    MIDDLEWARE.insert(0, toolbar)
+    MIDDLEWARE.insert(-2, toolbar)
     INTERNAL_IPS = ["127.0.0.1"]
 
 ROOT_URLCONF = "lyceum.urls"
@@ -124,7 +123,7 @@ USE_TZ = True
 
 
 STATIC_URL = "static/"
-
+STATIC_ROOT = "static/"
 STATICFILES_DIRS = [
     BASE_DIR / "static_dev",
 ]

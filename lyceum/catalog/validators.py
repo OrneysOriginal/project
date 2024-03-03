@@ -35,4 +35,4 @@ class ValidatorSerializer(BaseSerializer):
 MigrationWriter.register_serializer(ValidatorArg, ValidatorSerializer)
 
 
-__all__ = ["ValidatorSerializer", "ValidatorArg"]
+__all__ = []

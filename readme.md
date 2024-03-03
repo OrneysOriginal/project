@@ -22,6 +22,14 @@ pip install -r requirements/prod.txt - для продакшена
 ```bash
 cd lyceum
 ```
+* Создаём миграции(catalog)
+```bash
+python manage.py makemigrations catalog
+```
+* Применяем миграции
+```bash
+python manage.py migrate
+```
 * Запускаем тесты для проверки работоспособности
 ```bash
 python manage.py test
@@ -48,6 +56,14 @@ $ python3 -m pip install -r requirements/dev.txt
 * Меняем директорию на lyceum
 ```bash
 cd lyceum
+```
+* Создаём миграции(catalog)
+```bash
+python manage.py makemigrations catalog
+```
+* Применяем миграции
+```bash
+python manage.py migrate
 ```
 * Запускаем тесты для проверки работоспособности
 ```bash

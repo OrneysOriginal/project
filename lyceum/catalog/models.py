@@ -1,5 +1,6 @@
 import django.core.exceptions
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.utils.safestring import mark_safe
 from django.utils.text import slugify
 
 from catalog.validators import ValidatorArg
@@ -102,12 +103,19 @@ class Item(AbstractCatalog):
         verbose_name="теги",
     )
 
+    def get_image(self):
+        image = MainImage.objects.filter(item_id=self.id)[0]
+        return mark_safe(f"<img src='{image.get_image300x300().url}'>")
+
     class Meta:
         verbose_name = "товар"
         verbose_name_plural = "товары"
 
 
 class MainImage(AbstractImage):
+    image = django.db.models.ImageField(
+        upload_to="mainimage/",
+    )
     item = django.db.models.OneToOneField(
         Item,
         on_delete=django.db.models.CASCADE,
@@ -120,6 +128,9 @@ class MainImage(AbstractImage):
 
 
 class Images(AbstractImage):
+    image = django.db.models.ImageField(
+        upload_to="images/",
+    )
     item = django.db.models.ForeignKey(
         Item,
         on_delete=django.db.models.CASCADE,
@@ -131,4 +142,4 @@ class Images(AbstractImage):
         verbose_name_plural = "дополнительные изображения"
 
 
-__all__ = ["Category", "Tag", "MainImage", "Images", "Item"]
+__all__ = []
