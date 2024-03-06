@@ -51,7 +51,7 @@ class StaticURLTests(TestCase):
                 response_status_code,
                 expected_status,
                 msg=f"{reverse(template, args=[param])}"
-                    f" get not {expected_status}",
+                f" get not {expected_status}",
             )
         except django.urls.exceptions.NoReverseMatch:
             pass

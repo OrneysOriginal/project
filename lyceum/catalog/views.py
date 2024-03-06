@@ -30,7 +30,8 @@ def item_detail(request, pk):
     context = {
         "title": "Товар",
         "item": django.shortcuts.get_object_or_404(
-            Item.objects.filter(is_published=True), pk=pk,
+            Item.objects.filter(is_published=True),
+            pk=pk,
         ),
     }
     return render(request, templates, context)
