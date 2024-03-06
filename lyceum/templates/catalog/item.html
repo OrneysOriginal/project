@@ -2,7 +2,29 @@
 {% load static %}
 {% block content %}
     <h1>Товар детально</h1>
-    {% for obj in item %}
-        {{ obj.image_tmb }}
-    {% endfor %}
+        <div class="card mb-3" style="max-width: 1700px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              {{ item.main_image.image_tmb }}
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h4 class="card-title">{{ item__name }}</h4>
+                  <h5 class="card-title">Категория:</h5>
+                  <p>{{ item.category.name }}</p>
+                  <h5>Описание:</h5>
+                  <p class="card-text">{{ item.text }}</p>
+                  <h5 class="card-title">Теги:</h5>
+                  {% for tag in item.tags.all %}
+                  <p>{{ tag.name }}</p>
+                  {% endfor %}
+              </div>
+            </div>
+            <div>
+              {% for img in item.images.all %}
+              {{ img.image_tmb }}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
 {% endblock %}

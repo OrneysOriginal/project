@@ -2,20 +2,9 @@
 {% load static %}
 {% block content %}
     <h1>Список товаров</h1>
-    {% for obj in mainimage %}
-        <div class="card mb-3" style="max-width: 1700px;">
-          <div class="row g-0">
-            <div class="col-md-4">
-              {{ obj.image_tmb }}
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Название пока не завезли :( (девелопер пока что ищет информацию в чатике(и не только в нём) как не поймать ошибку Could not parse)</h5>
-                <p class="card-text">Описание пока не завезли :(</p>
-                  <a class="btn btn-primary" href="{% url "catalog:item_detail" obj.item_id %}" role="button">К товару</a>
-              </div>
-            </div>
-          </div>
-        </div>
+    {% for item in items %}
+        {% include "includes/item_card.html" %}
+    {% empty %}
+        <p>Список пуст</p>
     {% endfor %}
 {% endblock %}

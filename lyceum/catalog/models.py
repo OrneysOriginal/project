@@ -102,19 +102,23 @@ class Item(AbstractCatalog):
         related_name="item",
         verbose_name="теги",
     )
+    is_on_main = django.db.models.BooleanField(
+        default=False,
+    )
 
     def get_image(self):
         image = MainImage.objects.filter(item_id=self.id)[0]
         return mark_safe(f"<img src='{image.get_image300x300().url}'>")
 
     class Meta:
+        ordering = ("name",)
         verbose_name = "товар"
         verbose_name_plural = "товары"
 
 
 class MainImage(AbstractImage):
     image = django.db.models.ImageField(
-        upload_to="mainimage/",
+        upload_to="catalog/mainimage/",
     )
     item = django.db.models.OneToOneField(
         Item,
@@ -129,7 +133,7 @@ class MainImage(AbstractImage):
 
 class Images(AbstractImage):
     image = django.db.models.ImageField(
-        upload_to="images/",
+        upload_to="catalog/images/",
     )
     item = django.db.models.ForeignKey(
         Item,

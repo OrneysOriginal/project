@@ -50,8 +50,9 @@ $ source venv/bin/activate
 ```
 * Установка всех продовых зависимостей
 ```bash
-$ python3 -m pip install -r requirements/test.txt
-$ python3 -m pip install -r requirements/dev.txt
+pip install -r requirements/test.txt - для тестов
+pip install -r requirements/dev.txt - для разработки
+pip install -r requirements/prod.txt - для продакшена
 ```
 * Меняем директорию на lyceum
 ```bash

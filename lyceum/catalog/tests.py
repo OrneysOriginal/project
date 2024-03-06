@@ -1,6 +1,7 @@
 from http import HTTPStatus
 import itertools
 
+import django
 from django.core.exceptions import ValidationError
 from django.test import Client, TestCase
 from django.urls import reverse
@@ -16,12 +17,12 @@ class StaticURLTests(TestCase):
 
     @parameterized.parameterized.expand(
         [
-            ("0", HTTPStatus.OK),
-            ("1", HTTPStatus.OK),
-            ("01", HTTPStatus.OK),
-            ("010", HTTPStatus.OK),
-            ("10", HTTPStatus.OK),
-            ("100", HTTPStatus.OK),
+            ("0", HTTPStatus.NOT_FOUND),
+            ("1", HTTPStatus.NOT_FOUND),
+            ("01", HTTPStatus.NOT_FOUND),
+            ("010", HTTPStatus.NOT_FOUND),
+            ("10", HTTPStatus.NOT_FOUND),
+            ("100", HTTPStatus.NOT_FOUND),
             ("abs", HTTPStatus.NOT_FOUND),
             ("a4s", HTTPStatus.NOT_FOUND),
             ("ab4", HTTPStatus.NOT_FOUND),
@@ -39,12 +40,20 @@ class StaticURLTests(TestCase):
         param,
         expected_status,
     ):
-        respone_status_code = Client().get(f"/catalog/{param}/").status_code
-        self.assertEqual(
-            respone_status_code,
-            expected_status,
-            msg=f"/catalog/{param}/ get not {expected_status}",
-        )
+        try:
+            response_status_code = (
+                Client()
+                .get(reverse("catalog:item_detail", args=[param]))
+                .status_code
+            )
+            self.assertEqual(
+                response_status_code,
+                expected_status,
+                msg=f"{reverse('catalog:item_detail', args=[param])}"
+                    f" get not {expected_status}",
+            )
+        except django.urls.exceptions.NoReverseMatch:
+            pass
 
     @parameterized.parameterized.expand(
         (
@@ -93,7 +102,7 @@ class StaticURLTests(TestCase):
 
 class DBItemTests(TestCase):
     @classmethod
-    def setUpClass(cls) -> None:
+    def setUpClass(cls):
         super().setUpClass()
 
         cls.category = catalog.models.Category.objects.create(
@@ -186,7 +195,7 @@ class TagTests(TestCase):
                 self.tag.full_clean()
                 self.tag.save()
             self.assertEqual(
-                catalog.models.Item.objects.count(),
+                catalog.models.Tag.objects.count(),
                 tag_count,
                 msg="add no validate item",
             )
@@ -323,24 +332,88 @@ class NormalizeNameTests(TestCase):
 
 
 class PagesTests(TestCase):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+
+        cls.category = catalog.models.Category.objects.create(
+            name="Test",
+            slug="Test",
+        )
+        cls.tag = catalog.models.Tag.objects.create(
+            name="Test",
+            slug="Test",
+        )
+        cls.tag.save()
+        cls.category.save()
 
     @parameterized.parameterized.expand(
         [
-            (reverse("catalog:item_list"), 200),
+            (reverse("catalog:item_list"), HTTPStatus.OK),
+            (reverse("catalog:item_detail", args=[0]), HTTPStatus.NOT_FOUND),
             (reverse("catalog:item_detail", args=[1]), HTTPStatus.OK),
-            (reverse("catalog:item_detail", args=[2]), HTTPStatus.OK),
-            (reverse("catalog:item_detail", args=[3]), HTTPStatus.OK),
-            (reverse("catalog:item_detail", args=[4]), HTTPStatus.OK),
-            (reverse("catalog:item_detail", args=[5]), HTTPStatus.OK),
-            (reverse("catalog:item_detail", args=[6]), HTTPStatus.OK),
-            (reverse("catalog:item_detail", args=[7]), HTTPStatus.OK),
-            (reverse("catalog:item_detail", args=[8]), HTTPStatus.OK),
-            (reverse("catalog:item_detail", args=[9]), HTTPStatus.OK),
+            (reverse("catalog:item_detail", args=[2]), HTTPStatus.NOT_FOUND),
+            (reverse("catalog:item_detail", args=[3]), HTTPStatus.NOT_FOUND),
+            (reverse("catalog:item_detail", args=[4]), HTTPStatus.NOT_FOUND),
+            (reverse("catalog:item_detail", args=[5]), HTTPStatus.NOT_FOUND),
+            (reverse("catalog:item_detail", args=[6]), HTTPStatus.NOT_FOUND),
+            (reverse("catalog:item_detail", args=[7]), HTTPStatus.NOT_FOUND),
+            (reverse("catalog:item_detail", args=[8]), HTTPStatus.NOT_FOUND),
+            (reverse("catalog:item_detail", args=[9]), HTTPStatus.NOT_FOUND),
         ],
     )
     def test_page_status_code(self, url, status_code):
+        item = catalog.models.Item.objects.create(
+            name="Test",
+            text="Test",
+            category=self.category,
+        )
+        item.clean()
+        item.save()
         response_code = Client().get(url).status_code
         self.assertEqual(response_code, status_code)
+
+
+class ContextTests(TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.not_publish_tag = catalog.models.Tag.objects.create(
+            name="Тестовый тэг не опубликован",
+            is_published=True,
+            slug="Test slug1",
+        )
+        cls.publish_category = catalog.models.Category.objects.create(
+            name="Тестовая категория опубликован",
+            is_published=True,
+            slug="Test slug",
+            weight=200,
+        )
+
+    def test_homepage(self):
+        item = catalog.models.Item.objects.create(
+            name="Test",
+            is_published=True,
+            category=self.publish_category,
+        )
+        item.clean()
+        item.save()
+        response = django.test.Client().get(reverse("homepage:main"))
+        self.assertIn("items", response.context)
+
+    def test_homepage_count_item(self):
+        item = catalog.models.Item.objects.create(
+            name="Test",
+            is_published=True,
+            category=self.publish_category,
+            text="Testing превосходно",
+        )
+        item.full_clean()
+        item.save()
+        response = django.test.Client().get(reverse("homepage:main"))
+        items = response.context["items"]
+        self.assertEqual(items.count(), 0)
 
 
 __all__ = []

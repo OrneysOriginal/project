@@ -38,9 +38,13 @@ class AbstractImage(models.Model):
 
     def image_tmb(self):
         if self.image:
-            tag = f'<img src="{self.get_image300x300().url}" width=300>'
+            tag = f'<img src="{self.get_image300x300().url}" width="300px">'
             return mark_safe(tag)
-        return "изображение отсутствует"
+        return mark_safe("<p>изображение отсутствует</p>")
+
+    def save(self, *args, **kwargs):
+        super(AbstractImage, self).save(*args, **kwargs)
+        self.get_image300x300()
 
     image_tmb.short_description = "превью"
     image_tmb.allow_tags = True
