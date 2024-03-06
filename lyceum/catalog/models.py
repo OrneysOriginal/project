@@ -96,7 +96,7 @@ class Item(AbstractCatalog):
         verbose_name="категории",
         unique=False,
         help_text="Выберите категорию",
-        related_name="item"
+        related_name="item",
     )
     tags = django.db.models.ManyToManyField(
         Tag,
