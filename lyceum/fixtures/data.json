@@ -90,6 +90,7 @@
     "is_published": true,
     "text": "Превосходно",
     "category": 1,
+    "is_on_main": true,
     "tags": [
       2
     ]
@@ -103,6 +104,7 @@
     "is_published": true,
     "text": "Превосходно",
     "category": 2,
+    "is_on_main": true,
     "tags": [
       3
     ]
@@ -116,6 +118,7 @@
     "is_published": true,
     "text": "Превосходно",
     "category": 3,
+    "is_on_main": true,
     "tags": [
       1
     ]
@@ -129,6 +132,7 @@
     "is_published": true,
     "text": "Превосходно",
     "category": 3,
+    "is_on_main": true,
     "tags": [
       3
     ]
@@ -142,6 +146,7 @@
     "is_published": true,
     "text": "Превосходно",
     "category": 1,
+    "is_on_main": false,
     "tags": [
       5
     ]
@@ -167,7 +172,7 @@
   "model": "catalog.mainimage",
   "pk": 3,
   "fields": {
-    "image": "baranina_iE8MZgp.jpg",
+    "image": "catalog/mainimage/baranina_pdSuWQS.jpg",
     "item": 3
   }
 },
@@ -185,6 +190,14 @@
   "fields": {
     "image": "cucumber_eRzthIL.jpg",
     "item": 5
+  }
+},
+{
+  "model": "catalog.images",
+  "pk": 1,
+  "fields": {
+    "image": "catalog/images/baranina-kare_vkIL0Qq.jpeg",
+    "item": 3
   }
 },
 {
@@ -448,6 +461,646 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2024-03-06T08:53:17.017Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Баранина",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"\\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/images/baranina-kare.jpg\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2024-03-06T09:28:05.458Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Баранина",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"\\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/images/baranina-kare_vxtQP4b.jpg\", \"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2024-03-06T09:30:12.845Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Баранина",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"\\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/images/baranina-kare.jpg\", \"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2024-03-06T09:40:59.085Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Баранина",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2024-03-06T09:46:26.004Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Баранина",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"\\u0413\\u043b\\u0430\\u0432\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/mainimage/baranina-kare.jpeg\", \"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2024-03-06T09:46:36.213Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Баранина",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"\\u0413\\u043b\\u0430\\u0432\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/mainimage/baranina-kare_luAsw6V.jpeg\", \"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2024-03-06T09:51:35.126Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Баранина",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"\\u0413\\u043b\\u0430\\u0432\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/mainimage/baranina_pdSuWQS.jpg\", \"fields\": [\"Image\"]}}, {\"changed\": {\"name\": \"\\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/images/baranina-kare.jpeg\", \"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2024-03-06T09:53:57.937Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Баранина",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"\\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/images/baranina-kare_ZUE2uVq.jpeg\", \"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2024-03-06T09:59:17.649Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Баранина",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"\\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/images/baranina-kare.jpeg\", \"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2024-03-06T10:02:51.232Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Баранина",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"\\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/images/baranina-kare_tu5zWpw.jpeg\", \"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2024-03-06T10:06:27.178Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Баранина",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"\\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/images/baranina-kare.jpeg\", \"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2024-03-06T10:07:37.443Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Баранина",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"\\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/images/baranina-kare_vkIL0Qq.jpeg\", \"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2024-03-06T10:33:04.738Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Баранина",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"\\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/images/baranina-kare.jpeg\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2024-03-06T10:33:22.532Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Баранина",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"\\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/images/baranina-kare_YAg7cWG.jpeg\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2024-03-06T10:34:45.237Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Баранина",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"\\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/images/baranina-kare_WNtlRD1.jpeg\"}}, {\"added\": {\"name\": \"\\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/images/baranina-kare_GC6jYS0.jpeg\"}}, {\"added\": {\"name\": \"\\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/images/baranina-kare_X4HwwjD.jpeg\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2024-03-06T10:35:11.008Z",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "3",
+    "object_repr": "Баранина",
+    "action_flag": 2,
+    "change_message": "[{\"deleted\": {\"name\": \"\\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/images/baranina-kare.jpeg\"}}, {\"deleted\": {\"name\": \"\\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/images/baranina-kare_YAg7cWG.jpeg\"}}, {\"deleted\": {\"name\": \"\\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/images/baranina-kare_WNtlRD1.jpeg\"}}, {\"deleted\": {\"name\": \"\\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/images/baranina-kare_GC6jYS0.jpeg\"}}, {\"deleted\": {\"name\": \"\\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0438\\u0437\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u0435\", \"object\": \"/media/catalog/images/baranina-kare_X4HwwjD.jpeg\"}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add категория",
+    "content_type": 1,
+    "codename": "add_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change категория",
+    "content_type": 1,
+    "codename": "change_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete категория",
+    "content_type": 1,
+    "codename": "delete_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view категория",
+    "content_type": 1,
+    "codename": "view_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add тег",
+    "content_type": 2,
+    "codename": "add_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change тег",
+    "content_type": 2,
+    "codename": "change_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete тег",
+    "content_type": 2,
+    "codename": "delete_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view тег",
+    "content_type": 2,
+    "codename": "view_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add товар",
+    "content_type": 3,
+    "codename": "add_item"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change товар",
+    "content_type": 3,
+    "codename": "change_item"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete товар",
+    "content_type": 3,
+    "codename": "delete_item"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view товар",
+    "content_type": 3,
+    "codename": "view_item"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add Главное изображение",
+    "content_type": 4,
+    "codename": "add_mainimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change Главное изображение",
+    "content_type": 4,
+    "codename": "change_mainimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete Главное изображение",
+    "content_type": 4,
+    "codename": "delete_mainimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view Главное изображение",
+    "content_type": 4,
+    "codename": "view_mainimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add дополнительное изображение",
+    "content_type": 5,
+    "codename": "add_images"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change дополнительное изображение",
+    "content_type": 5,
+    "codename": "change_images"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete дополнительное изображение",
+    "content_type": 5,
+    "codename": "delete_images"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view дополнительное изображение",
+    "content_type": 5,
+    "codename": "view_images"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 6,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 6,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 6,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 6,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 7,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 7,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 7,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 7,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 8,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 8,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 8,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 8,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 9,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 9,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 9,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 9,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 10,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 10,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 10,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 10,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 11,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 11,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 11,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 11,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add kv store",
+    "content_type": 12,
+    "codename": "add_kvstore"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change kv store",
+    "content_type": 12,
+    "codename": "change_kvstore"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete kv store",
+    "content_type": 12,
+    "codename": "delete_kvstore"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view kv store",
+    "content_type": 12,
+    "codename": "view_kvstore"
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
@@ -463,6 +1116,102 @@
     "date_joined": "2024-03-01T20:12:19.784Z",
     "groups": [],
     "user_permissions": []
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "catalog",
+    "model": "category"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "catalog",
+    "model": "tag"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "catalog",
+    "model": "item"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "catalog",
+    "model": "mainimage"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "catalog",
+    "model": "images"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "thumbnail",
+    "model": "kvstore"
   }
 },
 {
@@ -482,9 +1231,44 @@
 },
 {
   "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||11ace38e8e3a84fb0d475b46cc8dd559",
+  "fields": {
+    "value": "{\"name\": \"cache/12/b5/12b59d647f59c47a9553e316603c03a8.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||1b68fd11935fd420176d2e7482d1a2d8",
+  "fields": {
+    "value": "{\"name\": \"catalog/images/baranina-kare_tu5zWpw.jpeg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||21a5890b04ffb76391ae988589dcd013",
+  "fields": {
+    "value": "{\"name\": \"catalog/images/baranina-kare_GC6jYS0.jpeg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [800, 800]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
   "pk": "sorl-thumbnail||image||235f723e81e9d7ace4cd42c370a83c3a",
   "fields": {
     "value": "{\"name\": \"cache/b5/43/b543f82c888e401ea288c46a271201d2.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||305dd0f133b2f1b957d9ae6bb572f07d",
+  "fields": {
+    "value": "{\"name\": \"catalog/images/baranina-kare_ZUE2uVq.jpeg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [800, 800]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||35b51737d5d7d685daebab93f3410958",
+  "fields": {
+    "value": "{\"name\": \"cache/7c/4e/7c4e9f5525c26fd2ff633093799fe423.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
   }
 },
 {
@@ -496,9 +1280,23 @@
 },
 {
   "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||40a6fa014b13093c0b902a5e1fd1d287",
+  "fields": {
+    "value": "{\"name\": \"catalog/mainimage/baranina-kare.jpeg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [800, 800]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
   "pk": "sorl-thumbnail||image||48c6dafd2faedbe1fdb7577812a6914b",
   "fields": {
     "value": "{\"name\": \"beef_hC0nBYL.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [1400, 934]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||4af7eeee93fe7c8e2c5f34736a54b51d",
+  "fields": {
+    "value": "{\"name\": \"cache/55/4f/554fa2b2a4c3f4c8d26ee45d0ef200d9.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
   }
 },
 {
@@ -513,6 +1311,34 @@
   "pk": "sorl-thumbnail||image||524746794d7e1643b707b8dcc90ba82e",
   "fields": {
     "value": "{\"name\": \"cache/34/41/3441a8637c5959c062a6972a7ffdec0f.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||5f27984cf81a085e450270af63432591",
+  "fields": {
+    "value": "{\"name\": \"cache/d4/4d/d44d4fb174bce7a5ebf6cdc7a06f515e.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||60a9b89242e9b567679596a0220e6e65",
+  "fields": {
+    "value": "{\"name\": \"cache/7a/88/7a883ca8b0fb99622b3ad00113e6093a.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||6c58627a6ba6f2bb982f4eb3ce0d8131",
+  "fields": {
+    "value": "{\"name\": \"cache/5e/28/5e28c53f1d222da6b3ec0fb8244412a8.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||715adc0407ee43b659a41cca8c1fbff8",
+  "fields": {
+    "value": "{\"name\": \"cache/1d/10/1d10fe3b367db4321626f3dfce1a6cfa.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
   }
 },
 {
@@ -538,9 +1364,51 @@
 },
 {
   "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||8617b1a3fbce749b0fd41fa8d58553c9",
+  "fields": {
+    "value": "{\"name\": \"cache/df/5c/df5cd9f5244b0ec98fd0c34a39f5b7c9.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||9a8c35ce2ec076cb6b4e787801729920",
+  "fields": {
+    "value": "{\"name\": \"cache/8a/44/8a44ae291eb1ae976011be1b40522c10.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||9fbfc36bed7e342e4b1c2b53c6ea9f14",
+  "fields": {
+    "value": "{\"name\": \"cache/b9/fb/b9fbda649152623c38f7c423f7cfea70.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||a132faedfc718d910cc09f04975cccf6",
+  "fields": {
+    "value": "{\"name\": \"catalog/images/baranina-kare_X4HwwjD.jpeg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [800, 800]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||a582fd2a6e60bc4961e0e3ef8bf3399c",
+  "fields": {
+    "value": "{\"name\": \"catalog/mainimage/baranina-kare_luAsw6V.jpeg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [800, 800]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
   "pk": "sorl-thumbnail||image||a70bc39132d0a1d6b916c53eefb712cf",
   "fields": {
     "value": "{\"name\": \"cucumber_eRzthIL.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [1600, 1148]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||bb26d4f08c78adfd738417a15175fe81",
+  "fields": {
+    "value": "{\"name\": \"cache/17/7f/177fc7aeceedb9d0ed9b9d6a40df76f8.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
   }
 },
 {
@@ -552,9 +1420,51 @@
 },
 {
   "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||cd6d56baa1be6ac8e9a9b4471fa6200e",
+  "fields": {
+    "value": "{\"name\": \"catalog/images/baranina-kare_WNtlRD1.jpeg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [800, 800]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||cf51cb89f8fdd7cc0a9968acaf8ebb18",
+  "fields": {
+    "value": "{\"name\": \"catalog/images/baranina-kare.jpeg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [800, 800]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||d5f2c883028b63df67be77028aba3218",
+  "fields": {
+    "value": "{\"name\": \"catalog/images/baranina-kare_YAg7cWG.jpeg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [800, 800]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||db6c46e8aa2b33d7511689b12b01a00c",
+  "fields": {
+    "value": "{\"name\": \"catalog/images/baranina-kare_vxtQP4b.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [800, 800]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
   "pk": "sorl-thumbnail||image||db8ee2a73eb10ea5dca8927e01691cf8",
   "fields": {
     "value": "{\"name\": \"baranina_WtvJRuX.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [1013, 675]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||dd2cadb3e65ddafa12148fa74266c6d8",
+  "fields": {
+    "value": "{\"name\": \"catalog/mainimage/baranina_pdSuWQS.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [1013, 675]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||dfa1ac7a548f3158804352704815b8e9",
+  "fields": {
+    "value": "{\"name\": \"catalog/images/baranina-kare.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [800, 800]}"
   }
 },
 {
@@ -566,6 +1476,13 @@
 },
 {
   "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||e0e1507658e229ff7f97dccd23f36aac",
+  "fields": {
+    "value": "{\"name\": \"cache/a1/09/a109885e0263f42c217ab84798b85096.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
   "pk": "sorl-thumbnail||image||e7da2b837bc56026d41861cb25b8ddfe",
   "fields": {
     "value": "{\"name\": \"apple_gdl1Xcp.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [1280, 805]}"
@@ -573,9 +1490,51 @@
 },
 {
   "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||ede4f06c0595ddd2d90aedfcb1688e61",
+  "fields": {
+    "value": "{\"name\": \"catalog/images/baranina-kare_vkIL0Qq.jpeg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [800, 800]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||image||f03ca1c0e9a8aaf07270ca61138f6598",
+  "fields": {
+    "value": "{\"name\": \"cache/58/d9/58d925e7a01265d0f7cbbc4132b758e0.jpg\", \"storage\": \"django.core.files.storage.filesystem.FileSystemStorage\", \"size\": [300, 300]}"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||1b68fd11935fd420176d2e7482d1a2d8",
+  "fields": {
+    "value": "[\"5f27984cf81a085e450270af63432591\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||21a5890b04ffb76391ae988589dcd013",
+  "fields": {
+    "value": "[\"11ace38e8e3a84fb0d475b46cc8dd559\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||305dd0f133b2f1b957d9ae6bb572f07d",
+  "fields": {
+    "value": "[\"9fbfc36bed7e342e4b1c2b53c6ea9f14\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
   "pk": "sorl-thumbnail||thumbnails||3f1f01a212a98a43c40c58a5ef97036c",
   "fields": {
     "value": "[\"8438015a9bced54643b0050b6df4ac8e\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||40a6fa014b13093c0b902a5e1fd1d287",
+  "fields": {
+    "value": "[\"715adc0407ee43b659a41cca8c1fbff8\"]"
   }
 },
 {
@@ -601,9 +1560,51 @@
 },
 {
   "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||a132faedfc718d910cc09f04975cccf6",
+  "fields": {
+    "value": "[\"bb26d4f08c78adfd738417a15175fe81\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||a582fd2a6e60bc4961e0e3ef8bf3399c",
+  "fields": {
+    "value": "[\"4af7eeee93fe7c8e2c5f34736a54b51d\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
   "pk": "sorl-thumbnail||thumbnails||a70bc39132d0a1d6b916c53eefb712cf",
   "fields": {
     "value": "[\"e07c50f0780df5ba7abe892b1d7c6df9\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||cd6d56baa1be6ac8e9a9b4471fa6200e",
+  "fields": {
+    "value": "[\"f03ca1c0e9a8aaf07270ca61138f6598\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||cf51cb89f8fdd7cc0a9968acaf8ebb18",
+  "fields": {
+    "value": "[\"35b51737d5d7d685daebab93f3410958\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||d5f2c883028b63df67be77028aba3218",
+  "fields": {
+    "value": "[\"60a9b89242e9b567679596a0220e6e65\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||db6c46e8aa2b33d7511689b12b01a00c",
+  "fields": {
+    "value": "[\"9a8c35ce2ec076cb6b4e787801729920\"]"
   }
 },
 {
@@ -615,9 +1616,30 @@
 },
 {
   "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||dd2cadb3e65ddafa12148fa74266c6d8",
+  "fields": {
+    "value": "[\"6c58627a6ba6f2bb982f4eb3ce0d8131\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||dfa1ac7a548f3158804352704815b8e9",
+  "fields": {
+    "value": "[\"e0e1507658e229ff7f97dccd23f36aac\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
   "pk": "sorl-thumbnail||thumbnails||e7da2b837bc56026d41861cb25b8ddfe",
   "fields": {
     "value": "[\"857e4fa54c25b865987f693b1ee0f922\"]"
+  }
+},
+{
+  "model": "thumbnail.kvstore",
+  "pk": "sorl-thumbnail||thumbnails||ede4f06c0595ddd2d90aedfcb1688e61",
+  "fields": {
+    "value": "[\"8617b1a3fbce749b0fd41fa8d58553c9\"]"
   }
 }
 ]

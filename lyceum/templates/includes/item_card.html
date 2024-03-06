@@ -9,7 +9,7 @@
           <h5 class="card-title">Категория:</h5>
           <p>{{ item.category.name }}</p>
           <h5>Описание:</h5>
-          <p class="card-text">{{ item.text|truncatewords:10 }}</p>
+          <p class="card-text">{{ item.text|truncatewords_html:10 }}</p>
           <h5 class="card-title">Теги:</h5>
           {% for tag in item.tags.all %}
           <p>{{ tag.name }}</p>
