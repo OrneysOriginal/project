@@ -100,6 +100,7 @@ class Item(AbstractCatalog):
     )
     tags = django.db.models.ManyToManyField(
         Tag,
+        related_query_name="items",
         related_name="item",
         verbose_name="теги",
     )
@@ -125,6 +126,7 @@ class MainImage(AbstractImage):
         Item,
         on_delete=django.db.models.CASCADE,
         related_name="main_image",
+        related_query_name="main_image",
     )
 
     class Meta:
@@ -140,6 +142,7 @@ class Images(AbstractImage):
         Item,
         on_delete=django.db.models.CASCADE,
         related_name="images",
+        related_query_name="images",
     )
 
     class Meta:

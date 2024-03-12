@@ -414,7 +414,7 @@ class ContextTests(TestCase):
         item.save()
         response = django.test.Client().get(reverse("homepage:main"))
         items = response.context["items"]
-        self.assertEqual(items.count(), 0)
+        self.assertEqual(len(items), 0)
 
 
 __all__ = []
