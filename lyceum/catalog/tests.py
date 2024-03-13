@@ -3,6 +3,7 @@ import itertools
 
 import django
 from django.core.exceptions import ValidationError
+from django.db.models import QuerySet
 from django.test import Client, TestCase
 from django.urls import reverse
 import parameterized
@@ -380,11 +381,6 @@ class ContextTests(TestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.not_publish_tag = catalog.models.Tag.objects.create(
-            name="Тестовый тэг не опубликован",
-            is_published=True,
-            slug="Test slug1",
-        )
         cls.publish_category = catalog.models.Category.objects.create(
             name="Тестовая категория опубликован",
             is_published=True,
@@ -403,18 +399,41 @@ class ContextTests(TestCase):
         response = django.test.Client().get(reverse("homepage:main"))
         self.assertIn("items", response.context)
 
-    def test_homepage_count_item(self):
+    @parameterized.parameterized.expand(
+        [
+            ("test_name", True, "test_text превосходно", 1),
+            ("test_name", False, "test_text превосходно", 0),
+        ],
+    )
+    def test_homepage_count_item(
+        self,
+        name,
+        is_published,
+        text,
+        count,
+    ):
         item = catalog.models.Item.objects.create(
-            name="Test",
-            is_published=True,
+            name=name,
+            is_published=is_published,
             category=self.publish_category,
-            text="Testing превосходно",
+            text=text,
         )
         item.full_clean()
         item.save()
-        response = django.test.Client().get(reverse("homepage:main"))
+        response = django.test.Client().get(reverse("catalog:item_list"))
         items = response.context["items"]
-        self.assertEqual(len(items), 0)
+        self.assertEqual(len(items), count)
+
+    @parameterized.parameterized.expand(
+        [
+            ("homepage:main", QuerySet),
+            ("catalog:item_list", QuerySet),
+            ("about:about", QuerySet),
+        ],
+    )
+    def test_type_context(self, url, datastruct):
+        response = django.test.Client().get(reverse(url))
+        self.assertIsInstance(response.context["items"], datastruct)
 
 
 __all__ = []
