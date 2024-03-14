@@ -11,7 +11,7 @@ def homepage(request):
 
     context = {
         "title": "Главная",
-        "items": Item.objects.published().filter(is_on_main=True),
+        "items": Item.objects.on_main(),
     }
     return render(request, template, context)
 

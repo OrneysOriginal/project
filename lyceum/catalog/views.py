@@ -9,7 +9,7 @@ def item_list(request):
     templates = "catalog/item_list.html"
     context = {
         "title": "Список товаров",
-        "items": Item.objects.published().filter(is_published=True),
+        "items": Item.objects.published(),
     }
     return render(request, templates, context)
 
@@ -19,7 +19,7 @@ def item_detail(request, pk):
     context = {
         "title": "Товар",
         "item": django.shortcuts.get_object_or_404(
-            Item.objects.filter(is_published=True),
+            Item.objects.published(),
             pk=pk,
         ),
     }
