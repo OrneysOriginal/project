@@ -376,16 +376,14 @@ class ContextTests(TestCase):
             weight=200,
         )
 
-    def test_homepage(self):
-        item = catalog.models.Item.objects.create(
-            name="Test",
-            is_published=True,
-            category=self.publish_category,
-        )
-        item.clean()
-        item.save()
-        response = django.test.Client().get(reverse("homepage:main"))
-        self.assertIn("items", response.context)
+    @parameterized.parameterized.expand(
+        [
+            ("catalog:item_list", "items"),
+        ],
+    )
+    def test_catalog(self, url, key):
+        response = django.test.Client().get(reverse(url))
+        self.assertIn(key, response.context)
 
     @parameterized.parameterized.expand(
         [
@@ -393,7 +391,7 @@ class ContextTests(TestCase):
             ("test_name", False, "test_text превосходно", 0),
         ],
     )
-    def test_homepage_count_item(
+    def test_count_item(
         self,
         name,
         is_published,
@@ -414,9 +412,7 @@ class ContextTests(TestCase):
 
     @parameterized.parameterized.expand(
         [
-            ("homepage:main", QuerySet),
             ("catalog:item_list", QuerySet),
-            ("about:about", QuerySet),
         ],
     )
     def test_type_context(self, url, datastruct):

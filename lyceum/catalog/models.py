@@ -82,7 +82,27 @@ class Tag(AbstractCatalog):
         self.normalization_data = normalization_data
 
 
+class ItemManager(django.db.models.Manager):
+    def published(self):
+        return (
+            self.get_queryset()
+            .select_related("category")
+            .select_related("main_image")
+            .prefetch_related(
+                django.db.models.Prefetch(
+                    "tags",
+                    queryset=Tag.objects.filter(is_published=True).only(
+                        "name",
+                    ),
+                ),
+            )
+            .only("category__name", "tags__name", "text", "name")
+            .filter(category__is_published=True)
+        )
+
+
 class Item(AbstractCatalog):
+    objects = ItemManager()
     text = django.db.models.TextField(
         verbose_name="текст",
         validators=[ValidatorArg("превосходно", "роскошно")],
