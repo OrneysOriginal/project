@@ -20,7 +20,9 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "ABOBA")
 
 DEBUG = os.getenv("DJANGO_DEBUG", "False").lower() in true_val
 
-DEBUG_TOOLBAR_CONFIG = {"DISABLE_PANELS": [True]}
+DEBUG_TOOLBAR_CONFIG = {
+    "INTERCEPT_REDIRECTS": False,
+}
 
 ALLOW_REVERSE = os.getenv("DJANGO_ALLOW_REVERSE", "true").lower() in true_val
 
@@ -54,7 +56,7 @@ MIDDLEWARE = [
 if DEBUG:
     INSTALLED_APPS.append("debug_toolbar")
     toolbar = "debug_toolbar.middleware.DebugToolbarMiddleware"
-    MIDDLEWARE.insert(-2, toolbar)
+    MIDDLEWARE.insert(0, toolbar)
     INTERNAL_IPS = ["127.0.0.1"]
 
 ROOT_URLCONF = "lyceum.urls"

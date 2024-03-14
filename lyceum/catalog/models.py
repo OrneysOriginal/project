@@ -44,7 +44,7 @@ class Category(AbstractCatalog):
             normalization_data=normalization_data,
         ).exists():
             raise django.core.exceptions.ValidationError(
-                {Category.name.field.name: "есть похожое название"},
+                {Category.name.field.name: "есть похожее название"},
             )
         self.normalization_data = normalization_data
 
@@ -77,7 +77,7 @@ class Tag(AbstractCatalog):
             normalization_data=normalization_data,
         ).exists():
             raise django.core.exceptions.ValidationError(
-                {Tag.name.field.name: "есть похожое название"},
+                {Tag.name.field.name: "есть похожее название"},
             )
         self.normalization_data = normalization_data
 

@@ -38,7 +38,7 @@ class AbstractImage(models.Model):
 
     def image_tmb(self):
         if self.image:
-            tag = f'<img src="{self.get_image300x300().url}" width="300px">'
+            tag = f'<img src="{self.get_image300x300().url}">'
             return mark_safe(tag)
         return mark_safe("<p>изображение отсутствует</p>")
 

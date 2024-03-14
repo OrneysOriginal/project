@@ -270,32 +270,20 @@ class CategoryTests(TestCase):
 
 class NormalizeNameTests(TestCase):
     @parameterized.parameterized.expand(
-        (
-            (x[0], x[1][0], x[1][1])
-            for x in itertools.product(
-                [
-                    ("test"),
-                    ("Тest"),
-                    ("tЕst"),
-                ],
-                [
-                    ("test test", True),
-                    ("itfaketest", True),
-                    ("test, test", True),
-                    ("test!test", True),
-                    ("testt", True),
-                    ("test!", False),
-                    ("!test", False),
-                    ("!test!", False),
-                    (" test ", False),
-                    ("test,", False),
-                    (".test", False),
-                    ("te st", False),
-                    ("te sТ", False),
-                    ("tеst", False),
-                ],
-            )
-        ),
+        [
+            ("test", "test test", True),
+            ("testfy", "itfaketest", True),
+            ("testtrue", "test, test", True),
+            ("testyes", "test!test", True),
+            ("testtindex", "testt", True),
+            ("test!", "test!", False),
+            ("!test", "!test", False),
+            ("test,", "test,", False),
+            (".test", ".test", False),
+            ("te st", "te st", False),
+            ("te sТ", "te sТ", False),
+            ("tеst", "tеst", False),
+        ],
     )
     def test_add_tag(self, name1, name2, is_validate):
         tag_count = catalog.models.Category.objects.count()

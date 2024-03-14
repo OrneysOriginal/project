@@ -22,9 +22,9 @@ pip install -r requirements/prod.txt - для продакшена
 ```bash
 cd lyceum
 ```
-* Создаём миграции(catalog)
+* Создаём миграции
 ```bash
-python manage.py makemigrations catalog
+python manage.py makemigrations
 ```
 * Применяем миграции
 ```bash
@@ -58,9 +58,9 @@ pip install -r requirements/prod.txt - для продакшена
 ```bash
 cd lyceum
 ```
-* Создаём миграции(catalog)
+* Создаём миграции
 ```bash
-python manage.py makemigrations catalog
+python manage.py makemigrations
 ```
 * Применяем миграции
 ```bash
