@@ -669,6 +669,58 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2024-03-14T11:11:30.127Z",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "6",
+    "object_repr": "Вкусно!",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2024-03-14T11:25:30.129Z",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "7",
+    "object_repr": "Вкувсно!",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2024-03-14T11:26:25.951Z",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "8",
+    "object_repr": "НямНям",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2024-03-14T13:01:50.418Z",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "9",
+    "object_repr": "Вкусно!",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -1105,7 +1157,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$600000$j936FJS2y2dkvXX3Sdns8o$kIuf8vdYLWN0qB+WjCX1msGv3zTGW15mRSf752S6BA4=",
-    "last_login": "2024-03-01T20:12:29.594Z",
+    "last_login": "2024-03-14T11:22:49.589Z",
     "is_superuser": true,
     "username": "Orneys",
     "first_name": "",
@@ -1216,10 +1268,26 @@
 },
 {
   "model": "sessions.session",
+  "pk": "2fsy5ywbsuqptpvi3pqci7ewdyhfa3cs",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlk28W8p6XMGy95d4wBypDipEHeHSCmgfTPzXiKmba1x67zEicRFaHH63XLCB7cd0D212yxxbusyZbkr8qBdjjPx83q4fwc19fqtB0U4AGvWxQTNkJHIWCCDwAGCAVIqWa2KZ-eSt4bZmzMQsvMWixbvD-17OCA:1rkjAf:JV_AQFg6ya251Z2i4ZRAJ8KwWaExdoC-0pjBXp_Vlgs",
+    "expire_date": "2024-03-28T11:22:49.761Z"
+  }
+},
+{
+  "model": "sessions.session",
   "pk": "gkfwzlat6jo5xvgw4t0q2bxawafkt4ad",
   "fields": {
     "session_data": ".eJxVjDsOwjAQBe_iGlk28W8p6XMGy95d4wBypDipEHeHSCmgfTPzXiKmba1x67zEicRFaHH63XLCB7cd0D212yxxbusyZbkr8qBdjjPx83q4fwc19fqtB0U4AGvWxQTNkJHIWCCDwAGCAVIqWa2KZ-eSt4bZmzMQsvMWixbvD-17OCA:1rg9F7:JL_1tN-AyZJZv25GR2yChh9aRik_-H6qX-KicBwTzZk",
     "expire_date": "2024-03-15T20:12:29.681Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "tq1m4c6ism20062ru0x84cqgh6r000ln",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlk28W8p6XMGy95d4wBypDipEHeHSCmgfTPzXiKmba1x67zEicRFaHH63XLCB7cd0D212yxxbusyZbkr8qBdjjPx83q4fwc19fqtB0U4AGvWxQTNkJHIWCCDwAGCAVIqWa2KZ-eSt4bZmzMQsvMWixbvD-17OCA:1rkjAZ:xaaDl_4Rm-H7oYLZJicktbkkw7uPgxmyDPt0FcFfbQQ",
+    "expire_date": "2024-03-28T11:22:43.837Z"
   }
 },
 {
