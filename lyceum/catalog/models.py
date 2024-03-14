@@ -26,7 +26,6 @@ class Category(AbstractCatalog):
     normalization_data = django.db.models.CharField(
         max_length=150,
         verbose_name="правильные данные",
-        unique=True,
         editable=False,
     )
 
@@ -60,7 +59,6 @@ class Tag(AbstractCatalog):
     normalization_data = django.db.models.CharField(
         max_length=150,
         verbose_name="правильные данные",
-        unique=True,
         editable=False,
     )
 
