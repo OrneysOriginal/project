@@ -3,10 +3,9 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.utils.safestring import mark_safe
 from django.utils.text import slugify
 
+from catalog.manager import ItemManager
 from catalog.validators import ValidatorArg
 from core.models import AbstractCatalog, AbstractImage, normalize_str
-
-from catalog.manager import ItemManager
 
 
 class Category(AbstractCatalog):

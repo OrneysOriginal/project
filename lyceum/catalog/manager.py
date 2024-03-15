@@ -13,7 +13,8 @@ class ItemManager(django.db.models.Manager):
                 django.db.models.Prefetch(
                     "tags",
                     queryset=importlib.import_module("catalog.models")
-                    .Tag.objects.filter(is_published=True).only(
+                    .Tag.objects.filter(is_published=True)
+                    .only(
                         "name",
                     ),
                 ),
@@ -24,3 +25,6 @@ class ItemManager(django.db.models.Manager):
 
     def on_main(self):
         return self.published().filter(is_on_main=True)
+
+
+__all__ = []
