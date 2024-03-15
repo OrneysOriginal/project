@@ -6,6 +6,8 @@ from django.utils.text import slugify
 from catalog.validators import ValidatorArg
 from core.models import AbstractCatalog, AbstractImage, normalize_str
 
+from catalog.manager import ItemManager
+
 
 class Category(AbstractCatalog):
     slug = django.db.models.SlugField(
@@ -82,42 +84,6 @@ class Tag(AbstractCatalog):
         self.normalization_data = normalization_data
 
 
-class ItemManager(django.db.models.Manager):
-    def published(self):
-        return (
-            self.get_queryset()
-            .select_related("category")
-            .select_related("main_image")
-            .prefetch_related(
-                django.db.models.Prefetch(
-                    "tags",
-                    queryset=Tag.objects.filter(is_published=True).only(
-                        "name",
-                    ),
-                ),
-            )
-            .only("category__name", "tags__name", "text", "name")
-            .filter(category__is_published=True)
-        ).filter(is_published=True)
-
-    def on_main(self):
-        return (
-            self.get_queryset()
-            .select_related("category")
-            .select_related("main_image")
-            .prefetch_related(
-                django.db.models.Prefetch(
-                    "tags",
-                    queryset=Tag.objects.filter(is_published=True).only(
-                        "name",
-                    ),
-                ),
-            )
-            .only("category__name", "tags__name", "text", "name")
-            .filter(category__is_published=True)
-        ).filter(is_on_main=True)
-
-
 class Item(AbstractCatalog):
     objects = ItemManager()
     text = django.db.models.TextField(
@@ -155,7 +121,7 @@ class Item(AbstractCatalog):
 
 class MainImage(AbstractImage):
     image = django.db.models.ImageField(
-        upload_to="catalog/mainimage/",
+        upload_to="catalog/mainimage/%Y/%m/%d",
     )
     item = django.db.models.OneToOneField(
         Item,
@@ -171,7 +137,7 @@ class MainImage(AbstractImage):
 
 class Images(AbstractImage):
     image = django.db.models.ImageField(
-        upload_to="catalog/images/",
+        upload_to="catalog/images/%Y/%m/%d",
     )
     item = django.db.models.ForeignKey(
         Item,

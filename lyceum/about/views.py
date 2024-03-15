@@ -6,7 +6,7 @@ def description(request):
     templates = "about/about.html"
     context = {
         "title": "О проекте",
-        "items": QuerySet(),
+        "items": QuerySet,
     }
     return render(request, templates, context)
 

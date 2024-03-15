@@ -30,6 +30,10 @@ python manage.py makemigrations
 ```bash
 python manage.py migrate
 ```
+* Используем фикстуры
+```bash
+python manage.py loaddata fixtures/data.json
+```
 * Запускаем тесты для проверки работоспособности
 ```bash
 python manage.py test
@@ -66,6 +70,10 @@ python manage.py makemigrations
 ```bash
 python manage.py migrate
 ```
+* Используем фикстуры
+```bash
+python manage.py loaddata fixtures/data.json
+```
 * Запускаем тесты для проверки работоспособности
 ```bash
 * python3 manage.py test
@@ -75,6 +83,6 @@ python manage.py migrate
 $ python3 manage.py runserver
 ```
 
-Вот так должна выглядеть система таблиц в базе данных
-ER у меня и здесь и просто картиночка (или erDiagram))
+Вот так выглядит система таблиц в базе данных
+ER у меня, а здесь просто картиночка (или erDiagram))
 ![Screenshot](ER.jpg)

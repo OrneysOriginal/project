@@ -31,7 +31,7 @@ class PageTests(TestCase):
     )
     def test_type_context(self, url, datastruct):
         response = django.test.Client().get(reverse(url))
-        self.assertIsInstance(response.context["items"], datastruct)
+        self.assertIs(response.context["items"], datastruct)
 
     @parameterized.parameterized.expand(
         [
