@@ -1,7 +1,7 @@
 from django.core.mail import send_mail
 from django.shortcuts import redirect, render
-from feedback.forms import FeedbackForm
 
+from feedback.forms import FeedbackForm
 from lyceum.settings import DJANGO_MAIL
 
 

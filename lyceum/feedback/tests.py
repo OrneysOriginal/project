@@ -1,7 +1,8 @@
 from django.test import Client, TestCase
 from django.urls import reverse
-from feedback.forms import FeedbackForm
 import parameterized
+
+from feedback.forms import FeedbackForm
 
 
 class TestFeedback(TestCase):
