@@ -149,6 +149,7 @@ class DBItemTests(TestCase):
                 self.item.tags.add(self.tag)
                 self.item.full_clean()
                 self.item.save()
+
             self.assertEqual(
                 catalog.models.Item.objects.count(),
                 item_count,
@@ -196,6 +197,7 @@ class TagTests(TestCase):
             with self.assertRaises(ValidationError):
                 self.tag.full_clean()
                 self.tag.save()
+
             self.assertEqual(
                 catalog.models.Tag.objects.count(),
                 tag_count,
@@ -253,6 +255,7 @@ class CategoryTests(TestCase):
             with self.assertRaises(ValidationError):
                 self.category.full_clean()
                 self.category.save()
+
             self.assertEqual(
                 catalog.models.Item.objects.count(),
                 category_count,
@@ -304,6 +307,7 @@ class NormalizeNameTests(TestCase):
                 self.tag1.save()
                 self.tag2.full_clean()
                 self.tag2.save()
+
             self.assertEqual(
                 catalog.models.Tag.objects.count(),
                 tag_count + 1,

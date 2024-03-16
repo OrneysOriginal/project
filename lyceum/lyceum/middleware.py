@@ -25,12 +25,15 @@ class ReverseRusWordMiddleware:
                 rus_reverse_words = {}
                 for i in range(len(words)):
                     rus_reverse_words[words[i]] = words[i][::-1]
+
                 strip_text = text.strip("<body>").strip("</>").split()
                 for i in range(len(strip_text)):
                     if rus_reverse_words.get(strip_text[i]) is not None:
                         strip_text[i] = rus_reverse_words[strip_text[i]]
+
                 text = " ".join(strip_text)
                 response.content = text.encode("utf-8")
+
         self.change_count()
         return response
 

@@ -19,6 +19,7 @@ def feedback(request):
             fail_silently=False,
         )
         return redirect("feedback:feedback")
+
     context = {
         "title": "Обратная связь",
         "form": feedback_form,

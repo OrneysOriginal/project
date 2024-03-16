@@ -40,6 +40,7 @@ class AbstractImage(models.Model):
         if self.image:
             tag = f'<img src="{self.get_image300x300().url}">'
             return mark_safe(tag)
+
         return mark_safe("<p>изображение отсутствует</p>")
 
     def save(self, *args, **kwargs):

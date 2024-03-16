@@ -38,6 +38,7 @@ def plaintext_echo(request):
         }
         template = "homepage/plaintext.html"
         return render(request, template, context)
+
     raise Http404()
 
 

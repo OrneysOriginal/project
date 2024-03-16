@@ -33,6 +33,7 @@ class Category(AbstractCatalog):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)
+
         super().save(*args, **kwargs)
 
     class Meta:
@@ -47,6 +48,7 @@ class Category(AbstractCatalog):
             raise django.core.exceptions.ValidationError(
                 {Category.name.field.name: "есть похожее название"},
             )
+
         self.normalization_data = normalization_data
 
 
@@ -66,6 +68,7 @@ class Tag(AbstractCatalog):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)
+
         super().save(*args, **kwargs)
 
     class Meta:
@@ -80,6 +83,7 @@ class Tag(AbstractCatalog):
             raise django.core.exceptions.ValidationError(
                 {Tag.name.field.name: "есть похожее название"},
             )
+
         self.normalization_data = normalization_data
 
 

@@ -14,6 +14,7 @@ class ValidatorArg:
         self.regular = r"\b" + args[0] + r"\b"
         for i in range(1, len(args)):
             self.regular += r"|\b" + args[i] + r"\b"
+
         self.num = num
 
     def __call__(self, text):
