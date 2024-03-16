@@ -1,6 +1,10 @@
 import re
 
 from django.conf import settings
+from django.core import mail
+from django.core.mail import send_mail
+
+from lyceum.settings import DJANGO_MAIL
 
 
 class ReverseRusWordMiddleware:
@@ -19,6 +23,15 @@ class ReverseRusWordMiddleware:
     def __call__(self, request):
         response = self.get_response(request)
         if ReverseRusWordMiddleware.count == 10:
+            if request.method == "POST":
+                text = request.POST.get("text")[::-1]
+                send_mail(
+                    "",
+                    text,
+                    f"from{DJANGO_MAIL}",
+                    [mail],
+                    fail_silently=False,
+                )
             if settings.ALLOW_REVERSE:
                 text = response.content.decode("utf-8")
                 words = re.findall("[а-яА-ЯёЁ]+", text)
