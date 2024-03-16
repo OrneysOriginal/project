@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿-r prod.txt
+=======
+-r prod.txt
+>>>>>>> 4801e67bf4ace4de79afdaa91d37ae9f1aac6d68
 parametrized
 flake8-absolute-import
 flake8-bugbear
