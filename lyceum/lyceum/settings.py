@@ -28,7 +28,10 @@ ALLOW_REVERSE = os.getenv("DJANGO_ALLOW_REVERSE", "true").lower() in true_val
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "*").split(",")
 
+DJANGO_MAIL = os.getenv("DJANGO_MAIL", "boba@yandex.com")
+
 INSTALLED_APPS = [
+    "feedback.apps.FeedbackConfig",
     "core.apps.CoreConfig",
     "catalog.apps.CatalogConfig",
     "about.apps.AboutConfig",
@@ -51,6 +54,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "lyceum.middleware.ReverseRusWordMiddleware",
 ]
 
 if DEBUG:
@@ -134,5 +138,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = "/media/"
+
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+
+EMAIL_FILE_PATH = BASE_DIR / "send_mail"
 
 __all__ = []
