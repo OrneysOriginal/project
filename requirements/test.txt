@@ -17,4 +17,4 @@ flake8-return
 flake8-type-ignore
 flake8-use-pathlib
 flake8_implicit_str_concat
-flake8-pep8-naming
+pep8-naming
