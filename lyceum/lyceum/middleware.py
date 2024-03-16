@@ -32,6 +32,7 @@ class ReverseRusWordMiddleware:
                     [mail],
                     fail_silently=False,
                 )
+
             if settings.ALLOW_REVERSE:
                 text = response.content.decode("utf-8")
                 words = re.findall("[а-яА-ЯёЁ]+", text)
