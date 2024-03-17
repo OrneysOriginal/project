@@ -1,6 +1,5 @@
 from http import HTTPStatus
 
-from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -31,7 +30,7 @@ def echoview(request):
         }
         return render(request, template, context)
 
-    raise PermissionDenied()
+    return HttpResponse(status=HTTPStatus.METHOD_NOT_ALLOWED)
 
 
 def plaintext_echo(request):
@@ -44,7 +43,7 @@ def plaintext_echo(request):
         template = "homepage/plaintext.html"
         return render(request, template, context)
 
-    raise PermissionDenied()
+    return HttpResponse(status=HTTPStatus.METHOD_NOT_ALLOWED)
 
 
 __all__ = []
