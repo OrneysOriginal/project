@@ -16,6 +16,7 @@ class Category(AbstractCatalog):
         verbose_name="слаг",
         help_text="Напишите слаг(Eng)",
     )
+
     weight = django.db.models.IntegerField(
         default=100,
         validators=[
