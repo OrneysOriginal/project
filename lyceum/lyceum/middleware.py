@@ -35,7 +35,7 @@ class ReverseRusWordMiddleware:
 
             if settings.ALLOW_REVERSE:
                 text = response.content.decode("utf-8")
-                words = re.findall("^[а-яА-ЯёЁ]+$", text)
+                words = re.findall(r"\b[а-яА-ЯёЁ]+\b", text)
                 rus_reverse_words = {}
                 for i in range(len(words)):
                     rus_reverse_words[words[i]] = words[i][::-1]

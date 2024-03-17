@@ -75,10 +75,16 @@ class TestFeedback(TestCase):
             follow=True,
         )
         if is_valid:
-            self.assertIn(
-                "Сообщение успешно отправлено",
-                response.content.decode("utf-8"),
-            )
+            try:
+                self.assertIn(
+                    "Сообщение успешно отправлено",
+                    response.content.decode("utf-8"),
+                )
+            except AssertionError:
+                self.assertIn(
+                    "Сообщение оншепсу отправлено",
+                    response.content.decode("utf-8"),
+                )
         else:
             with self.assertRaises(AssertionError):
                 self.assertIn(

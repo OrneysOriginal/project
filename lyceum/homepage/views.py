@@ -1,6 +1,7 @@
 from http import HTTPStatus
 
-from django.http import Http404, HttpResponse
+from django.core.exceptions import PermissionDenied
+from django.http import HttpResponse
 from django.shortcuts import render
 
 from catalog.models import Item
@@ -22,12 +23,15 @@ def teapot(request):
 
 
 def echoview(request):
-    template = "homepage/echo_form.html"
-    form = EchoSubmitForm(request.POST or None)
-    context = {
-        "form": form,
-    }
-    return render(request, template, context)
+    if request.method == "GET":
+        template = "homepage/echo_form.html"
+        form = EchoSubmitForm(request.POST or None)
+        context = {
+            "form": form,
+        }
+        return render(request, template, context)
+
+    raise PermissionDenied()
 
 
 def plaintext_echo(request):
@@ -36,10 +40,11 @@ def plaintext_echo(request):
         context = {
             "form": text,
         }
+
         template = "homepage/plaintext.html"
         return render(request, template, context)
 
-    raise Http404()
+    raise PermissionDenied()
 
 
 __all__ = []
