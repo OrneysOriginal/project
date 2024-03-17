@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.core.mail import send_mail
 from django.shortcuts import redirect, render
 
@@ -8,17 +9,19 @@ from lyceum.settings import DJANGO_MAIL
 def feedback(request):
     templates = "feedback/feedback.html"
     feedback_form = FeedbackForm(request.POST or None)
-    if feedback_form.is_valid():
-        text = feedback_form.cleaned_data.get("text")
-        mail = feedback_form.cleaned_data.get("mail")
-        send_mail(
-            "",
-            text,
-            f"from{DJANGO_MAIL}",
-            [mail],
-            fail_silently=False,
-        )
-        return redirect("feedback:feedback")
+    if request.method == "POST":
+        if feedback_form.is_valid():
+            text = feedback_form.cleaned_data.get("text")
+            mail = feedback_form.cleaned_data.get("mail")
+            send_mail(
+                "",
+                text,
+                f"from{DJANGO_MAIL}",
+                [mail],
+                fail_silently=False,
+            )
+            messages.success(request, "Письмо успешно отправлено")
+            return redirect("feedback:feedback")
 
     context = {
         "title": "Обратная связь",

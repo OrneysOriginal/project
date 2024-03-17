@@ -54,5 +54,37 @@ class TestFeedback(TestCase):
         )
         self.assertIn("form", response.context)
 
+    @parameterized.parameterized.expand(
+        [
+            ("I-ne-Taher@yandex.ru", "Привет", 1),
+            ("sav1ngeorgiy@yandex.ru", "Привет", 1),
+            ("georgijsavin17122@gmail.com", "Привет", 1),
+            ("I-ne-Taheryandex.ru", "Привет", 0),
+            ("sav1ngeorgiy@yandexru", "Привет", 0),
+            ("georgijsavin17122@gmail", "Привет", 0),
+        ],
+    )
+    def test_success_text(self, email, text, is_valid):
+        form_data = {
+            "text": text,
+            "mail": email,
+        }
+        response = Client().post(
+            reverse("feedback:feedback"),
+            data=form_data,
+            follow=True,
+        )
+        if is_valid:
+            self.assertIn(
+                "Сообщение успешно отправлено",
+                response.content.decode("utf-8"),
+            )
+        else:
+            with self.assertRaises(AssertionError):
+                self.assertIn(
+                    "Сообщение успешно отправлено",
+                    response.content.decode("utf-8"),
+                )
+
 
 __all__ = []

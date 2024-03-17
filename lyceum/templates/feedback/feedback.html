@@ -2,9 +2,24 @@
 {% block content %}
 <form method="post">
     {% csrf_token %}
-    <ul>
-        {{ form.as_ul }}
-    </ul>
+    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert alert-danger">
+                {{ error|escape }}
+            </div>
+        {% endfor %}
+        {{ field.label_tag }} {{ field }}
+        {% if field.help_text %}
+            <p class="help">{{ field.help_text|safe }}</p>
+        {% endif %}
+    {% endfor %}
+    {% if messages %}
+    <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+        {% for msg in messages %}
+        <p>Сообщение успешно отправлено</p>
+        {% endfor %}
+    </div>
+    {% endif %}
     <button class="btn btn-primary" type="submit">Сохранить</button>
 </form>
 {% endblock %}
