@@ -6,7 +6,9 @@ from homepage.models import EchoSubmit
 class EchoSubmitForm(ModelForm):
     class Meta:
         model = EchoSubmit
-        fields = "__all__"
+        fields = (
+            EchoSubmit.text.field.name,
+        )
         labels = {
             EchoSubmit.text.field.name: "Текст",
         }
