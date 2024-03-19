@@ -1,8 +1,13 @@
+import pathlib
+
+import django.conf
+import django.core.files.base
 from django.test import Client, TestCase
 from django.urls import reverse
 import parameterized
 
 from feedback.forms import FeedbackForm
+import feedback.models
 
 
 class TestFeedback(TestCase):
@@ -82,7 +87,7 @@ class TestFeedback(TestCase):
                 )
             except AssertionError:
                 self.assertIn(
-                    "Сообщение оншепсу отправлено",
+                    "еинещбооС оншепсу онелварпто",
                     response.content.decode("utf-8"),
                 )
         else:
@@ -91,6 +96,32 @@ class TestFeedback(TestCase):
                     "Сообщение успешно отправлено",
                     response.content.decode("utf-8"),
                 )
+
+    def test_file_upload(self):
+        files = [
+            django.core.files.base.ContentFile(
+                f"file_{index}".encode(),
+                name="filename",
+            )
+            for index in range(10)
+        ]
+        form_data = {
+            "text": "file_test",
+            "mail": "123@mail.com",
+            "file": files,
+        }
+        Client().post(
+            reverse("feedback:feedback"),
+            data=form_data,
+            follow=True,
+        )
+        feedback_files = feedback.models.Feedback.objects.all()
+
+        media_root = pathlib.Path(django.conf.settings.MEDIA_ROOT)
+
+        for index, file in enumerate(feedback_files):
+            uploaded_file = media_root / file.file.path
+            self.assertEqual(uploaded_file.open().read(), f"file_{index}")
 
 
 __all__ = []

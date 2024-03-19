@@ -4,11 +4,11 @@ import django.conf
 
 
 WORDS_REGEX = re.compile(r"\w+|\W+")
-NOT_RUSSIAN_REGEX = re.compile(r"^[^а-яА-ЯёЁ\s]+$")
+RUSSIAN_REGEX = re.compile(r"^[а-яА-ЯёЁ]+$")
 
 
 class ReverseRusWordMiddleware:
-    count = 1
+    count = 0
 
     def __init__(self, get_response):
         self.get_response = get_response
@@ -34,7 +34,7 @@ class ReverseRusWordMiddleware:
         words = WORDS_REGEX.findall(content)
 
         transformed = [
-            word if NOT_RUSSIAN_REGEX.search(word) else word[::-1]
+            word[::-1] if RUSSIAN_REGEX.search(word) else word
             for word in words
         ]
 
