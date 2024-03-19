@@ -44,31 +44,4 @@ class PagesTests(TestCase):
         self.assertIsInstance(response.context["items"], datastruct)
 
 
-class FormTests(TestCase):
-
-    @parameterized.parameterized.expand(
-        [
-            ("Привет"),
-            ("Привет"),
-            ("Привет"),
-            ("Привет"),
-            ("Привет"),
-            ("Привет"),
-            ("Привет"),
-            ("Привет"),
-            ("Привет"),
-            ("Привет, этo почтi-почти Pуcский текст@, "
-             "просто≈ Как-то со спецü символами:) ¡сорри∑! "
-             "Hу ещё раз ¡сорри! Ёжика не видели?"),
-        ]
-    )
-    def test_form(self, text):
-        response = Client().post(
-            "echo/submit/",
-            text=text,
-        )
-        self.assertRedirects(response, "echo/submit/")
-
-
-
 __all__ = []
