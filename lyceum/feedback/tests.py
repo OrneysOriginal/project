@@ -77,12 +77,12 @@ class TestFeedback(TestCase):
 
     @parameterized.parameterized.expand(
         [
-            ("I-ne-Taheryandex.ru", "Привет", 0),
-            ("sav1ngeorgiy@yandexru", "Привет", 0),
-            ("georgijsavin17122@gmail.", "Привет", 0),
-            ("@.ru", "Привет", 0),
-            (".ru", "Привет", 0),
-            ("@gmail.com", "Привет", 0),
+            ("I-ne-Taheryandex.ru", "Привет"),
+            ("sav1ngeorgiy@yandexru", "Привет"),
+            ("georgijsavin17122@gmail.", "Привет"),
+            ("@.ru", "Привет"),
+            (".ru", "Привет"),
+            ("@gmail.com", "Привет"),
         ],
     )
     def test_error_form(self, mail, text):
