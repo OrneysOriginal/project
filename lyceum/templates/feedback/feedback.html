@@ -16,7 +16,7 @@
     {% if messages %}
     <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
         {% for msg in messages %}
-        <p>Сообщение успешно отправлено</p>
+        <p {% if msg.tags %} class=" {{msg.tags}} " {% endif %}> {{ msg }} </p>
         {% endfor %}
     </div>
     {% endif %}

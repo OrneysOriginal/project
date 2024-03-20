@@ -1,4 +1,3 @@
-from django.core.validators import EmailValidator
 import django.db.models
 from django.db.models import Model
 
@@ -13,7 +12,6 @@ class Feedback(Model):
     mail = django.db.models.EmailField(
         verbose_name="email",
         max_length=100,
-        validators=[EmailValidator],
     )
 
 

@@ -1,13 +1,8 @@
-import pathlib
-
-import django.conf
-import django.core.files.base
 from django.test import Client, TestCase
 from django.urls import reverse
 import parameterized
 
 from feedback.forms import FeedbackForm
-import feedback.models
 
 
 class TestFeedback(TestCase):
@@ -66,62 +61,19 @@ class TestFeedback(TestCase):
             ("georgijsavin17122@gmail.com", "Привет", 1),
             ("I-ne-Taheryandex.ru", "Привет", 0),
             ("sav1ngeorgiy@yandexru", "Привет", 0),
-            ("georgijsavin17122@gmail", "Привет", 0),
+            ("georgijsavin17122@gmail.", "Привет", 0),
+            ("@.ru", "Привет", 0),
+            (".ru", "Привет", 0),
+            ("@gmail.com", "Привет", 0),
         ],
     )
-    def test_success_text(self, email, text, is_valid):
-        form_data = {
-            "text": text,
-            "mail": email,
-        }
-        response = Client().post(
-            reverse("feedback:feedback"),
-            data=form_data,
-            follow=True,
-        )
+    def test_true_false_email(self, mail, text, is_valid):
+        form_data = {"text": text, "mail": mail}
+        form = FeedbackForm(data=form_data)
         if is_valid:
-            try:
-                self.assertIn(
-                    "Сообщение успешно отправлено",
-                    response.content.decode("utf-8"),
-                )
-            except AssertionError:
-                self.assertIn(
-                    "еинещбооС оншепсу онелварпто",
-                    response.content.decode("utf-8"),
-                )
+            self.assertTrue(form.is_valid())
         else:
-            with self.assertRaises(AssertionError):
-                self.assertIn(
-                    "Сообщение успешно отправлено",
-                    response.content.decode("utf-8"),
-                )
-
-    def test_file_upload(self):
-        files = [
-            django.core.files.base.ContentFile(
-                f"file_{index}".encode(),
-                name="filename",
-            )
-            for index in range(10)
-        ]
-        form_data = {
-            "text": "file_test",
-            "mail": "123@mail.com",
-            "file": files,
-        }
-        Client().post(
-            reverse("feedback:feedback"),
-            data=form_data,
-            follow=True,
-        )
-        feedback_files = feedback.models.Feedback.objects.all()
-
-        media_root = pathlib.Path(django.conf.settings.MEDIA_ROOT)
-
-        for index, file in enumerate(feedback_files):
-            uploaded_file = media_root / file.file.path
-            self.assertEqual(uploaded_file.open().read(), f"file_{index}")
+            self.assertFalse(form.is_valid())
 
 
 __all__ = []

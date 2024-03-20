@@ -1,9 +1,16 @@
-from django.forms import EmailInput, ModelForm, TextInput
+from django.forms import ModelForm
 
 from feedback.models import Feedback
 
 
-class FeedbackForm(ModelForm):
+class BootstrapForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.visible_fields():
+            field.field.widget.attrs["class"] = "input-group-text"
+
+
+class FeedbackForm(BootstrapForm):
     class Meta:
         model = Feedback
         exclude = ["created_on"]
@@ -15,10 +22,6 @@ class FeedbackForm(ModelForm):
         help_texts = {
             Feedback.mail.field.name: "Введите вашу почту",
             Feedback.text.field.name: "Введите текст для письма",
-        }
-        widgets = {
-            "text": TextInput(attrs={"class": "input-group-text"}),
-            "mail": EmailInput(attrs={"class": "input-group-text"}),
         }
 
 
