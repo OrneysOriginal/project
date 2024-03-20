@@ -75,5 +75,31 @@ class TestFeedback(TestCase):
         else:
             self.assertFalse(form.is_valid())
 
+    @parameterized.parameterized.expand(
+        [
+            ("I-ne-Taheryandex.ru", "Привет", 0),
+            ("sav1ngeorgiy@yandexru", "Привет", 0),
+            ("georgijsavin17122@gmail.", "Привет", 0),
+            ("@.ru", "Привет", 0),
+            (".ru", "Привет", 0),
+            ("@gmail.com", "Привет", 0),
+        ],
+    )
+    def test_error_form(self, mail, text, is_valid):
+        data_form = {
+            "text": text,
+            "mail": mail,
+        }
+        response = self.client.post(
+            reverse("feedback:feedback"),
+            data=data_form,
+        )
+        self.assertFormError(
+            response,
+            "form",
+            "mail",
+            "Введите правильный адрес электронной почты.",
+        )
+
 
 __all__ = []
