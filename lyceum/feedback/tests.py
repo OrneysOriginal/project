@@ -85,7 +85,7 @@ class TestFeedback(TestCase):
             ("@gmail.com", "Привет", 0),
         ],
     )
-    def test_error_form(self, mail, text, is_valid):
+    def test_error_form(self, mail, text):
         data_form = {
             "text": text,
             "mail": mail,
