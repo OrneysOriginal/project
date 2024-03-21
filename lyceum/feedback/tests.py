@@ -95,7 +95,7 @@ class TestFeedback(TestCase):
             data=data_form,
         )
         self.assertFormError(
-            response.content["form"],
+            response,
             "form",
             "mail",
             "Введите правильный адрес электронной почты.",
