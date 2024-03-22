@@ -9,8 +9,6 @@ python -m venv venv
 * Активировать её
 ```bash
 venv/Script/activate
-или
-venv/Script/activate.bat
 ```
 * Устанавливаем все необходимые зависимости(прод будет загружен при установке любого из первых двух)
 ```bash

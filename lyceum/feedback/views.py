@@ -17,11 +17,15 @@ def feedback(request):
             send_mail(
                 "",
                 text,
-                f"from{DJANGO_MAIL}",
+                f"{DJANGO_MAIL}",
                 [mail],
                 fail_silently=False,
             )
-            messages.success(request, "Письмо успешно отправлено")
+            messages.success(
+                request,
+                f"Мы получили от вас обратную связь с текстом {text}. "
+                f"Скоро мы обработаем его и вернемся к вам с ответом",
+            )
             return redirect(reverse("feedback:feedback"))
 
     context = {
