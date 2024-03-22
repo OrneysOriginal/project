@@ -16,16 +16,13 @@ def feedback(request):
             mail = feedback_form.cleaned_data.get("mail")
             send_mail(
                 "",
-                text,
+                f"Мы получили от вас обратную связь с текстом {text}."
+                f" Скоро мы обработаем его и вернемся к вам с ответом",
                 f"{DJANGO_MAIL}",
                 [mail],
                 fail_silently=False,
             )
-            messages.success(
-                request,
-                f"Мы получили от вас обратную связь с текстом {text}. "
-                f"Скоро мы обработаем его и вернемся к вам с ответом",
-            )
+            messages.success(request, "Письмо успешно отправлено")
             return redirect(reverse("feedback:feedback"))
 
     context = {
