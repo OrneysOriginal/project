@@ -1,0 +1,21 @@
+<div class="card mb-3" style="max-width: 1700px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      {{ item.main_image.image_tmb }}
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h4 class="card-title">{{ item.name }}</h4>
+          <h5 class="card-title">Категория:</h5>
+          <p>{{ item.category.name }}</p>
+          <h5>Описание:</h5>
+          <p class="card-text">{{ item.text|truncatewords_html:10 }}</p>
+          <h5 class="card-title">Теги:</h5>
+          {% for tag in item.tags.all %}
+          <p>{{ tag.name }}</p>
+          {% endfor %}
+            <a class="btn btn-primary" href="{% url "catalog:item_detail" pk=item.id %}" role="button">К товару</a>
+      </div>
+    </div>
+  </div>
+</div>
