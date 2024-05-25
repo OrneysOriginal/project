@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+        {% if form.has_error %}
+            {% for error in field.errors %}
+                <div class="alert alert-danger">
+                    {{ error|escape }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {{ field.label_tag }} {{ field }}
+        {% if field.help_text %}
+            <p class="help">{{ field.help_text|safe }}</p>
+        {% endif %}
+    {% endfor %}
+    {% if messages %}
+    <div class="p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+        {% for msg in messages %}
+        <p {% if msg.tags %} class=" {{msg.tags}} " {% endif %}> {{ msg }} </p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <button class="btn btn-primary" type="submit">Сохранить</button>
+</form>
+{% endblock %}
