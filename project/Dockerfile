@@ -4,6 +4,6 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR ./app
 
-COPY .. .
+COPY project .
 
 RUN pip3 install -r requirements/prod.txt

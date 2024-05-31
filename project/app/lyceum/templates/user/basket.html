@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+{% if length > 0 %}
+    {% for goods in basket %}
+        <h3>{{ goods.item }}</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ goods.item.main_image.image_tmb }}
+            <button type="submit" class="btn btn-danger">Убрать из корзины</button>
+        </form>
+
+    {% endfor %}
+{% else %}
+<h1>Пока что здесь ничего нет</h1>
+{% endif %}
+{% endblock %}
