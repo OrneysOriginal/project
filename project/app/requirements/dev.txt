@@ -1,0 +1,2 @@
+﻿-r prod.txt
+black==24.1.1
